@@ -1,12 +1,13 @@
-import { useState } from 'react'
 import './App.css'
+import { Routes } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+import Onboarding from './pages/Onboarding'
 
 function App() {
-
   return (
-    <>
-      <p>Hello from App.jsx</p>
-    </>
+    <Routes>
+      <Route path="/onboarding" element={<Onboarding />} />
+    </Routes>
   )
 }
 
