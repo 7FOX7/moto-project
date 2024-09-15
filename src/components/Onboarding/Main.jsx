@@ -1,30 +1,33 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import CustomLoadingBar from "../../customs/components/CustomLoadingBar";
+import { useNavigate } from "react-router-dom";
 import { OnboardingBox } from "../../styles/style";
+import CustomLoadingBar from "../../customs/components/CustomLoadingBar";
 
 const Main = () => {
-   const [isLoading, setIsLoading] = useState(true);
    const [loadingProgress, setLoadingProgress] = useState(0);
+   const navigate = useNavigate(); 
 
    useEffect(() => {
       const interval = setInterval(() => {
          setLoadingProgress((prevVal) => {
             if (prevVal >= 109) {
                clearInterval(interval);
-               setIsLoading(false);
-               return 109;
+               return prevVal; 
             }
-            return prevVal + 1;
+            return prevVal + 1
          });
       }, 45);
 
       return () => clearInterval(interval);
    }, []);
 
-   if (!isLoading) {
-      return <p>it stopped loading</p>
-   }
+   useEffect(() => {
+      if (loadingProgress >= 109) {
+         navigate('/home', {relative: "route"});
+      }
+   }, [loadingProgress, navigate]);
+
    return (
       <OnboardingBox>
          <CustomLoadingBar progress={loadingProgress} />
