@@ -4,6 +4,9 @@ const theme = createTheme({
    palette: {
       onboarding: {
          
+      },
+      home: {
+
       }, 
       global: {
          borderLinearProgress: {
