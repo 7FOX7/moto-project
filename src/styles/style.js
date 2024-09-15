@@ -8,13 +8,16 @@ export const OnboardingBox = styled(Box)({
    height: "100vh", 
    display: "flex", 
    alignItems: "center", 
-   backgroundColor: theme.palette.common.black,
+   backgroundColor: theme.palette.grey[500],
 })
 
 export const LoadingBarContainer = styled(Box)({
    width: "100%", 
+   height: "100vh",
    display: "flex", 
-   justifyContent: "center"
+   justifyContent: "center", 
+   alignItems: "center",
+   backgroundColor: theme.palette.common.black,
 })
 
 export const BorderLinearProgress = styled(LinearProgress)({

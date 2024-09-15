@@ -2,7 +2,7 @@ import { useScreenSize } from "../../contexts/ScreenSizeContext";
 import { LoadingBarContainer } from "../../styles/style";
 import { BorderLinearProgress } from "../../styles/style";
 
-const CustomLoadingBar = ({ progress }) => {
+const CustomLoadingBar = () => {
    const isSmallScreen = useScreenSize(); 
    return (
       <LoadingBarContainer>
@@ -10,8 +10,6 @@ const CustomLoadingBar = ({ progress }) => {
             sx={{
                width: isSmallScreen ? "60%" : "30%"
             }} 
-            variant="determinate"
-            value={progress} 
          />
       </LoadingBarContainer>
    )
