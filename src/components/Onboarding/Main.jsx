@@ -10,14 +10,14 @@ const Main = () => {
    useEffect(() => {
       const interval = setInterval(() => {
          setLoadingProgress((prevVal) => {
-            if (prevVal >= 110) {
+            if (prevVal >= 109) {
                clearInterval(interval);
                setIsLoading(false);
-               return 110;
+               return 109;
             }
             return prevVal + 1;
          });
-      }, 60);
+      }, 45);
 
       return () => clearInterval(interval);
    }, []);

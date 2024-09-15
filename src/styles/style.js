@@ -8,7 +8,7 @@ export const OnboardingBox = styled(Box)({
    height: "100vh", 
    display: "flex", 
    alignItems: "center", 
-   backgroundColor: theme.palette.common.black, 
+   backgroundColor: theme.palette.common.black,
 })
 
 export const LoadingBarContainer = styled(Box)({
@@ -18,13 +18,14 @@ export const LoadingBarContainer = styled(Box)({
 })
 
 export const BorderLinearProgress = styled(LinearProgress)({
-   height: 4, 
+   boxShadow: theme.shadows.borderLinearProgress[1],
+   height: 4,  
    borderRadius: theme.shape.borderLinearProgress.borderRadius, 
    [`&.${linearProgressClasses.colorPrimary}`]: {
-      backgroundColor: theme.palette.grey[700]
+      backgroundColor: theme.palette.grey[700], 
    }, 
    [`& .${linearProgressClasses.bar}`]: {
       borderRadius: theme.shape.borderLinearProgress.borderRadius, 
-      backgroundColor: theme.palette.global.borderLinearProgress.main
+      background: theme.palette.global.borderLinearProgress.main, 
    }
 })

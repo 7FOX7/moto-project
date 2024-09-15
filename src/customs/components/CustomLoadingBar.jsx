@@ -18,4 +18,3 @@ const CustomLoadingBar = ({ progress }) => {
 }
  
 export default CustomLoadingBar
- 
