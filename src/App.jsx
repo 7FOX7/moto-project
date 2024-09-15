@@ -1,13 +1,16 @@
 import './App.css'
 import { Routes } from 'react-router-dom'
 import { Route } from 'react-router-dom'
+import { ScreenSizeProvider } from './contexts/ScreenSizeContext'
 import Onboarding from './pages/Onboarding'
 
 function App() {
   return (
-    <Routes>
-      <Route path="/onboarding" element={<Onboarding />} />
-    </Routes>
+    <ScreenSizeProvider>
+      <Routes>
+        <Route path="/onboarding" element={<Onboarding />} />
+      </Routes>
+    </ScreenSizeProvider>
   )
 }
 
