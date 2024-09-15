@@ -1,5 +1,7 @@
+import Main from "../components/Onboarding/Main"
+
 const Onboarding = () => {
-   return <p>Hello from Onboarding</p>
+   return <Main />   
 }
 
 export default Onboarding
