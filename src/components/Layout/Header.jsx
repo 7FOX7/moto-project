@@ -14,6 +14,7 @@ const Header = () => {
             <CustomIconButton 
                onClick={handleClick} 
                icon={<MenuIcon />}
+               ariaLabel="Open Main Navigation"
             />
          </Toolbar>
       </HeaderAppBar>
@@ -21,3 +22,20 @@ const Header = () => {
 }
 
 export default Header
+
+
+// 1. the idea: to add the list of links that will open on 'menu' icon click
+
+/* 
+   procedure: 
+
+   our data folder structure could look like: 
+
+   data 
+   |
+   |
+    ---- navLinks.js 
+
+
+   
+*/
