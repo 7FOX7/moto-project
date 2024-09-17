@@ -11,7 +11,7 @@ const ScreenSizeContext = createContext('');
 
 export const ScreenSizeProvider = ({children}) => { 
    const forceUpdate = useForceUpdate()
-   const isSmallScreen = useMediaQuery(theme.breakpoints.between('xs', 'sm'));
+   const isSmallScreen = useMediaQuery(theme.breakpoints.between('xs', 'md'));
    useEffect(() => {
       window.addEventListener('resize', forceUpdate())
       return () => {
