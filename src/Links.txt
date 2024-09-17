@@ -1,0 +1,32 @@
+links in the navigation bar: 
+
+- Workouts (Access to various workout plans and routines)
+	- by clicking we will see options: 
+		1. Workout Videos
+		2. Workout Programs
+		3. Progress Tracking
+
+- Healthy Living (Access to sources related to mental health, nutrition)
+	- by clicking we will see options: 
+		1. Fitness
+		2. Nutrition
+		3. Healthy Recipes
+		4. Mental Health
+
+- Community (Will basically contain the links to the discussions)
+	- by clicking we will see all the discussions;
+ 
+- Blogs (Articles on fitness tips, trends, and success stories)
+	- by clicking we will see all the blogs; 
+
+- About (FAQ, Careers, Experts)
+	- by clicking we will see the options: 
+		1. FAQ
+		2. Careers
+		3. Experts
+
+
+
+links in the footer: 
+
+- Will contain all the links from the navigation bar, but with the full option list; 
