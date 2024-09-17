@@ -1,0 +1,7 @@
+When adding a new Route you have to make sure that you do everything below step by step: 
+
+1. In your 'pages' folder - add a new page; 
+2. Import the page to the 'App.jsx'
+3. Inside 'theme.js', add the name of the route that you have just added (consider 'palette' and 'typography')
+4. Add the Outermost Box (if any) to the 'style.js', like you did with the 'OnboardingBox'
+5. DON'T store the Interactive content inside the 'route'. Add a new component 'Main' and add ALL the relevant content there
