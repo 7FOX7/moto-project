@@ -2,11 +2,8 @@ import { createTheme } from "@mui/material";
 
 const theme = createTheme({
    palette: {
-      onboarding: {
-         
-      },
-      home: {
-
+      primary: {
+         main: "rgb(255, 255, 255)",  
       }, 
       global: {
          borderLinearProgress: {
