@@ -17,7 +17,7 @@ function App() {
     <ScreenSizeProvider>
       <Suspense fallback={<CustomLoadingBar />}>
         <Routes>
-          <Route path="/" element={<Navigate to="/onboarding" />} />
+          {/* <Route path="/" element={<Navigate to="/onboarding" />} /> */}
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="onboarding" element={<Onboarding />} />
