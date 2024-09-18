@@ -28,7 +28,6 @@ export const LoadingBarContainer = styled(Box)({
 })
 
 export const BorderLinearProgress = styled(LinearProgress)({
-   boxShadow: theme.shadows.borderLinearProgress[1],
    height: 4,  
    borderRadius: theme.shape.borderLinearProgress.borderRadius, 
    [`&.${linearProgressClasses.colorPrimary}`]: {

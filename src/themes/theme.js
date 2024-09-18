@@ -16,11 +16,6 @@ const theme = createTheme({
          borderRadius: 2
       }
    }, 
-   shadows: {
-      borderLinearProgress: {   
-         1: "0px 0px 25px 2px rgb(0, 8, 232)"
-      }
-   }
 })
 
 export default theme
