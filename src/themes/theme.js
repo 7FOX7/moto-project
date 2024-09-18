@@ -9,6 +9,11 @@ const theme = createTheme({
          borderLinearProgress: {
             main: "linear-gradient(90deg, rgba(0,0,73,1) 0%, rgba(0,137,255,1) 100%)"
          }
+      }, 
+      footer: {
+         subLink: {
+            main: "rgba(200, 200, 200, 0.5)"
+         }
       }
    }, 
    shape: {
@@ -16,6 +21,13 @@ const theme = createTheme({
          borderRadius: 2
       }
    }, 
+   typography: {
+      footer: {
+         mainLink: {
+            fontWeight: "700"
+         }
+      }, 
+   }
 })
 
 export default theme
