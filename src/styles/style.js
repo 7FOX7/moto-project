@@ -1,13 +1,34 @@
 import { styled } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import theme from "../themes/theme";
 import LinearProgress, {linearProgressClasses} from "@mui/material/LinearProgress";
 
-export const HeaderAppBar = styled(AppBar)({
+export const HeaderSection = styled(AppBar)({
    position: "fixed", 
    background: "linear-gradient(90deg, rgba(0,0,60,1) 0%, rgba(0,155,162,1) 100%)",
    color: theme.palette.primary.main 
+})
+
+export const FooterSection = styled(Box)({
+   position: "absolute",
+   top: "100%", 
+   left: 0,  
+   width: "100%",  
+   background: "radial-gradient(circle, rgba(0,85,93,1) 0%, rgba(3,0,40,1) 100%)", 
+   color: theme.palette.primary.main
+})
+
+export const MainNavLink = styled(Typography)({
+   textWrap: "nowrap", 
+   fontWeight: theme.typography.footer.mainLink, 
+   color: theme.palette.primary.main
+})
+
+export const SubNavLink = styled(Typography)({
+   textWrap: "nowrap", 
+   color: theme.palette.footer.subLink.main
 })
 
 export const OnboardingBox = styled(Box)({
