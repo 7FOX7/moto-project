@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useScreenSize } from "../../contexts/ScreenSizeContext";
-import { HeaderAppBar } from "../../styles/style";
+import { HeaderSection } from "../../styles/style";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar"
 import CustomIconButton from "../../customs/components/CustomIconButton"
 import CustomSwipeableDrawer from "../../customs/components/CustomSwipeableDrawer";
-import MenuIcon from '@mui/icons-material/Menu';
 import CustomListContainer from "../../customs/components/CustomListContainer";
+import MenuIcon from '@mui/icons-material/Menu';
 
 const anchor = "right"
 const List = CustomListContainer.header
@@ -25,7 +25,7 @@ const Header = () => {
 
    return (
       <>
-         <HeaderAppBar>
+         <HeaderSection>
             <Toolbar>
                <Box sx={{flexGrow: 1}} />
                {isSmallScreen ?
@@ -38,7 +38,7 @@ const Header = () => {
                   <List />
                }
             </Toolbar>
-         </HeaderAppBar>
+         </HeaderSection>
          {isSmallScreen && 
             <CustomSwipeableDrawer 
             list={<List />}
@@ -55,9 +55,15 @@ const Header = () => {
 export default Header
 
 /*
-1. the idea: to add the list of links that will open on 'menu' icon click
 
- 
-  
+1. The footer structure can look like:  
+
+const List = CustomListContainer.footer
+
+const Footer = () => {
+   <FooterStyled>
+      <List />
+   </FooterStyled>
+}
    
 */
