@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useScreenSize } from "../../contexts/ScreenSizeContext";
 import { HeaderSection } from "../../styles/style";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar"
 import CustomIconButton from "../../customs/components/CustomIconButton"
 import CustomSwipeableDrawer from "../../customs/components/CustomSwipeableDrawer";
 import CustomListContainer from "../../customs/components/CustomListContainer";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar"
 import MenuIcon from '@mui/icons-material/Menu';
 
 const anchor = "right"
@@ -41,29 +41,15 @@ const Header = () => {
          </HeaderSection>
          {isSmallScreen && 
             <CustomSwipeableDrawer 
-            list={<List />}
-            anchor={anchor}
-            open={open}
-            onOpen={handleOpen}
-            onClose={handleClose}
-         />
+               list={<List />}
+               anchor={anchor}
+               open={open}
+               onOpen={handleOpen}
+               onClose={handleClose}
+            />
          }
       </>
    )
 }
 
 export default Header
-
-/*
-
-1. The footer structure can look like:  
-
-const List = CustomListContainer.footer
-
-const Footer = () => {
-   <FooterStyled>
-      <List />
-   </FooterStyled>
-}
-   
-*/
