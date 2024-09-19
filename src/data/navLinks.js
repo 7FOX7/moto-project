@@ -16,8 +16,8 @@ const navLinks = [
          }, 
          {
             id: "workoutProgress", 
-            title: "Progress Tracking", 
-            path: "/progress-tracking"
+            title: "Progress", 
+            path: "/progress"
          }
       ] 
    }, 
@@ -51,12 +51,26 @@ const navLinks = [
    {
       id: "communityLink", 
       title: "Community", 
-      path: "/community"
+      path: "/community", 
+      subLinks: [
+         {
+            id: "communityDiscussions", 
+            title: "Discussions", 
+            path: "/discussions"
+         } 
+      ]
    }, 
    {
       id: "blogsLink", 
       title: "Blogs", 
-      path: "/blogs"
+      path: "/blogs", 
+      subLinks: [
+         {
+            id: "blogsSuccessStories", 
+            title: "Success Stories", 
+            path: "/success-stories"
+         } 
+      ]
    }, 
    {
       id: "aboutLink", 
