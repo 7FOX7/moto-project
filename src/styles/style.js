@@ -1,9 +1,9 @@
 import { styled } from "@mui/material/styles";
+import theme from "../themes/theme";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import theme from "../themes/theme";
 import LinearProgress, {linearProgressClasses} from "@mui/material/LinearProgress";
+import Typography from "@mui/material/Typography";
 
 export const HeaderSection = styled(AppBar)({
    position: "fixed", 
@@ -20,15 +20,8 @@ export const FooterSection = styled(Box)({
    color: theme.palette.primary.main
 })
 
-export const MainNavLink = styled(Typography)({
+export const NavLinkContent = styled(Typography)({
    textWrap: "nowrap", 
-   fontWeight: theme.typography.footer.mainLink, 
-   color: theme.palette.primary.main
-})
-
-export const SubNavLink = styled(Typography)({
-   textWrap: "nowrap", 
-   color: theme.palette.footer.subLink.main
 })
 
 export const OnboardingBox = styled(Box)({
