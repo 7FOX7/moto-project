@@ -32,6 +32,12 @@ export const OnboardingBox = styled(Box)({
    backgroundColor: theme.palette.grey[500],
 })
 
+export const HomeBox = styled(Box)({
+   height: "100vh", 
+   display: "flex", 
+   alignItems: "center",
+})
+
 export const LoadingBarContainer = styled(Box)({
    width: "100%", 
    height: "100vh",

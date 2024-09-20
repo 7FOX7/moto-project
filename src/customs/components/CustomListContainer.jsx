@@ -137,3 +137,10 @@ const CustomListContainer = {
 }
 
 export default CustomListContainer
+
+/*
+   the idea: 
+   1. on the black background, the first animation appears
+   2. there will be a box appearing from the left 
+   3. 
+*/
