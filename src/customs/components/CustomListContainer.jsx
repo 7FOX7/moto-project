@@ -42,15 +42,15 @@ const CustomListContainer = {
             size={12}
          >
             <Grid 
-               size={{xs: 12, sm: 12, md: 4, lg: 4, xl: 4}}
+               size={{xs: 12, sm: 12, md: 3, lg: 5, xl: 5}}
             >
                <img
                   src="/images/fox_logo.png"
                   alt="7FOX7 Logo" 
                   draggable="false"
                   style={{
-                     width: "100px", 
-                     height: "100px", 
+                     width: "90px", 
+                     height: "90px", 
                   }} 
                />
             </Grid>
@@ -59,7 +59,7 @@ const CustomListContainer = {
                columns={12}
                columnSpacing={12}
                rowSpacing={3}
-               size={{xs: 12, sm: 12, md: 8, lg: 8, xl: 8}}
+               size={{xs: 12, sm: 12, md: 9, lg: 7, xl: 7}}
             >
                {navLinks.map((navLink) => {
                   return (
