@@ -20,7 +20,7 @@ export const FooterSection = styled(Box)({
    color: theme.palette.primary.main
 })
 
-export const NavLinkContent = styled(Typography)({
+export const LinkContent = styled(Typography)({
    textWrap: "nowrap", 
 })
 

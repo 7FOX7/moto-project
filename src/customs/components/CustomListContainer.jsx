@@ -1,5 +1,5 @@
 import { useScreenSize } from "../../contexts/ScreenSizeContext"
-import CustomNavLink from "./CustomNavLink"
+import CustomLink from "./CustomLink"
 import CustomLinkIcon from "./CustomLinkIcon"
 import CustomText from "./CustomText"
 import List from "@mui/material/List"
@@ -20,9 +20,9 @@ const CustomListContainer = {
             {navLinks.map((navLink) => {
                return (
                   <ListItem key={navLink.id}>
-                     <CustomNavLink 
+                     <CustomLink 
                         path={navLink.path} 
-                        title={navLink.title}
+                        content={navLink.title}
                         bold={true}    
                      />
                   </ListItem>
@@ -45,7 +45,8 @@ const CustomListContainer = {
                size={{xs: 12, sm: 12, md: 4, lg: 4, xl: 4}}
             >
                <img
-                  src="/images/fox_logo.png" 
+                  src="/images/fox_logo.png"
+                  alt="7FOX7 Logo" 
                   draggable="false"
                   style={{
                      width: "100px", 
@@ -62,14 +63,14 @@ const CustomListContainer = {
             >
                {navLinks.map((navLink) => {
                   return (
-                        <Grid 
+                     <Grid 
                         key={navLink.id} 
                         size={{xs: 12, sm: 6, md: 2, lg: 2, xl: 2}}
                      >
-                        <CustomNavLink 
+                        <CustomLink 
                            path={navLink.path} 
-                           title={navLink.title}
-                           bold={true} 
+                           content={navLink.title}
+                           bold={true}    
                         />
                         {navLink.subLinks && navLink.subLinks.length > 0 && (
                            navLink.subLinks.map((subLink) => {
@@ -77,9 +78,9 @@ const CustomListContainer = {
                                  <Grid 
                                     key={subLink.id}
                                  >
-                                    <CustomNavLink 
+                                    <CustomLink 
                                        path={subLink.path} 
-                                       title={subLink.title} 
+                                       content={subLink.title} 
                                        secondary={true} 
                                     />
                                  </Grid>
