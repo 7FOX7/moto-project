@@ -1,7 +1,12 @@
 import { HomeBox } from "../../styles/style"
+import Content from "./Home/Content"
 
 const Main = () => {
-   return <HomeBox />
+   return (
+      <HomeBox>
+         <Content />
+      </HomeBox>
+   )
    /*
       1. The idea: 
 

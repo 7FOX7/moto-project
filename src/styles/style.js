@@ -33,9 +33,9 @@ export const OnboardingBox = styled(Box)({
 })
 
 export const HomeBox = styled(Box)({
+   width: "100vw", 
    height: "100vh", 
    display: "flex", 
-   alignItems: "center",
 })
 
 export const LoadingBarContainer = styled(Box)({
@@ -58,3 +58,18 @@ export const BorderLinearProgress = styled(LinearProgress)({
       background: theme.palette.global.borderLinearProgress.main, 
    }
 })
+
+export const VideoChunkContainer = styled(Box)({
+   width: "", 
+   height: "", 
+   display: "", 
+   // justifyContent: ""
+})
+
+export const VideoChunk = styled(Box)({
+   width: "", 
+   height: "", 
+   display: "", 
+   // justifyContent: ""
+})
+
