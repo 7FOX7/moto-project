@@ -2,6 +2,7 @@ import { styled } from "@mui/material/styles";
 import theme from "../themes/theme";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
 import LinearProgress, {linearProgressClasses} from "@mui/material/LinearProgress";
 import Typography from "@mui/material/Typography";
 
@@ -25,17 +26,15 @@ export const LinkContent = styled(Typography)({
 })
 
 export const OnboardingBox = styled(Box)({
-   width: "100vw", 
+   width: "100%", 
    height: "100vh", 
-   display: "flex", 
-   alignItems: "center", 
    backgroundColor: theme.palette.grey[500],
 })
 
 export const HomeBox = styled(Box)({
-   width: "100vw", 
-   height: "100vh", 
-   display: "flex", 
+   width: "100%", 
+   height: "100vh",  
+   padding: "10px"
 })
 
 export const LoadingBarContainer = styled(Box)({
@@ -60,16 +59,38 @@ export const BorderLinearProgress = styled(LinearProgress)({
 })
 
 export const VideoChunkContainer = styled(Box)({
-   width: "", 
-   height: "", 
-   display: "", 
-   // justifyContent: ""
+   width: "100%",  
+   display: "flex", 
+   alignItems: "center",
 })
 
-export const VideoChunk = styled(Box)({
-   width: "", 
-   height: "", 
-   display: "", 
-   // justifyContent: ""
+export const VideoChunk = styled(Paper)({
+   display: "flex",  
+   borderRadius: "15px",
+   margin: "30px" 
 })
+
+export const VideoChunkText = styled(Box)({
+   margin: "20px"
+})
+
+/*
+   <VideoChunkContainer sx={{d: flex, fd: column, yada ... }}>
+      <VideoChunk />
+      <VideoChunk />
+      <VideoChunk />
+      <VideoChunk />
+      ... 
+
+   </VideoChunkContainer>
+
+   assuming <VideoChunk /> will contain also the text inside: 
+
+   <VideoWithText sx={{display: "flex", width: "100%", isMobile: "fd: column" : "row", }}>
+      <VideoChunk>
+         <video />
+      </VideoChunk>
+      <TextContainer />
+   </VideoWithText>
+*/ 
 

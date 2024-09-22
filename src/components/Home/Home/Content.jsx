@@ -1,43 +1,105 @@
-import React, { useRef } from "react"
+import { useCallback } from "react"
 import { useGSAP } from "@gsap/react"
+import { useScreenSize } from "../../../contexts/ScreenSizeContext"
 import gsap from "gsap"
+import CustomText from "../../../customs/components/CustomText"
+import SplitType from "split-type"
 import { VideoChunkContainer } from "../../../styles/style"
 import { VideoChunk } from "../../../styles/style"
+import { VideoChunkText } from "../../../styles/style"
 import homepageVideoChunks from "../../../data/homepageVideoChunks"
 
+const borderRadius = "15px"
+
 const Content = () => {
-   const videoChunkContainerRef = useRef(null)
+   const isSmallScreen = useScreenSize(); 
    useGSAP(() => {
-      const tl = gsap.timeline(); 
-      gsap.to(videoChunkContainerRef.current, {
+      gsap.set('.videoChunkContainer', {
+         opacity: 0,  
+         y: 1000, 
+         xPercent: isSmallScreen ? 0 : 9
+      })
+      gsap.set('.videoChunk', {
+         transformOrigin: "center"
+      })
+      const master = gsap.timeline()
+      master
+         .add(part1())
+
+   }, {dependencies: []})
+
+   const part1 = useCallback(() => {
+      const videoChunkText = new SplitType('.videoChunkText0', {types: "chars"})
+      const chars = videoChunkText.chars
+      gsap.set(chars, {
          opacity: 0
       })
-   }, {dependencies: [], scope: videoChunkContainerRef})
+      const tl = gsap.timeline()
+      tl
+         .to('.videoChunkContainer0', { 
+            opacity: 1, 
+            y: 150, 
+            duration: 1.2, 
+            ease: "power3.in", 
+         })
+         .to('.videoChunk0', {
+            scale: isSmallScreen ? 1.4 : 1.7,
+            duration: 1, 
+            ease: "power2.inOut"
+         }, "+=0.3")
+         .to('.videoChunk0', {
+            rotate: -10, 
+            scale: 1, 
+            duration: 0.3, 
+            ease: "power2.in"
+         })
+         .to(chars, {
+            opacity: 1, 
+            stagger: 0.1, 
+         }, "+=1")
+   }, [])
+
    return (
-      <VideoChunkContainer ref={videoChunkContainerRef}>
-         {homepageVideoChunks.map((video, index) => {
+         homepageVideoChunks.map((video, index) => {
             return (
-               <VideoChunk 
-                  key={video.id}
-                  className={`videoContainer` + index}   
+               <VideoChunkContainer 
+                  key={video.id} 
+                  className={`videoChunkContainer videoChunkContainer` + index}
+                  sx={{
+                     flexDirection: isSmallScreen ? "column" : "row"
+                  }}
                >
-                  <video 
-                     autoPlay={true}
-                     muted={true}
-                     loop={true}
+                  <VideoChunk 
+                     className={`videoChunk videoChunk` + index}
+                     variant="elevation"   
+                     elevation={10}
                   >
-                     <source 
-                        src={video.src} 
-                        type="video/webm" 
+                     <video 
+                        autoPlay={true}
+                        muted={true}
+                        loop={true}
+                        width={isSmallScreen ? "260" : "360"}
+                        style={{
+                           borderRadius: borderRadius 
+                        }}
+                     >
+                        <source 
+                           src={video.src} 
+                           type="video/webm" 
+                        />
+                        <source 
+                           src={video.src} 
+                           type="video/mp4" 
+                        />
+                     </video>
+                  </VideoChunk>
+                  <VideoChunkText className={`videoChunkText videoChunkText` + index}>
+                     <CustomText 
+                        text={video.addText}
                      />
-                     <source 
-                        src={video.src} 
-                        type="video/mp4" 
-                     />
-                  </video>
-               </VideoChunk>
-         )})}
-      </VideoChunkContainer>
+                  </VideoChunkText>
+               </VideoChunkContainer>
+         )})
    )
 }  
 
