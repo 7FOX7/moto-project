@@ -7,7 +7,7 @@ const homepageVideoChunks = [
    {
       id: "motorcycleClip1", 
       src: "/videos/motorcycleClip2.mp4", 
-      addText: "Yes, there was Still something to prove"
+      addText: "Whatever you think is right. We are here to help"
    }, 
    {
       id: "motorcycleClip2", 
