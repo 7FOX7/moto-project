@@ -6,6 +6,11 @@ import Paper from "@mui/material/Paper";
 import LinearProgress, {linearProgressClasses} from "@mui/material/LinearProgress";
 import Typography from "@mui/material/Typography";
 
+export const LayoutBox = styled(Box)({
+   position: "relative", 
+   minHeight: "100%"
+})
+
 export const HeaderSection = styled(AppBar)({
    position: "fixed", 
    background: "linear-gradient(90deg, rgba(0,0,60,1) 0%, rgba(0,155,162,1) 100%)",
@@ -14,9 +19,10 @@ export const HeaderSection = styled(AppBar)({
 
 export const FooterSection = styled(Box)({
    position: "absolute",
-   top: "100%", 
+   bottom: 0, 
    left: 0,  
    width: "100%",  
+   zIndex: 100, 
    background: "radial-gradient(circle, rgba(0,85,93,1) 0%, rgba(3,0,40,1) 100%)", 
    color: theme.palette.primary.main
 })
@@ -27,13 +33,13 @@ export const LinkContent = styled(Typography)({
 
 export const OnboardingBox = styled(Box)({
    width: "100%", 
-   height: "100vh", 
+   height: "100%", 
    backgroundColor: theme.palette.grey[500],
 })
 
 export const HomeBox = styled(Box)({
    width: "100%", 
-   height: "100vh",  
+   height: "100%",  
    padding: "10px"
 })
 
