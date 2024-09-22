@@ -9,6 +9,9 @@ const CustomText = memo(function CustomText(props) {
             color={secondary ? "global.secondaryTextContent.main" : "primary"}
             variant={variant}
             typography={bold && "global.boldText"}
+            sx={{
+               textAlign: "center"
+            }}
          >
             {text}
          </Typography>
