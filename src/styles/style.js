@@ -51,7 +51,7 @@ export const ContentBox = styled(Box)({
 
 export const ContentTextBox = styled(Box)({
    position: "absolute", 
-   top: "30%", 
+   top: "25%", 
    left: 0, 
    width: "100%", 
    height: "300px",
@@ -59,7 +59,8 @@ export const ContentTextBox = styled(Box)({
    flexDirection: "column", 
    justifyContent: "center", 
    alignItems: "center", 
-   padding: "10px"
+   padding: "10px", 
+   backgroundColor: "green"
 })
 
 export const LoadingBarContainer = styled(Box)({
@@ -83,19 +84,19 @@ export const BorderLinearProgress = styled(LinearProgress)({
    }
 })
 
-export const VideoChunkContainer = styled(Box)({
+export const VideoContainer = styled(Box)({
    width: "100%",  
    display: "flex", 
    alignItems: "center",
 })
 
-export const VideoChunk = styled(Paper)({
+export const VideoPaper = styled(Paper)({
    display: "flex",  
    borderRadius: "15px",
    margin: "30px" 
 })
 
-export const VideoChunkText = styled(Box)({
+export const VideoTextBox = styled(Box)({
    margin: "20px"
 })
 

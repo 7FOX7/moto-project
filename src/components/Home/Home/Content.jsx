@@ -8,9 +8,9 @@ import CustomText from "../../../customs/components/CustomText"
 import SplitType from "split-type"
 import { ContentTextBox } from "../../../styles/style"
 import { ContentBox } from "../../../styles/style"
-import { VideoChunkContainer } from "../../../styles/style"
-import { VideoChunk } from "../../../styles/style"
-import { VideoChunkText } from "../../../styles/style"
+import { VideoContainer } from "../../../styles/style"
+import { VideoPaper } from "../../../styles/style"
+import { VideoTextBox } from "../../../styles/style"
 import homepageVideoChunks from "../../../data/homepageVideoChunks"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Box from "@mui/material/Box"
@@ -160,7 +160,7 @@ const Content = () => {
          {homepageVideoChunks.slice(0, 2).map((video, index) => {
             const isLeftText = index % 2 === 0
             return (
-               <VideoChunkContainer 
+               <VideoContainer
                   key={video.id} 
                   className={`videoChunkContainer videoChunkContainer` + index}
                   sx={{
@@ -169,13 +169,13 @@ const Content = () => {
                   }}
                >
                   {(!isLeftText && !isSmallScreen) &&  
-                     <VideoChunkText className={`videoChunkText videoChunkText` + index}>
+                     <VideoTextBox className={`videoChunkText` + index}>
                         <CustomText 
                            text={video.addText}
                         />
-                     </VideoChunkText>
+                     </VideoTextBox>
                   }
-                  <VideoChunk 
+                  <VideoPaper 
                      className={`videoChunk videoChunk` + index}
                      variant="elevation"   
                      elevation={10}
@@ -184,20 +184,20 @@ const Content = () => {
                         width={isSmallScreen ? "240" : "360"}
                         src={video.src}
                      />
-                  </VideoChunk>
+                  </VideoPaper>
                   {(isLeftText || isSmallScreen) && 
-                     <VideoChunkText className={`videoChunkText videoChunkText` + index}>
+                     <VideoTextBox className={`videoChunkText` + index}>
                         <CustomText 
                            text={video.addText}
                         />
-                     </VideoChunkText>
+                     </VideoTextBox>
                   }
-               </VideoChunkContainer>
+               </VideoContainer>
          )})}
          <ContentTextBox 
             className="contentTextBox"
             sx={{
-               scrollMarginTop: isSmallScreen ? 0 : "120px"
+               scrollMarginTop: isSmallScreen ? "110px" : "120px"
             }}
          >
             <Box 
