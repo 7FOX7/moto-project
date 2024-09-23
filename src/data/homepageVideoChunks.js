@@ -12,17 +12,17 @@ const homepageVideoChunks = [
    {
       id: "motorcycleClip2", 
       src: "/videos/motorcycleClip5.mp4",  
-      addText: "Yes, there was Still something to prove, or not?"
+      addText: "Over the past 9 years"
    }, 
    {
       id: "motorcycleClip3", 
       src: "/videos/motorcycleClip8.mp4",  
-      addText: "Yes, there was Still something to prove"
+      addText: "We prove we are a good partner"
    }, 
    {
       id: "motorcycleClip4", 
       src: "/videos/motorcycleClip10.mp4", 
-      addText: "Yes, there was Still something to prove"
+      addText: "Folks appreciate, love, and recognise us"
    }, 
    {
       id: "motorcycleClip5", 
