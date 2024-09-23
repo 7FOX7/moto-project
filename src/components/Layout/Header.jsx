@@ -18,7 +18,7 @@ const Header = () => {
 
    const content = 
       <img
-         src="/images/fox_logo.png" 
+         src="/images/fox-logo.png" 
          alt="Fox Logo"
          draggable="false"
          style={{

@@ -45,7 +45,7 @@ const CustomListContainer = {
                size={{xs: 12, sm: 12, md: 3, lg: 5, xl: 5}}
             >
                <img
-                  src="/images/fox_logo.png"
+                  src="/images/fox-logo.png"
                   alt="7FOX7 Logo" 
                   draggable="false"
                   style={{
