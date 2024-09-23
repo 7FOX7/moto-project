@@ -7,8 +7,8 @@ import LinearProgress, {linearProgressClasses} from "@mui/material/LinearProgres
 import Typography from "@mui/material/Typography";
 
 export const LayoutBox = styled(Box)({
-   position: "relative", 
-   minHeight: "100%"
+   position: "relative",
+   height: "900vh"
 })
 
 export const HeaderSection = styled(AppBar)({
@@ -39,7 +39,26 @@ export const OnboardingBox = styled(Box)({
 
 export const HomeBox = styled(Box)({
    width: "100%", 
-   height: "100%",  
+   height: "900vh",  
+   padding: "10px", 
+})
+
+export const ContentBox = styled(Box)({
+   position: "relative", 
+   width: "100%", 
+   height: "100%", 
+})
+
+export const ContentTextBox = styled(Box)({
+   position: "absolute", 
+   top: "30%", 
+   left: 0, 
+   width: "100%", 
+   height: "300px",
+   display: "flex", 
+   flexDirection: "column", 
+   justifyContent: "center", 
+   alignItems: "center", 
    padding: "10px"
 })
 
