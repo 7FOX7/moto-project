@@ -51,7 +51,7 @@ export const ContentBox = styled(Box)({
 
 export const ContentTextBox = styled(Box)({
    position: "absolute", 
-   top: "25%", 
+   top: "20%", 
    left: 0, 
    width: "100%", 
    height: "300px",
@@ -60,7 +60,19 @@ export const ContentTextBox = styled(Box)({
    justifyContent: "center", 
    alignItems: "center", 
    padding: "10px", 
-   backgroundColor: "green"
+   scrollMarginTop: "110px"
+})
+
+export const ContentRotatedVideos = styled(Box)({
+   position: "absolute", 
+   top: "40%", 
+   left: 0, 
+   width: "100%", 
+   display: "flex", 
+   flexDirection: "column", 
+   justifyContent: "center", 
+   alignItems: "center", 
+   padding: "10px", 
 })
 
 export const LoadingBarContainer = styled(Box)({
@@ -85,38 +97,18 @@ export const BorderLinearProgress = styled(LinearProgress)({
 })
 
 export const VideoContainer = styled(Box)({
-   width: "100%",  
    display: "flex", 
    alignItems: "center",
+   scrollMarginTop: "95px"
 })
 
 export const VideoPaper = styled(Paper)({
    display: "flex",  
-   borderRadius: "15px",
-   margin: "30px" 
+   borderRadius: "15px", 
 })
 
 export const VideoTextBox = styled(Box)({
-   margin: "20px"
+   
 })
 
-/*
-   <VideoChunkContainer sx={{d: flex, fd: column, yada ... }}>
-      <VideoChunk />
-      <VideoChunk />
-      <VideoChunk />
-      <VideoChunk />
-      ... 
-
-   </VideoChunkContainer>
-
-   assuming <VideoChunk /> will contain also the text inside: 
-
-   <VideoWithText sx={{display: "flex", width: "100%", isMobile: "fd: column" : "row", }}>
-      <VideoChunk>
-         <video />
-      </VideoChunk>
-      <TextContainer />
-   </VideoWithText>
-*/ 
 

@@ -7,6 +7,7 @@ import CustomVideo from "../../../customs/components/CustomVideo"
 import CustomText from "../../../customs/components/CustomText"
 import SplitType from "split-type"
 import { ContentTextBox } from "../../../styles/style"
+import { ContentRotatedVideos } from "../../../styles/style"
 import { ContentBox } from "../../../styles/style"
 import { VideoContainer } from "../../../styles/style"
 import { VideoPaper } from "../../../styles/style"
@@ -35,6 +36,7 @@ const Content = () => {
          .add(part1())
          .add(part2(), ">")
          .add(part3(), ">")
+         .add(part4(), ">")
 
    }, {dependencies: [], scope: contentBoxRef.current})
 
@@ -59,7 +61,7 @@ const Content = () => {
             ease: "power3.in", 
          })
          .to('.videoChunk0', {
-            scale: isSmallScreen ? 1.33 : 1.7,
+            scale: isSmallScreen ? 1.33 : 1.6,
             duration: 1, 
             ease: "power2.inOut"
          }, "+=0.3")
@@ -78,6 +80,7 @@ const Content = () => {
    }, [])
 
    const part2 = useCallback(() => {
+      const videoChunkContainer = gsap.utils.toArray(['.videoChunkContainer1'])[0]
       const contentTextBox = gsap.utils.toArray(['.contentTextBox'])[0]
       const videoChunkText = new SplitType('.videoChunkText1', {types: "chars"})
       const chars = videoChunkText.chars
@@ -98,17 +101,20 @@ const Content = () => {
             .pause()
 
       tl 
-         .fromTo('.videoChunkContainer1', 
+         .fromTo(videoChunkContainer, 
          {
             y: 1000, 
          },
          {
             visibility: "visible",
             y: 160,
-            onStart: () => spinningVideoChunk.play()   
+            onStart: () => spinningVideoChunk.play()
          })
          .to('.videoChunk1', {
-            onStart: () => spinningVideoChunk.pause(), 
+            onStart: () => {
+               spinningVideoChunk.pause()
+               videoChunkContainer.scrollIntoView({behavior: "smooth", block: "start", inline: "start"})
+            } 
          }, "+=0.7")
          .to('.videoChunk1', {
             rotate: 15
@@ -125,6 +131,7 @@ const Content = () => {
    }, [])
 
    const part3 = useCallback(() => {
+      const rotatedVideoContainer0 = gsap.utils.toArray(['.rotatedVideoContainer0'])[0]
       const contentTextPrimary = gsap.utils.toArray(['.contentTextPrimary'])[0]
       const contentTextSecondary = new SplitType('.contentTextSecondary', {types: "chars"})
       const chars = contentTextSecondary.chars
@@ -150,8 +157,52 @@ const Content = () => {
       const tl = gsap.timeline()
       tl
          .to(contentTextPrimary, {
-            onStart: () => textRevealing.play() 
+            onStart: () => textRevealing.play(), 
          }, "+=0.5")
+         .to(window, {
+            onStart: () => rotatedVideoContainer0.scrollIntoView({behavior: "smooth"})
+         }, "+=5")
+      return tl
+   }, [])
+
+   const part4 = useCallback(()  => {
+      const rotatedVideoTexts = gsap.utils.toArray([".rotatedVideoText0", ".rotatedVideoText1", ".rotatedVideoText2"])
+      const videoContainers = gsap.utils.toArray(['.rotatedVideoContainer'])
+      gsap.set(videoContainers, {
+         opacity: 0, 
+         rotateY: "90deg",
+         transformOrigin: "left"
+      })
+      const tl = gsap.timeline()
+
+      tl.add(animation())
+      
+      function animation() {
+         const tl = gsap.timeline()
+         videoContainers.map((videoContainer, index, arr) => {
+            const rotatedVideoText = new SplitType(rotatedVideoTexts[index], {types: "words"})
+            const words = rotatedVideoText.words
+            gsap.set(words, {
+               opacity: 0,
+               y: 30
+            })
+            tl
+               .to(videoContainer, {
+                  opacity: 1, 
+                  rotateY: "0deg", 
+                  duration: 1, 
+               })
+               .to(words, {
+                  opacity: 1, 
+                  y: 0, 
+                  stagger: 0.2,  
+                  onComplete: () => {
+                     index !== arr.length -1 && videoContainer.scrollIntoView({behavior: "smooth"}) 
+                  }
+               }, "+=1")
+         })
+         return tl
+      }
       return tl
    }, [])
 
@@ -164,12 +215,16 @@ const Content = () => {
                   key={video.id} 
                   className={`videoChunkContainer videoChunkContainer` + index}
                   sx={{
+                     width: "100%", 
                      flexDirection: isSmallScreen ? "column" : "row", 
                      justifyContent: isSmallScreen ? "normal" : "space-around" 
                   }}
                >
                   {(!isLeftText && !isSmallScreen) &&  
-                     <VideoTextBox className={`videoChunkText` + index}>
+                     <VideoTextBox 
+                        className={`videoChunkText` + index}
+                        sx={{margin: "15px"}}
+                     >
                         <CustomText 
                            text={video.addText}
                         />
@@ -179,6 +234,7 @@ const Content = () => {
                      className={`videoChunk videoChunk` + index}
                      variant="elevation"   
                      elevation={10}
+                     sx={{margin: "30px"}}
                   >
                      <CustomVideo 
                         width={isSmallScreen ? "240" : "360"}
@@ -186,7 +242,10 @@ const Content = () => {
                      />
                   </VideoPaper>
                   {(isLeftText || isSmallScreen) && 
-                     <VideoTextBox className={`videoChunkText` + index}>
+                     <VideoTextBox 
+                        className={`videoChunkText` + index}
+                        sx={{margin: "15px"}}
+                     >
                         <CustomText 
                            text={video.addText}
                         />
@@ -196,9 +255,6 @@ const Content = () => {
          )})}
          <ContentTextBox 
             className="contentTextBox"
-            sx={{
-               scrollMarginTop: isSmallScreen ? "110px" : "120px"
-            }}
          >
             <Box 
                className="contentTextPrimary"
@@ -217,33 +273,44 @@ const Content = () => {
                />
             </Box>
          </ContentTextBox>
+         <ContentRotatedVideos className="contentRotatedVideos">
+            {homepageVideoChunks.slice(2, 5).map((video, index) => {
+               const alignment = ["start", "center", "end"]
+               return (
+                  <VideoContainer
+                     key={video.id}
+                     className={`rotatedVideoContainer rotatedVideoContainer` + index}
+                     sx={{
+                        width: isSmallScreen ? "100%" : "50%", 
+                        flexDirection: "column", 
+                        alignSelf: !isSmallScreen && alignment[index] 
+                     }}
+                  >
+                     <VideoPaper 
+                        className={`rotatedVideo rotatedVideo` + index}
+                        variant="elevation"   
+                        elevation={10}
+                        sx={{margin: "20px"}}
+                     >
+                        <CustomVideo 
+                           width={isSmallScreen ? "240" : "360"}
+                           src={video.src}
+                        />
+                     </VideoPaper>
+                     <VideoTextBox 
+                        className={`rotatedVideoText` + index}
+                        sx={{margin: "5px"}}   
+                     >
+                        <CustomText 
+                           text={video.addText}
+                        />
+                     </VideoTextBox>
+                  </VideoContainer>
+               )
+            })}
+         </ContentRotatedVideos>
       </ContentBox>
    )
 }  
 
 export default Content
-
-/*
-   1. Idea: 
-
-   now, once we have two video chunks animated, we want to add an animation, so
-   the user is scrolled to a certain point, and, once he is there, we want to make the stagger animation, 
-   where three videos will appear
-
-   2. Problem: 
-
-   we need to create a trigger, by entering on which, the animation will be played. - Or, we can just start the 
-   animation without using scroll trigger at all
-
-   after we have written a short code on CodeSandbox (where we were using gsap.utils.toArray()), we were able to figure out how to select specific group of components, and then animate them. 
-
-   now, our task: once we have a collection of boxes we want to animate, we need to first show them (set visibility to visible): 
-
-   const videoChunks = gsap.utils.toArray('.video1', 'video2', 'video3')
-
-   tl.
-      to('videoChunks', {
-         visibility: "visible", 
-         stagger: 1
-      })
-*/
