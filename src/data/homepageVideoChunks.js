@@ -11,22 +11,22 @@ const homepageVideoChunks = [
    }, 
    {
       id: "motorcycleClip2", 
-      src: "/videos/motorcycleClip3.mp4", 
+      src: "/videos/motorcycleClip5.mp4",  
       addText: "Yes, there was Still something to prove, or not?"
    }, 
    {
       id: "motorcycleClip3", 
-      src: "/videos/motorcycleClip4.mp4", 
+      src: "/videos/motorcycleClip8.mp4",  
       addText: "Yes, there was Still something to prove"
    }, 
    {
       id: "motorcycleClip4", 
-      src: "/videos/motorcycleClip5.mp4", 
+      src: "/videos/motorcycleClip10.mp4", 
       addText: "Yes, there was Still something to prove"
    }, 
    {
       id: "motorcycleClip5", 
-      src: "/videos/motorcycleClip6.mp4", 
+      src: "/videos/motorcycleClip10.mp4", 
       addText: "Yes, there was Still something to prove"
    }, 
    {
