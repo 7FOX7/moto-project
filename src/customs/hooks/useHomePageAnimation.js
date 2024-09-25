@@ -17,6 +17,7 @@ const useHomePageAnimation = (contentBoxRef, isSmallScreen) => {
          .add(part2(), ">")
          .add(part3(), ">")
          .add(part4(), ">")
+         .add(part5(), "+=1")
 
    }, {dependencies: [], scope: contentBoxRef.current})
 
@@ -185,6 +186,18 @@ const useHomePageAnimation = (contentBoxRef, isSmallScreen) => {
       }
       return tl
    }, [])   
+
+   const part5 = useCallback(() => {
+      const contentReviewCarousel = gsap.utils.toArray('.contentReviewCarousel')[0]
+      const tl = gsap.timeline()
+
+      tl
+         .to(window, {
+            onStart: () => contentReviewCarousel.scrollIntoView({behavior: "smooth"})
+         })
+
+      return tl
+   }, [])
 }
 
 export default useHomePageAnimation

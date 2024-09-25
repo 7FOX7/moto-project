@@ -1,19 +1,26 @@
 import { useRef } from "react"
+import { useTheme } from "@emotion/react"
 import { useScreenSize } from "../../../contexts/ScreenSizeContext"
 import useHomePageAnimation from "../../../customs/hooks/useHomePageAnimation"
 import CustomVideo from "../../../customs/components/CustomVideo"
 import CustomText from "../../../customs/components/CustomText"
+import CustomCarousel from "../../../customs/components/CustomCarousel"
+import { ContentBox } from "../../../styles/style"
 import { ContentTextBox } from "../../../styles/style"
 import { ContentRotatedVideos } from "../../../styles/style"
-import { ContentBox } from "../../../styles/style"
+import { ContentReviewCarousel } from "../../../styles/style"
+import { ReviewTextBox } from "../../../styles/style"
+import { ReviewCarouselBox } from "../../../styles/style"
 import { VideoContainer } from "../../../styles/style"
-import { VideoPaper } from "../../../styles/style"
+import { StyledPaper } from "../../../styles/style"
 import { VideoTextBox } from "../../../styles/style"
 import homepageVideoChunks from "../../../data/homepageVideoChunks"
+import homepageReviews from "../../../data/homepageReviews"
 import Box from "@mui/material/Box"
 
 const Content = () => {
    const contentBoxRef = useRef(null);
+   const theme = useTheme(); 
    const isSmallScreen = useScreenSize(); 
 
    useHomePageAnimation({contentBoxRef, isSmallScreen})
@@ -41,7 +48,7 @@ const Content = () => {
                         />
                      </VideoTextBox>
                   }
-                  <VideoPaper 
+                  <StyledPaper 
                      className={`videoChunk videoChunk` + index}
                      variant="elevation"   
                      elevation={10}
@@ -51,7 +58,7 @@ const Content = () => {
                         width={isSmallScreen ? "240" : "360"}
                         src={video.src}
                      />
-                  </VideoPaper>
+                  </StyledPaper>
                   {(isLeftText || isSmallScreen) && 
                      <VideoTextBox 
                         className={`videoChunkText` + index}
@@ -72,7 +79,11 @@ const Content = () => {
             >
                <CustomText 
                   text="Why work with us?"
-                  fontSize={isSmallScreen ? "2.5rem" : "4rem"}
+                  typography={isSmallScreen ? 
+                     theme.typography.home.mobile.contentTextPrimary 
+                     : 
+                     theme.typography.home.desktop.contentTextPrimary
+                  }
                />
             </Box>
             <Box
@@ -80,7 +91,11 @@ const Content = () => {
             >
                <CustomText 
                   text="Let us present to you"
-                  fontSize={isSmallScreen ? "1.1rem" : "1.5rem"}
+                  typography={isSmallScreen ? 
+                     theme.typography.home.mobile.contentTextSecondary 
+                     : 
+                     theme.typography.home.desktop.contentTextSecondary
+                  }
                />
             </Box>
          </ContentTextBox>
@@ -97,7 +112,7 @@ const Content = () => {
                         alignSelf: !isSmallScreen && alignment[index] 
                      }}
                   >
-                     <VideoPaper 
+                     <StyledPaper 
                         className={`rotatedVideo rotatedVideo` + index}
                         variant="elevation"   
                         elevation={10}
@@ -107,7 +122,7 @@ const Content = () => {
                            width={isSmallScreen ? "240" : "360"}
                            src={video.src}
                         />
-                     </VideoPaper>
+                     </StyledPaper>
                      <VideoTextBox 
                         className={`rotatedVideoText` + index}
                         sx={{margin: "5px"}}   
@@ -120,8 +135,50 @@ const Content = () => {
                )
             })}
          </ContentRotatedVideos>
+         <ContentReviewCarousel 
+            className="contentReviewCarousel"
+            sx={{
+               flexDirection: isSmallScreen ? "column" : "row",
+               justifyContent: !isSmallScreen && "space-between"
+            }}
+         >
+            <ReviewTextBox  
+               sx={{
+                  width: isSmallScreen ? "100%" : "35%",
+               }}
+            >
+               <CustomText 
+                  text="Trusted By Millions of People"
+                  typography={isSmallScreen ? 
+                     theme.typography.home.mobile.reviewPrimaryText 
+                     : 
+                     theme.typography.home.desktop.reviewPrimaryText
+                  }
+               />
+               <br />
+               <CustomText 
+                  text="Don't take our word for it - See what others had to say about us"
+                  typography={isSmallScreen ? 
+                     theme.typography.home.mobile.reviewSecondaryText 
+                     : 
+                     theme.typography.home.desktop.reviewSecondaryText
+                  }
+               />
+            </ReviewTextBox>
+            <ReviewCarouselBox 
+               sx={{
+                  width: isSmallScreen ? "100%" : "60%"
+               }}
+            >
+               <CustomCarousel 
+                  data={homepageReviews}
+                  type="review"
+               />
+            </ReviewCarouselBox>
+         </ContentReviewCarousel>
       </ContentBox>
    )
 }  
 
 export default Content
+

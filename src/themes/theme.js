@@ -29,6 +29,38 @@ const theme = createTheme({
       }
    }, 
    typography: {
+      home: {
+         mobile: {
+            contentTextPrimary: {
+               fontSize: "2.5rem"
+            }, 
+            contentTextSecondary: {
+               fontSize: "1.1rem"
+            }, 
+            reviewPrimaryText: {
+               fontSize: "1.8rem",
+               fontWeight: 600
+            }, 
+            reviewSecondaryText: {
+               fontSize: "0.9rem"
+            }
+         }, 
+         desktop: {
+            contentTextPrimary: {
+               fontSize: "4rem"
+            }, 
+            contentTextSecondary: {
+               fontSize: "1.5rem"
+            }, 
+            reviewPrimaryText: {
+               fontSize: "2.3rem", 
+               fontWeight: 600
+            }, 
+            reviewSecondaryText: {
+               fontSize: "1rem"
+            }
+         }
+      }, 
       global: {
          boldText: {
             fontWeight: "700"
