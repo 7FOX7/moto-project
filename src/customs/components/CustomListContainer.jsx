@@ -37,100 +37,100 @@ const CustomListContainer = {
             padding: "20px 25px"
          }}>
             <Grid
-            container
-            columns={12}
-            size={12}
-         >
-            <Grid 
-               size={{xs: 12, sm: 12, md: 3, lg: 5, xl: 5}}
-            >
-               <img
-                  src="/images/fox-logo.png"
-                  alt="7FOX7 Logo" 
-                  draggable="false"
-                  style={{
-                     width: "90px", 
-                     height: "90px", 
-                  }} 
-               />
-            </Grid>
-            <Grid 
-               container 
+               container
                columns={12}
-               columnSpacing={12}
-               rowSpacing={3}
-               size={{xs: 12, sm: 12, md: 9, lg: 7, xl: 7}}
+               size={12}
             >
-               {navLinks.map((navLink) => {
-                  return (
-                     <Grid 
-                        key={navLink.id} 
-                        size={{xs: 12, sm: 6, md: 2, lg: 2, xl: 2}}
-                     >
-                        <CustomLink 
-                           path={navLink.path} 
-                           content={navLink.title}
-                           bold={true}    
-                        />
-                        {navLink.subLinks && navLink.subLinks.length > 0 && (
-                           navLink.subLinks.map((subLink) => {
-                              return (
-                                 <Grid 
-                                    key={subLink.id}
-                                 >
-                                    <CustomLink 
-                                       path={subLink.path} 
-                                       content={subLink.title} 
-                                       secondary={true} 
-                                    />
-                                 </Grid>
-                              )
-                           })
-                        )}
-                     </Grid>
-                  )
-               })}
+               <Grid 
+                  size={{xs: 12, sm: 12, md: 3, lg: 5, xl: 5}}
+               >
+                  <img
+                     src="/images/fox-logo.png"
+                     alt="7FOX7 Logo" 
+                     draggable="false"
+                     style={{
+                        width: "90px", 
+                        height: "90px", 
+                     }} 
+                  />
+               </Grid>
+               <Grid 
+                  container 
+                  columns={12}
+                  columnSpacing={12}
+                  rowSpacing={3}
+                  size={{xs: 12, sm: 12, md: 9, lg: 7, xl: 7}}
+               >
+                  {navLinks.map((navLink) => {
+                     return (
+                        <Grid 
+                           key={navLink.id} 
+                           size={{xs: 12, sm: 6, md: 2, lg: 2, xl: 2}}
+                        >
+                           <CustomLink 
+                              path={navLink.path} 
+                              content={navLink.title}
+                              bold={true}    
+                           />
+                           {navLink.subLinks && navLink.subLinks.length > 0 && (
+                              navLink.subLinks.map((subLink) => {
+                                 return (
+                                    <Grid 
+                                       key={subLink.id}
+                                    >
+                                       <CustomLink 
+                                          path={subLink.path} 
+                                          content={subLink.title} 
+                                          secondary={true} 
+                                       />
+                                    </Grid>
+                                 )
+                              })
+                           )}
+                        </Grid>
+                     )
+                  })}
+               </Grid>
             </Grid>
-         </Grid>
-         <br />
-         <Divider orientation="horizontal" sx={{background: "white"}} />
-         <br />
-         {/* TODO: Create a custom component that will contain the text */}
-         <Grid
-            container
-            columns={12}
-            size={12}
-            alignItems="center"
-         >
-            <Grid 
-               size={{xs: 12, sm: 12, md: 8, lg: 8, xl: 8}}
-            >
-               <CustomText 
-                  text="Copyright &copy; 2024 7FOX7. All rights reserved." 
-                  secondary={true}
-                  variant="body2"
-               />
-            </Grid>
+            <br />
+            <Divider orientation="horizontal" sx={{background: "white"}} />
+            <br />
+            {/* TODO: Create a custom component that will contain the text */}
             <Grid
                container
-               columnSpacing={{xs: 6, sm: 6, md: 6, lg: 6, xl: 2}}
-               size={{xs: 12, sm: 8, md: 4, lg: 4, xl: 4}}
+               columns={12}
+               size={12}
+               alignItems="center"
             >
-               {networkLinks.map((networkLink) => {
-                  return (
-                     <Grid 
-                        key={networkLink.id} 
-                        size={1}
-                     >
-                        <CustomLinkIcon 
-                           url={networkLink.url} 
-                           href={networkLink.href} 
-                        />
-                     </Grid>
-                  )
-               })}
+               <Grid 
+                  size={{xs: 12, sm: 12, md: 8, lg: 8, xl: 8}}
+               >
+                  <CustomText 
+                     text="Copyright &copy; 2024 7FOX7. All rights reserved." 
+                     secondary={true}
+                     variant="body2"
+                  />
+               </Grid>
+               <Grid
+                  container
+                  columnSpacing={{xs: 6, sm: 6, md: 6, lg: 6, xl: 2}}
+                  size={{xs: 12, sm: 8, md: 4, lg: 4, xl: 4}}
+               >
+                  {networkLinks.map((networkLink) => {
+                     return (
+                        <Grid 
+                           key={networkLink.id} 
+                           size={1}
+                        >
+                           <CustomLinkIcon 
+                              url={networkLink.url} 
+                              href={networkLink.href} 
+                           />
+                        </Grid>
+                     )
+                  })}
+               </Grid>
             </Grid>
-         </Grid>
          </Box>
       )
    }
