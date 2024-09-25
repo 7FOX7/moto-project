@@ -75,6 +75,25 @@ export const ContentRotatedVideos = styled(Box)({
    padding: "10px", 
 })
 
+export const ContentReviewCarousel = styled(Box)({
+   position: "absolute", 
+   top: "65%", 
+   left: 0, 
+   width: "100%", 
+   display: "flex",   
+   alignItems: "center", 
+   padding: "10px", 
+   scrollMarginTop: "110px"
+})
+
+export const ReviewTextBox = styled(Box)({
+   height: "200px",  
+})
+
+export const ReviewCarouselBox = styled(Box)({
+   height: "250px", 
+})
+
 export const LoadingBarContainer = styled(Box)({
    width: "100%", 
    height: "100vh",
@@ -102,7 +121,7 @@ export const VideoContainer = styled(Box)({
    scrollMarginTop: "95px"
 })
 
-export const VideoPaper = styled(Paper)({
+export const StyledPaper = styled(Paper)({
    display: "flex",  
    borderRadius: "15px", 
 })
@@ -110,5 +129,4 @@ export const VideoPaper = styled(Paper)({
 export const VideoTextBox = styled(Box)({
    
 })
-
 
