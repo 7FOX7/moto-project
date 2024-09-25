@@ -3,19 +3,19 @@ import Typography from "@mui/material/Typography"
 
 const CustomText = memo(function CustomText(props) {
    const {
+      color="primary", 
       text, 
-      secondary=false, 
-      bold=false, 
+      secondary=false,  
       variant="body1", 
-      fontSize
+      typography
    } = props
+   
    return (
       <>
          <Typography 
-            color={secondary ? "global.secondaryTextContent.main" : "primary"}
+            color={secondary ? "global.secondaryTextContent.main" : color}
             variant={variant}
-            typography={bold && "global.boldText"}
-            fontSize={fontSize}
+            typography={typography}
             sx={{
                textAlign: "center"
             }}
