@@ -8,7 +8,8 @@ import { ScreenSizeProvider } from './contexts/ScreenSizeContext'
 import artificialDelay from './utils/functions/artificialDelay'
 import CustomLoadingBar from './customs/components/CustomLoadingBar'
 
-const Onboarding = lazy(() => artificialDelay(5000, import('./pages/Onboarding')))
+// const Onboarding = lazy(() => artificialDelay(5000, import('./pages/Onboarding')))
+const Onboarding = lazy(() => import('./pages/Onboarding'))
 const Home = lazy(() => import('./pages/Home'))
 const Layout = lazy(() => import('./components/Layout/Layout'))
 
