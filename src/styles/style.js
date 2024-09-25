@@ -94,6 +94,19 @@ export const ReviewCarouselBox = styled(Box)({
    height: "250px", 
 })
 
+export const ContentRevealComponent = styled(Box)({
+   position: "absolute", 
+   top: "80%", 
+   left: 0, 
+   width: "100%",
+   height: "200px",  
+   display: "flex",   
+   alignItems: "center", 
+   padding: "10px", 
+   backgroundColor: "red", 
+   scrollMarginTop: "110px"
+})
+
 export const LoadingBarContainer = styled(Box)({
    width: "100%", 
    height: "100vh",

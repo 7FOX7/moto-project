@@ -9,6 +9,7 @@ import { ContentBox } from "../../../styles/style"
 import { ContentTextBox } from "../../../styles/style"
 import { ContentRotatedVideos } from "../../../styles/style"
 import { ContentReviewCarousel } from "../../../styles/style"
+import { ContentRevealComponent } from "../../../styles/style"
 import { ReviewTextBox } from "../../../styles/style"
 import { ReviewCarouselBox } from "../../../styles/style"
 import { VideoContainer } from "../../../styles/style"
@@ -176,6 +177,9 @@ const Content = () => {
                />
             </ReviewCarouselBox>
          </ContentReviewCarousel>
+         <ContentRevealComponent className="contentRevealComponent">
+            
+         </ContentRevealComponent>
       </ContentBox>
    )
 }  
