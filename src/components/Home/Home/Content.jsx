@@ -5,6 +5,7 @@ import useHomePageAnimation from "../../../customs/hooks/useHomePageAnimation"
 import CustomVideo from "../../../customs/components/CustomVideo"
 import CustomText from "../../../customs/components/CustomText"
 import CustomCarousel from "../../../customs/components/CustomCarousel"
+import CustomImage from "../../../customs/components/CustomImage"
 import { ContentBox } from "../../../styles/style"
 import { ContentTextBox } from "../../../styles/style"
 import { ContentRotatedVideos } from "../../../styles/style"
@@ -12,6 +13,7 @@ import { ContentReviewCarousel } from "../../../styles/style"
 import { ContentRevealComponent } from "../../../styles/style"
 import { ReviewTextBox } from "../../../styles/style"
 import { ReviewCarouselBox } from "../../../styles/style"
+import { RevealingComponent } from "../../../styles/style"
 import { VideoContainer } from "../../../styles/style"
 import { StyledPaper } from "../../../styles/style"
 import { VideoTextBox } from "../../../styles/style"
@@ -23,8 +25,7 @@ const Content = () => {
    const contentBoxRef = useRef(null);
    const theme = useTheme(); 
    const isSmallScreen = useScreenSize(); 
-
-   useHomePageAnimation({contentBoxRef, isSmallScreen})
+   useHomePageAnimation(contentBoxRef, isSmallScreen)
    return (
       <ContentBox ref={contentBoxRef}>
          {homepageVideoChunks.slice(0, 2).map((video, index) => {
@@ -178,11 +179,19 @@ const Content = () => {
             </ReviewCarouselBox>
          </ContentReviewCarousel>
          <ContentRevealComponent className="contentRevealComponent">
-            
+            <RevealingComponent className="revealingComponent">
+               <CustomImage 
+                  src="/images/motorcycle-cartoon.webp"
+                  alt="Motorcycle cartoon"
+                  width={isSmallScreen ? "350px" : "500px"}
+                  height={isSmallScreen ? "350px" : "500px"}
+               />
+            </RevealingComponent>
          </ContentRevealComponent>
       </ContentBox>
    )
 }  
 
 export default Content
+
 

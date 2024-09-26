@@ -7,29 +7,39 @@ import SplitType from "split-type"
 gsap.registerPlugin(ScrollTrigger)
 const useHomePageAnimation = (contentBoxRef, isSmallScreen) => {
    useGSAP(() => {
-      const pinDuration = innerHeight * 4.5
-      ScrollTrigger.create({
-         trigger: ".contentRevealComponent", 
-         start: "top top", 
-         end: `+=${pinDuration}`,
-         pin: true,
-         scrub: true, 
-         markers: true,  
-      })
+      const revealIndex = isSmallScreen ? 400 : 550; 
+      const pinDuration = innerHeight * 8
+      const xMove = innerWidth + revealIndex      
       gsap.set('.videoChunkContainer', {
          visibility: "hidden"
       })
       gsap.set('.videoChunk', {
          transformOrigin: "center"
       })
+      gsap.set('.revealingComponent', {
+         xPercent: -110 
+      })
+      
+      gsap.to('.revealingComponent', {
+         scrollTrigger: {
+            trigger: ".contentRevealComponent", 
+            start: "top top", 
+            end: `+=${pinDuration} 100px`,
+            pin: true,
+            scrub: true, 
+            markers: true,
+         }, 
+         x: xMove, 
+      })
+
       const master = gsap.timeline()
       master
-         .add(part1())
-         .add(part2(), ">")
-         .add(part3(), ">")
-         .add(part4(), ">")
-         .add(part5(), "+=1")
-
+         // .add(part1())
+         // .add(part2(), ">")
+         // .add(part3(), ">")
+         // .add(part4(), ">")
+         // .add(part5(), "+=1")
+   
    }, {dependencies: [], scope: contentBoxRef.current})
 
    const part1 = useCallback(() => {
@@ -45,7 +55,6 @@ const useHomePageAnimation = (contentBoxRef, isSmallScreen) => {
          {
             y: 1000
          }, 
-
          { 
             visibility: "visible", 
             y: 120, 
