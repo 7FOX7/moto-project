@@ -2,6 +2,7 @@ import { useScreenSize } from "../../contexts/ScreenSizeContext"
 import CustomLink from "./CustomLink"
 import CustomLinkIcon from "./CustomLinkIcon"
 import CustomText from "./CustomText"
+import CustomImage from "./CustomImage"
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import Grid from '@mui/material/Grid2'
@@ -44,14 +45,11 @@ const CustomListContainer = {
                <Grid 
                   size={{xs: 12, sm: 12, md: 3, lg: 5, xl: 5}}
                >
-                  <img
-                     src="/images/fox-logo.png"
-                     alt="7FOX7 Logo" 
-                     draggable="false"
-                     style={{
-                        width: "90px", 
-                        height: "90px", 
-                     }} 
+                  <CustomImage 
+                     src="/images/fox-logo.png" 
+                     alt="Fox Logo"
+                     width="60px"
+                     height="60px"   
                   />
                </Grid>
                <Grid 

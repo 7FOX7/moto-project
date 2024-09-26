@@ -5,6 +5,7 @@ import CustomIconButton from "../../customs/components/CustomIconButton"
 import CustomSwipeableDrawer from "../../customs/components/CustomSwipeableDrawer";
 import CustomListContainer from "../../customs/components/CustomListContainer";
 import CustomLink from "../../customs/components/CustomLink";
+import CustomImage from "../../customs/components/CustomImage";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar"
 import MenuIcon from '@mui/icons-material/Menu';
@@ -17,15 +18,11 @@ const Header = () => {
    const [open, setOpen] = useState(false)
 
    const content = 
-      <img
+      <CustomImage 
          src="/images/fox-logo.png" 
          alt="Fox Logo"
-         draggable="false"
-         style={{
-            width: "60px", 
-            height: "60px",
-            objectFit: "cover" 
-         }} 
+         width="60px"
+         height="60px"   
       />
 
    const handleOpen = () => {
