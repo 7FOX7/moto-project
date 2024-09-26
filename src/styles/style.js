@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 
 export const LayoutBox = styled(Box)({
    position: "relative",
-   height: "900vh"
+   height: "100%",
 })
 
 export const HeaderSection = styled(AppBar)({
@@ -39,7 +39,7 @@ export const OnboardingBox = styled(Box)({
 
 export const HomeBox = styled(Box)({
    width: "100%", 
-   height: "900vh",  
+   height: "1700vh",  
    padding: "10px", 
 })
 
@@ -51,7 +51,7 @@ export const ContentBox = styled(Box)({
 
 export const ContentTextBox = styled(Box)({
    position: "absolute", 
-   top: "20%", 
+   top: "15%", 
    left: 0, 
    width: "100%", 
    height: "300px",
@@ -65,7 +65,7 @@ export const ContentTextBox = styled(Box)({
 
 export const ContentRotatedVideos = styled(Box)({
    position: "absolute", 
-   top: "40%", 
+   top: "25%", 
    left: 0, 
    width: "100%", 
    display: "flex", 
@@ -77,7 +77,7 @@ export const ContentRotatedVideos = styled(Box)({
 
 export const ContentReviewCarousel = styled(Box)({
    position: "absolute", 
-   top: "65%", 
+   top: "35%", 
    left: 0, 
    width: "100%", 
    display: "flex",   
@@ -96,14 +96,14 @@ export const ReviewCarouselBox = styled(Box)({
 
 export const ContentRevealComponent = styled(Box)({
    position: "absolute", 
-   top: "80%", 
+   top: "45%", 
    left: 0, 
    width: "100%",
-   height: "200px",  
+   height: "20%", 
    display: "flex",   
    alignItems: "center", 
    padding: "10px", 
-   backgroundColor: "red", 
+   backgroundColor: "blue", 
    scrollMarginTop: "110px"
 })
 

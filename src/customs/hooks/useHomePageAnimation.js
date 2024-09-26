@@ -1,10 +1,21 @@
 import { useCallback } from "react"
 import { useGSAP } from "@gsap/react"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import gsap from "gsap"
 import SplitType from "split-type"
 
+gsap.registerPlugin(ScrollTrigger)
 const useHomePageAnimation = (contentBoxRef, isSmallScreen) => {
    useGSAP(() => {
+      ScrollTrigger.create({
+         trigger: ".contentRevealComponent", 
+         start: "top top", 
+         end: "bottom top",
+         pin: true,
+         scrub: true, 
+         markers: true,  
+
+      })
       gsap.set('.videoChunkContainer', {
          visibility: "hidden"
       })
