@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 
 export const LayoutBox = styled(Box)({
    position: "relative",
-   height: "100%",
+   height: "100%"
 })
 
 export const HeaderSection = styled(AppBar)({

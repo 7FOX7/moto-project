@@ -7,14 +7,14 @@ import SplitType from "split-type"
 gsap.registerPlugin(ScrollTrigger)
 const useHomePageAnimation = (contentBoxRef, isSmallScreen) => {
    useGSAP(() => {
+      const pinDuration = innerHeight * 4.5
       ScrollTrigger.create({
          trigger: ".contentRevealComponent", 
          start: "top top", 
-         end: "bottom top",
+         end: `+=${pinDuration}`,
          pin: true,
          scrub: true, 
          markers: true,  
-
       })
       gsap.set('.videoChunkContainer', {
          visibility: "hidden"
