@@ -37,22 +37,10 @@ export const OnboardingBox = styled(Box)({
    backgroundColor: theme.palette.grey[500],
 })
 
-export const HomeBox = styled(Box)({
-   width: "100%", 
-   height: "1700vh",  
-   padding: "10px", 
-})
-
-export const WorkoutBox = styled(Box)({
-   width: "100%", 
-   height: "100vh",  
-   padding: "10px", 
-})
-
 export const ContentBox = styled(Box)({
    position: "relative", 
-   width: "100%", 
-   height: "100%", 
+   width: "100%",   
+   padding: "10px",
 })
 
 export const ContentTextBox = styled(Box)({

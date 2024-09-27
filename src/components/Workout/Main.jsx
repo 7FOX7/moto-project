@@ -1,30 +1,13 @@
-import { WorkoutBox } from "../../styles/style"
+import Content from "../Shared/Content"
 
+const contentHeight = "300vh"
 const Main = () => {
    return (
-      <WorkoutBox>
-         {/*
-            1. idea: 
-            
-            Mobile: creating a list of activities in a single column; 
-            Desktop: creating in 3 columns (with a single row)
-
-            procedure: 
-
-            code structure: 
-            <WorkoutBox>
-               <Content> 
-            </WorkoutBox>
-
-            the 'Content' component should contain the List of workout themes: 
-            - Videos; 
-            - Programs; 
-            - Progress. 
-            
-            The will act as the links to the actual routes 
-            
-         */}
-      </WorkoutBox>
+      <Content 
+         height={contentHeight}
+      >
+         <p>Hello from Workout</p>            
+      </Content>
    )
 }
 

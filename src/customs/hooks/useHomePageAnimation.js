@@ -5,11 +5,11 @@ import gsap from "gsap"
 import SplitType from "split-type"
 
 gsap.registerPlugin(ScrollTrigger)
-const useHomePageAnimation = (contentBoxRef, isSmallScreen) => {
+const useHomePageAnimation = (contentRef, isSmallScreen) => {
    useGSAP(() => {
       const revealIndex = isSmallScreen ? 400 : 550; 
       const pinDuration = innerHeight * 8
-      const xMove = innerWidth + revealIndex      
+      const xMove = innerWidth + revealIndex
       gsap.set('.videoChunkContainer', {
          visibility: "hidden"
       })
@@ -40,7 +40,7 @@ const useHomePageAnimation = (contentBoxRef, isSmallScreen) => {
          .add(part4(), ">")
          .add(part5(), "+=1")
    
-   }, {dependencies: [], scope: contentBoxRef.current})
+   }, {dependencies: [], scope: contentRef.current})
 
    const part1 = useCallback(() => {
       const videoChunkText = new SplitType('.videoChunkText0', {types: "chars"})
@@ -223,7 +223,8 @@ const useHomePageAnimation = (contentBoxRef, isSmallScreen) => {
 export default useHomePageAnimation
 
 /*
-   1. idea: 
-   - Developing Workout page
-   - making header and footer visible 
+   Main (Home) {
+      <Content 
+      />
+   }
 */
