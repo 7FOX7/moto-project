@@ -16,7 +16,8 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
             variant="elevation"
             elevation={8}
             sx={{
-               height: "100%", 
+               width: isSmallScreen ? "230px" : "300px", 
+               height: isSmallScreen ? "200px" : "230px", 
                padding: "20px"
             }}
          >
