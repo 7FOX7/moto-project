@@ -131,7 +131,28 @@ const CustomListContainer = {
             </Grid>
          </Box>
       )
-   }
+   }, 
+   /*
+      activities: {
+         <List sx={{
+            display: isSmallScreen ? "block" : "flex"
+         }}>
+            {navLinks.map((navLink) => {
+               navLink.subLinks.map((subLink) => {
+                  return (
+                     <ListItem key={navLink.id}>
+                        <CustomLink 
+                           path={navLink.path} 
+                           content={navLink.title}
+                           bold={true}    
+                        />
+                     </ListItem>
+                  )
+               })
+            })}
+         </List>
+      }
+   */
 }
 
 export default CustomListContainer

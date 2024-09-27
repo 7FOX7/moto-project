@@ -12,6 +12,7 @@ import CustomLoadingBar from './customs/components/CustomLoadingBar'
 const Onboarding = lazy(() => import('./pages/Onboarding'))
 const Home = lazy(() => import('./pages/Home'))
 const Layout = lazy(() => import('./components/Layout/Layout'))
+const Workout = lazy(() => import('./pages/Workout'))
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="onboarding" element={<Onboarding />} />
+            <Route path="workout" element={<Workout />} />
           </Route>
         </Routes>
       </Suspense>

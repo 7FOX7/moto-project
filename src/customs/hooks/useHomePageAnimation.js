@@ -34,11 +34,11 @@ const useHomePageAnimation = (contentBoxRef, isSmallScreen) => {
 
       const master = gsap.timeline()
       master
-         // .add(part1())
-         // .add(part2(), ">")
-         // .add(part3(), ">")
-         // .add(part4(), ">")
-         // .add(part5(), "+=1")
+         .add(part1())
+         .add(part2(), ">")
+         .add(part3(), ">")
+         .add(part4(), ">")
+         .add(part5(), "+=1")
    
    }, {dependencies: [], scope: contentBoxRef.current})
 
@@ -221,3 +221,9 @@ const useHomePageAnimation = (contentBoxRef, isSmallScreen) => {
 }
 
 export default useHomePageAnimation
+
+/*
+   1. idea: 
+   - Developing Workout page
+   - making header and footer visible 
+*/
