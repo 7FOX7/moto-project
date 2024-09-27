@@ -1,53 +1,26 @@
 const navLinks = [
    {
-      id: "workoutLink", 
-      title: "Workout", 
-      path: "/workout", 
+      id: "ridesLink", 
+      title: "Rides", 
+      path: "/rides", 
       subLinks: [
          {
-            id: "workoutVideos", 
+            id: "ridesVideos", 
             title: "Videos", 
             path: "/videos"
          }, 
          {
-            id: "workoutPrograms", 
-            title: "Programs", 
-            path: "/programs"
+            id: "ridesEvents", 
+            title: "Events", 
+            path: "/events"
          }, 
          {
-            id: "workoutProgress", 
-            title: "Progress", 
-            path: "/progress"
+            id: "ridesArts", 
+            title: "Arts", 
+            path: "/arts"
          }
       ] 
-   }, 
-   {
-      id: "healthyLivingLink", 
-      title: "Healthy Living", 
-      path: "/healthy-living", 
-      subLinks: [
-         {
-            id: "healthyLivingFitness", 
-            title: "Fitness", 
-            path: "/articles"
-         }, 
-         {
-            id: "healthyLivingNutrition", 
-            title: "Nutrition", 
-            path: "/articles"
-         }, 
-         {
-            id: "healthyLivingRecipes", 
-            title: "Healthy Recipes", 
-            path: "/articles"
-         }, 
-         {
-            id: "healthyLivingMental", 
-            title: "Mental Health", 
-            path: "/articles"
-         }
-      ]
-   }, 
+   },
    {
       id: "communityLink", 
       title: "Community", 
@@ -57,6 +30,16 @@ const navLinks = [
             id: "communityDiscussions", 
             title: "Discussions", 
             path: "/discussions"
+         }, 
+         {
+            id: "communityTips", 
+            title: "Tips", 
+            path: "/tips"
+         }, 
+         {
+            id: "communityProfiles", 
+            title: "Profiles", 
+            path: "/profiles"
          } 
       ]
    }, 
@@ -83,15 +66,10 @@ const navLinks = [
             path: "/faq"
          }, 
          {
-            id: "aboutCareers", 
-            title: "Careers", 
-            path: "/careers"
+            id: "aboutSupport", 
+            title: "Support", 
+            path: "/support"
          }, 
-         {
-            id: "aboutExperts", 
-            title: "Experts", 
-            path: "/experts"
-         }
       ]
    }
 ]
