@@ -64,6 +64,22 @@ const theme = createTheme({
       global: {
          boldText: {
             fontWeight: "700"
+         }, 
+         mobile: {
+            pageHeading: {
+               fontSize: "3rem"
+            }, 
+            sectionHeading: {
+               fontSize: "2rem"
+            }
+         }, 
+         desktop: {
+            pageHeading: {
+               fontSize: "4rem"
+            }, 
+            sectionHeading: {
+               fontSize: "3rem"
+            }
          }
       }
    }
