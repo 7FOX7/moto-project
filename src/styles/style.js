@@ -146,3 +146,12 @@ export const SectionBox = styled(Box)({
    flexDirection: "column", 
    marginTop: "50px",
 })
+
+export const EventTypeBox = styled(Box)({
+   position: "absolute", 
+   top: "46%",
+   left: "5px", 
+   backgroundColor: "red", 
+   padding: "4px 10px", 
+   borderRadius: "25px"
+})

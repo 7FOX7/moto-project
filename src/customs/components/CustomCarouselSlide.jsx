@@ -4,7 +4,8 @@ import { useTheme } from "@emotion/react"
 import CustomText from "./CustomText"
 import CustomImage from "./CustomImage"
 import { StyledPaper } from "../../styles/style"
-import { Grid2 } from "@mui/material"
+import { EventTypeBox } from "../../styles/style"
+import Grid2 from "@mui/material/Grid2"
 import Rating from "@mui/material/Rating"
 
 const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
@@ -80,6 +81,7 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
       return (
       <StyledPaper 
             sx={{
+               position: "relative", 
                width: isSmallScreen ? "230px" : "300px", 
                height: "350px", 
                display: "flex", 
@@ -97,14 +99,11 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
                container
                rowSpacing={1}
                size={12}
-               sx={{
-                  background: "red"
-               }}
+               padding="10px"
             >
                <Grid2 
                   container
                   size={12}
-                  justifyContent="start"
                >
                   <CustomText 
                      color={theme.palette.common.black}
@@ -113,6 +112,7 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
                   />
                </Grid2>
                <Grid2
+                  container
                   size={12}
                >
                   <CustomText 
@@ -120,6 +120,20 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
                      text={item.title}
                   />
                </Grid2>
+               <Grid2
+                  container
+                  size={12}
+               >
+                  <CustomText 
+                     color={theme.palette.common.black}
+                     text={"At " + item.place}
+                  />
+               </Grid2>
+               <EventTypeBox>
+                  <CustomText
+                     text={item.type}
+                  />
+               </EventTypeBox>
             </Grid2>
          </StyledPaper>
       )
