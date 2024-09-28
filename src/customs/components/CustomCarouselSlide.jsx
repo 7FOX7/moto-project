@@ -2,6 +2,7 @@ import { memo } from "react"
 import { useScreenSize } from "../../contexts/ScreenSizeContext"
 import { useTheme } from "@emotion/react"
 import CustomText from "./CustomText"
+import CustomImage from "./CustomImage"
 import { StyledPaper } from "../../styles/style"
 import { Grid2 } from "@mui/material"
 import Rating from "@mui/material/Rating"
@@ -40,11 +41,11 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
                <Grid2
                   size={5}
                >
-                  <Rating 
-                     value={item.value}
-                     readOnly
-                     size={isSmallScreen ? "small" : "medium"}
-                  />
+                     <Rating 
+                        value={item.value}
+                        readOnly
+                        size={isSmallScreen ? "small" : "medium"}
+                     />
                </Grid2>
                <Grid2
                   size={7}
@@ -66,7 +67,60 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
    else if(type === "video") {
       return (
          <StyledPaper>
-            <p>Hello from <strong>VIDEO</strong></p>
+            <CustomImage 
+               src={item.src} 
+               alt="Fox Logo"
+               width="200px"
+               height="200px"   
+            />
+         </StyledPaper>
+      )
+   }
+   else if(type === "event") {
+      return (
+      <StyledPaper 
+            sx={{
+               width: isSmallScreen ? "230px" : "300px", 
+               height: "350px", 
+               display: "flex", 
+               flexDirection: "column", 
+            }}
+         >
+            <CustomImage
+               src={item.imgSrc}
+               alt={item.imgAlt}
+               width="100%"
+               height="200px"
+               borderRadius="15px 15px 0px 0px" 
+            />
+            <Grid2
+               container
+               rowSpacing={1}
+               size={12}
+               sx={{
+                  background: "red"
+               }}
+            >
+               <Grid2 
+                  container
+                  size={12}
+                  justifyContent="start"
+               >
+                  <CustomText 
+                     color={theme.palette.common.black}
+                     text={item.date}
+                     typography={theme.typography.global.boldText}
+                  />
+               </Grid2>
+               <Grid2
+                  size={12}
+               >
+                  <CustomText 
+                     color={theme.palette.common.black}
+                     text={item.title}
+                  />
+               </Grid2>
+            </Grid2>
          </StyledPaper>
       )
    }
