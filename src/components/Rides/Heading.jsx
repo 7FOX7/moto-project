@@ -10,8 +10,8 @@ const Heading = () => {
    return (
       <Box
          sx={{
-            position: "relative", 
-            float: "right"
+            marginTop: "60px", 
+            alignSelf: "flex-start"
          }}
       >
          <CustomText 
