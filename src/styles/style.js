@@ -40,6 +40,8 @@ export const OnboardingBox = styled(Box)({
 export const ContentBox = styled(Box)({
    position: "relative", 
    width: "100%",   
+   display: "flex", 
+   flexDirection: "column",
    padding: "10px",
 })
 
@@ -138,3 +140,9 @@ export const VideoTextBox = styled(Box)({
    
 })
 
+export const SectionBox = styled(Box)({
+   width: "100%",
+   display: "flex", 
+   flexDirection: "column", 
+   marginTop: "50px",
+})
