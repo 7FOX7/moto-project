@@ -67,7 +67,7 @@ const theme = createTheme({
          }, 
          mobile: {
             pageHeading: {
-               fontSize: "3rem"
+               fontSize: "2.5rem"
             }, 
             sectionHeading: {
                fontSize: "2rem"
@@ -75,10 +75,10 @@ const theme = createTheme({
          }, 
          desktop: {
             pageHeading: {
-               fontSize: "4rem"
+               fontSize: "3.5rem"
             }, 
             sectionHeading: {
-               fontSize: "3rem"
+               fontSize: "2.5rem"
             }
          }
       }
