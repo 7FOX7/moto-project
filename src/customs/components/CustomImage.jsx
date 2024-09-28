@@ -1,4 +1,4 @@
-const CustomImage = ({src, alt, width, height}) => {
+const CustomImage = ({src, alt, width, height, borderRadius}) => {
    return (
       <>
          <img 
@@ -8,7 +8,8 @@ const CustomImage = ({src, alt, width, height}) => {
             style={{
                width: width, 
                height: height, 
-               objectFit: "cover"
+               objectFit: "cover", 
+               borderRadius: borderRadius && borderRadius
             }}
          />
       </>
