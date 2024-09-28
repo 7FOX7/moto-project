@@ -29,11 +29,3 @@ const EventSection = () => {
 }
 
 export default EventSection
-
-/*
-   types: 
-   1. Social; 
-   2. Racing;
-   3. Workshop;   
-   4. Camping; 
-*/
