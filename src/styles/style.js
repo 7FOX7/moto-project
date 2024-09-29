@@ -156,9 +156,9 @@ export const EventTypeBox = styled(Box)({
    borderRadius: "25px"
 })
 
-export const ScrollableContainer = styled(Box)({
-   backgroundColor: theme.palette.grey[300], 
+export const ScrollableContainer = styled(Box)({ 
    height: "450px", 
-   overflowY: "scroll",
    overflowX: "hidden", 
+   backgroundColor: theme.palette.grey[300],
+   paddingBlock: "10px"
 })
