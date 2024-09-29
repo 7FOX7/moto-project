@@ -1,31 +1,57 @@
 const videoThumbnails = [
    {
       id: "videoThumbnail1",
-      src: "/images/thumbnail-andrew's-motorcycle-gear.jpg", 
+      imgSrc: "/images/thumbnail-andrew's-motorcycle-gear.jpg", 
+      imgAlt: "Video Thumbnail", 
+      description: "Wow, there should be a description"
+   }, 
+   {
+      id: "videoThumbnail2",
+      imgSrc: "/images/thumbnail-common-mistakes.jpg", 
+      imgAlt: "Video Thumbnail", 
+      description: "Wow, there should be a description"
    }, 
    {
       id: "videoThumbnail3",
-      src: "/images/thumbnail-common-mistakes.jpg", 
+      imgSrc: "/images/thumbnail-andrew's-motorcycle-gear.jpg", 
+      imgAlt: "Video Thumbnail", 
+      description: "Wow, there should be a description"
    }, 
    {
       id: "videoThumbnail4",
-      src: "/images/thumbnail-andrew's-motorcycle-gear.jpg", 
+      imgSrc: "/images/thumbnail-common-mistakes.jpg", 
+      imgAlt: "Video Thumbnail", 
+      description: "Wow, there should be a description"
    }, 
    {
       id: "videoThumbnail5",
-      src: "/images/thumbnail-common-mistakes.jpg", 
+      imgSrc: "/images/thumbnail-andrew's-motorcycle-gear.jpg", 
+      imgAlt: "Video Thumbnail", 
+      description: "Wow, there should be a description"
    }, 
    {
       id: "videoThumbnail6",
-      src: "/images/thumbnail-andrew's-motorcycle-gear.jpg", 
+      imgSrc: "/images/thumbnail-common-mistakes.jpg", 
+      imgAlt: "Video Thumbnail", 
+      description: "Wow, there should be a description"
    }, 
    {
       id: "videoThumbnail7",
-      src: "/images/thumbnail-common-mistakes.jpg", 
+      imgSrc: "/images/thumbnail-andrew's-motorcycle-gear.jpg", 
+      imgAlt: "Video Thumbnail", 
+      description: "Wow, there should be a description"
    }, 
    {
       id: "videoThumbnail8",
-      src: "/images/thumbnail-andrew's-motorcycle-gear.jpg", 
+      imgSrc: "/images/thumbnail-common-mistakes.jpg", 
+      imgAlt: "Video Thumbnail", 
+      description: "Wow, there should be a description"
+   }, 
+   {
+      id: "videoThumbnail9",
+      imgSrc: "/images/thumbnail-andrew's-motorcycle-gear.jpg", 
+      imgAlt: "Video Thumbnail", 
+      description: "Wow, there should be a description"
    }, 
 ]
 
