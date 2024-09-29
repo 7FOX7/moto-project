@@ -2,9 +2,17 @@ import { useScreenSize } from "../../contexts/ScreenSizeContext"
 import { useTheme } from "@emotion/react"
 import CustomCarousel from "../../customs/components/CustomCarousel"
 import CustomText from "../../customs/components/CustomText"
-import { SectionBox } from "../../styles/style"
+import CustomImage from "../../customs/components/CustomImage"
+import {SectionBox} from "../../styles/style"
+import {ScrollableContainer} from "../../styles/style"
+import {StyledPaper} from "../../styles/style"
 import Box from "@mui/material/Box"
+import List from "@mui/material/List"
+import ListItem from "@mui/material/ListItem"
+import Grid2 from "@mui/material/Grid2"
+import Divider from "@mui/material/Divider"
 import events from "../../data/events"
+
 
 const EventSection = () => {
    const isSmallScreen = useScreenSize(); 
@@ -12,7 +20,8 @@ const EventSection = () => {
    return (
       <SectionBox component="section">
          <Box sx={{
-            alignSelf: "flex-start"
+            alignSelf: "flex-start", 
+            marginBottom: "10px"
          }}>
             <CustomText 
                text="Events"
@@ -20,12 +29,112 @@ const EventSection = () => {
                typography={isSmallScreen ? theme.typography.global.mobile.sectionHeading : theme.typography.global.desktop.sectionHeading}
             />
          </Box>
-         <CustomCarousel
-            data={events}
-            type="event"
-         />
+
+         {isSmallScreen ? 
+            <CustomCarousel
+               data={events}
+               type="event"
+            />
+            : 
+            <ScrollableContainer>
+               <List>
+                  {events.map((event) => {
+                     return (
+                        <>
+                           <ListItem 
+                              key={event.id}
+                           >
+                              <Grid2
+                                 container
+                                 spacing={2}
+                                 size={12}
+                              >
+                                 <Grid2
+                                    container
+                                    size={{md: 12, lg: 12, xl: 6}}
+                                 >
+                                    <StyledPaper 
+                                       sx={{
+                                          width: "250px", 
+                                          height: "170px",
+                                          flexDirection: "column", 
+                                          justifyContent: "start", 
+                                          alignItems: "flex-start"
+                                       }}
+                                    >
+                                       <Box 
+                                          sx={{
+                                             width: "100%",
+                                             height: "130px", 
+                                          }
+                                       }>
+                                          <CustomImage
+                                             width="100%"
+                                             height="100%"
+                                             src={event.imgSrc}
+                                             alt={event.imgAlt}
+                                             borderRadius="15px 15px 0 0"
+                                          />
+                                       </Box>
+                                       <Box sx={{
+                                          margin: "5px"
+                                       }}>
+                                          <CustomText
+                                             color={theme.palette.common.black}
+                                             text={event.type}
+                                          />
+                                       </Box>
+                                    </StyledPaper>
+                                 </Grid2>
+                                 <Grid2
+                                    container
+                                    rowSpacing={1}
+                                    size={{md: 12, lg: 12, xl: 6}}
+                                 >
+                                    <Grid2
+                                       container
+                                       size={12}
+                                    >
+                                       <CustomText
+                                          color={theme.palette.rides.eventTitle.main}
+                                          text={event.title}
+                                          typography={theme.typography.rides.eventTitle}
+                                       />
+                                    </Grid2>
+                                    <Grid2
+                                       container
+                                       size={12}
+                                    >
+                                       <CustomText
+                                          color={theme.palette.common.black}
+                                          text={event.date}
+                                       />
+                                    </Grid2>
+                                    <Grid2
+                                       container
+                                       size={12}
+                                    >
+                                       <CustomText
+                                          color={theme.palette.common.black}
+                                          text={"At " + event.place}
+                                       />
+                                    </Grid2>
+                                 </Grid2>
+                              </Grid2>
+                           </ListItem>
+                           <br />
+                           <Divider variant="middle" />
+                           <br />
+                        </>
+                     )
+                  })}
+               </List>
+            </ScrollableContainer>
+         }
       </SectionBox>
    )
 }
 
 export default EventSection
+
+

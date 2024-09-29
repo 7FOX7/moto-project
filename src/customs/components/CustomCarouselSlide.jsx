@@ -12,6 +12,7 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
    const isSmallScreen = useScreenSize()
    const theme = useTheme()
    const {item, type} = props
+   
    if(type === "review") {
       return (
          <StyledPaper 
@@ -67,12 +68,17 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
    }
    else if(type === "video") {
       return (
-         <StyledPaper>
+         <StyledPaper
+            sx={{
+               width: "230px", 
+               height: "200px"
+            }}
+         >
             <CustomImage 
-               src={item.src} 
-               alt="Fox Logo"
-               width="200px"
-               height="200px"   
+               width="100%"
+               height="100%"
+               src={item.imgSrc} 
+               alt={item.imgAlt}   
             />
          </StyledPaper>
       )
@@ -84,15 +90,14 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
                position: "relative", 
                width: isSmallScreen ? "230px" : "300px", 
                height: "350px", 
-               display: "flex", 
                flexDirection: "column", 
             }}
          >
             <CustomImage
-               src={item.imgSrc}
-               alt={item.imgAlt}
                width="100%"
                height="200px"
+               src={item.imgSrc}
+               alt={item.imgAlt}
                borderRadius="15px 15px 0px 0px" 
             />
             <Grid2
@@ -101,6 +106,16 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
                size={12}
                padding="10px"
             >
+               <Grid2
+                  container
+                  size={12}
+               >
+                  <CustomText 
+                     color={theme.palette.rides.eventTitle.main}
+                     text={item.title}
+                     typography={theme.typography.rides.eventTitle}
+                  />
+               </Grid2>
                <Grid2 
                   container
                   size={12}
@@ -108,16 +123,6 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
                   <CustomText 
                      color={theme.palette.common.black}
                      text={item.date}
-                     typography={theme.typography.global.boldText}
-                  />
-               </Grid2>
-               <Grid2
-                  container
-                  size={12}
-               >
-                  <CustomText 
-                     color={theme.palette.common.black}
-                     text={item.title}
                   />
                </Grid2>
                <Grid2
@@ -135,6 +140,24 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
                   />
                </EventTypeBox>
             </Grid2>
+         </StyledPaper>
+      )
+   }
+   else if(type === "art") {
+      return (
+         <StyledPaper 
+            sx={{
+               width: "250px", 
+               height: "250px"
+            }}
+         >
+            <CustomImage
+               width="100%"
+               height="100%"
+               src={item.imgSrc}
+               alt={item.imgAlt}
+               borderRadius="15px" 
+            />
          </StyledPaper>
       )
    }
