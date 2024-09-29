@@ -8,7 +8,7 @@ const CustomImage = ({src, alt, width, height, borderRadius}) => {
             style={{
                width: width, 
                height: height, 
-               objectFit: "cover", 
+               objectFit: "fill", 
                borderRadius: borderRadius && borderRadius
             }}
          />
