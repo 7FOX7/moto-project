@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material";
+import { orange } from "@mui/material/colors";
 
 const theme = createTheme({
    components: {
@@ -22,6 +23,11 @@ const theme = createTheme({
             main: "rgba(200, 200, 200, 0.5)"
          }
       }, 
+      rides: {
+         eventTitle: {
+            main: orange[400]
+         }
+      }
    }, 
    shape: {
       borderLinearProgress: {
@@ -29,6 +35,27 @@ const theme = createTheme({
       }
    }, 
    typography: {
+      global: {
+         boldText: {
+            fontWeight: "700"
+         }, 
+         mobile: {
+            pageHeading: {
+               fontSize: "2.5rem"
+            }, 
+            sectionHeading: {
+               fontSize: "2rem"
+            }
+         }, 
+         desktop: {
+            pageHeading: {
+               fontSize: "3.5rem"
+            }, 
+            sectionHeading: {
+               fontSize: "2.5rem"
+            }
+         }
+      }, 
       home: {
          mobile: {
             contentTextPrimary: {
@@ -61,25 +88,10 @@ const theme = createTheme({
             }
          }
       }, 
-      global: {
-         boldText: {
+      rides: {
+         eventTitle: {
+            fontSize: "1.15rem", 
             fontWeight: "700"
-         }, 
-         mobile: {
-            pageHeading: {
-               fontSize: "2.5rem"
-            }, 
-            sectionHeading: {
-               fontSize: "2rem"
-            }
-         }, 
-         desktop: {
-            pageHeading: {
-               fontSize: "3.5rem"
-            }, 
-            sectionHeading: {
-               fontSize: "2.5rem"
-            }
          }
       }
    }
