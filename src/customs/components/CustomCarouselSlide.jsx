@@ -1,4 +1,5 @@
 import { memo } from "react"
+import { useNavigate } from "react-router-dom"
 import { useScreenSize } from "../../contexts/ScreenSizeContext"
 import { useTheme } from "@emotion/react"
 import CustomText from "./CustomText"
@@ -67,11 +68,13 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
       )
    }
    else if(type === "video") {
+      const navigate = useNavigate()
       return (
          <StyledPaper
+            onClick={() => navigate(`/video-view/${item.id}`, {relative: "route"})}
             sx={{
                width: "230px", 
-               height: "200px"
+               height: "170px"
             }}
          >
             <CustomImage 
@@ -85,11 +88,11 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
    }
    else if(type === "event") {
       return (
-      <StyledPaper 
+         <StyledPaper 
             sx={{
                position: "relative", 
-               width: isSmallScreen ? "230px" : "300px", 
-               height: "350px", 
+               width: "230px", 
+               height: "320px", 
                flexDirection: "column", 
             }}
          >
@@ -147,8 +150,8 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
       return (
          <StyledPaper 
             sx={{
-               width: "250px", 
-               height: "250px"
+               width: "230px", 
+               height: "230px"
             }}
          >
             <CustomImage

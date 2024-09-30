@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import { useScreenSize } from "../../contexts/ScreenSizeContext"
 import { useTheme } from "@emotion/react"
 import CustomText from "../../customs/components/CustomText"
@@ -12,13 +13,14 @@ import ImageListItemBar from "@mui/material/ImageListItemBar"
 import videoThumbnails from "../../data/videoThumbnails"
 
 const VideoSection = () => {
+   const navigate = useNavigate(); 
    const isSmallScreen = useScreenSize(); 
-   const theme = useTheme(); 
+   const theme = useTheme();
 
    return (
       <SectionBox component="section">
          <Box sx={{
-            alignSelf: "flex-start", 
+            display: "flex", 
             marginBottom: "10px"
          }}>
             <CustomText 
@@ -44,6 +46,10 @@ const VideoSection = () => {
                      return (
                         <ImageListItem
                            key={thumbnail.id}
+                           onClick={() => navigate(`/video-view/${thumbnail.id}`, {relative: "route"})}
+                           sx={{
+                              cursor: "pointer"
+                           }}
                         >
                            <CustomImage
                               width="100%"
