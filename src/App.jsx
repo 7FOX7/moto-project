@@ -13,6 +13,7 @@ const Onboarding = lazy(() => import('./pages/Onboarding'))
 const Home = lazy(() => import('./pages/Home'))
 const Layout = lazy(() => import('./components/Layout/Layout'))
 const Rides = lazy(() => import('./pages/Rides'))
+const VideoView = lazy(() => import('./pages/VideoView')) 
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="onboarding" element={<Onboarding />} />
             <Route path="rides" element={<Rides />} />
+            <Route path="video-view/:id" element={<VideoView />} />
           </Route>
         </Routes>
       </Suspense>

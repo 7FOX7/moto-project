@@ -18,7 +18,7 @@ export const HeaderSection = styled(AppBar)({
 })
 
 export const FooterSection = styled(Box)({
-   position: "absolute",
+   position: "relative",
    bottom: 0, 
    left: 0,  
    width: "100%",  
@@ -40,9 +40,8 @@ export const OnboardingBox = styled(Box)({
 export const ContentBox = styled(Box)({
    position: "relative", 
    width: "100%",   
-   display: "flex", 
-   flexDirection: "column",
    padding: "10px",
+   marginBottom: "30px"
 })
 
 export const ContentTextBox = styled(Box)({
@@ -149,7 +148,7 @@ export const SectionBox = styled(Box)({
 
 export const EventTypeBox = styled(Box)({
    position: "absolute", 
-   top: "46%",
+   top: "50%",
    left: "5px", 
    backgroundColor: theme.palette.grey[600], 
    padding: "4px 10px", 
@@ -161,4 +160,12 @@ export const ScrollableContainer = styled(Box)({
    overflowX: "hidden", 
    backgroundColor: theme.palette.grey[300],
    paddingBlock: "10px"
+})
+
+export const EmbeddedVideoContainer = styled(Box)({
+   width: "100%", 
+   height: "100%", 
+   display: "flex",
+   justifyContent: "center", 
+   alignItems: "center", 
 })
