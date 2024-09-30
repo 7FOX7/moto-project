@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
 const useHomePageAnimation = (contentRef, isSmallScreen) => {
    useGSAP(() => {
       const revealIndex = isSmallScreen ? 400 : 550; 
-      const pinDuration = innerHeight * 8
+      const pinDuration = innerHeight * 9
       const xMove = innerWidth + revealIndex
       gsap.set('.videoChunkContainer', {
          visibility: "hidden"
