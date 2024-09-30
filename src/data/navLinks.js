@@ -7,17 +7,17 @@ const navLinks = [
          {
             id: "ridesVideos", 
             title: "Videos", 
-            path: "/videos"
+            path: "/rides"
          }, 
          {
             id: "ridesEvents", 
             title: "Events", 
-            path: "/events"
+            path: "/rides"
          }, 
          {
             id: "ridesArts", 
             title: "Arts", 
-            path: "/arts"
+            path: "/rides"
          }
       ] 
    },
