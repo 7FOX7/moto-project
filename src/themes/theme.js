@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material";
-import { orange } from "@mui/material/colors";
+import { orange, red } from "@mui/material/colors";
 
 const theme = createTheme({
    components: {
@@ -26,8 +26,11 @@ const theme = createTheme({
       rides: {
          eventTitle: {
             main: orange[400]
+         }, 
+         selectedEvent: {
+            main: red[500]
          }
-      }
+      }, 
    }, 
    shape: {
       borderLinearProgress: {
@@ -91,6 +94,10 @@ const theme = createTheme({
       rides: {
          eventTitle: {
             fontSize: "1.15rem", 
+            fontWeight: "700"
+         }, 
+         selectedEvent: {
+            fontSize: "1.1rem",
             fontWeight: "700"
          }
       }

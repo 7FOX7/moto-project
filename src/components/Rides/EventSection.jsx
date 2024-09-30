@@ -2,6 +2,7 @@ import { Fragment } from "react"
 import { useState } from "react"
 import { useScreenSize } from "../../contexts/ScreenSizeContext"
 import { useTheme } from "@emotion/react"
+import CustomSelect from "../../customs/components/CustomSelect"
 import CustomCarousel from "../../customs/components/CustomCarousel"
 import CustomText from "../../customs/components/CustomText"
 import CustomImage from "../../customs/components/CustomImage"
@@ -15,33 +16,110 @@ import Grid2 from "@mui/material/Grid2"
 import Divider from "@mui/material/Divider"
 import events from "../../data/events"
 import Link from "@mui/material/Link"
+import eventTypes from "../../data/eventTypes"
 
 const EventSection = () => {
-   const [visibleEvents, setVisibleEvents] = useState(6); 
+   const [visibleEvents, setVisibleEvents] = useState(5); 
+   const [filteredEvents, setFilteredEvents] = useState([...events])
+   const [selectedEventType, setSelectedEventType] = useState('All'); 
    const isSmallScreen = useScreenSize(); 
    const theme = useTheme(); 
+
+   const handleChange = (e) => {
+      const selectedType = e.target.value
+      const filteredEvents = selectedType === "All" ? events : events.filter(event => event.type === selectedType)
+      setSelectedEventType(selectedType)
+      setFilteredEvents(filteredEvents)
+      setVisibleEvents(5)
+   }
+
+   const handleClick = (eventType) => {
+      const selectedType = eventType
+      const filteredEvents = selectedType === "All" ? events : events.filter(event => event.type === selectedType)
+      setSelectedEventType(selectedType)
+      setFilteredEvents(filteredEvents)
+      setVisibleEvents(5)
+   }
+
    return (
       <SectionBox component="section">
-         <Box sx={{
-            alignSelf: "flex-start", 
-            marginBottom: "10px"
-         }}>
-            <CustomText 
-               text="Events"
-               variant="h2"
-               typography={isSmallScreen ? theme.typography.global.mobile.sectionHeading : theme.typography.global.desktop.sectionHeading}
-            />
-         </Box>
-
+            <Box sx={{
+               display: "flex", 
+               color: theme.palette.common.white, 
+               marginBottom: "10px", 
+            }}>
+               <Box>
+                  <CustomText 
+                     color="inherit"
+                     text="Events"
+                     variant="h2"
+                     typography={isSmallScreen ? theme.typography.global.mobile.sectionHeading : theme.typography.global.desktop.sectionHeading}
+                  />
+               </Box>
+               <Box
+                  sx={{
+                     display: "flex", 
+                     alignItems: "center", 
+                     marginLeft: "10px", 
+                  }}
+               >
+                  {isSmallScreen ? 
+                     <CustomSelect 
+                        selectedOption={selectedEventType}
+                        options={eventTypes}
+                        onChange={handleChange}
+                     />
+                     : 
+                     <Grid2 
+                        container
+                        columnSpacing={1.5}
+                        rowSpacing={1} 
+                        size={12}
+                        alignItems="center"
+                     >
+                        <Grid2>
+                           <Link 
+                              component="button"
+                              onClick={() => handleClick("All")}
+                           >
+                              <CustomText
+                                 color={selectedEventType === "All" && theme.palette.rides.selectedEvent.main}
+                                 text="All"
+                                 typography={selectedEventType === "All" && theme.typography.rides.selectedEvent}
+                              />
+                           </Link>
+                        </Grid2>
+                        {eventTypes.map((type) => {
+                           return (
+                              <Grid2 key={type.id}>
+                                 <Grid2>
+                                    <Link 
+                                       component="button"
+                                       onClick={() => handleClick(type.name)}
+                                    >
+                                       <CustomText
+                                          color={selectedEventType === type.name && theme.palette.rides.selectedEvent.main}
+                                          text={type.name}
+                                          typography={selectedEventType === type.name && theme.typography.rides.selectedEvent}
+                                       />
+                                    </Link>
+                                 </Grid2>
+                              </Grid2>
+                           )
+                        })}
+                     </Grid2>
+                  }
+               </Box>
+            </Box>
          {isSmallScreen ? 
             <CustomCarousel
-               data={events}
+               data={filteredEvents}
                type="event"
             />
             : 
             <ScrollableContainer>
                   <List>
-                     {events.slice(0, visibleEvents).map((event) => {
+                     {filteredEvents.slice(0, visibleEvents).map((event) => {
                         return (
                            <Fragment
                               key={event.id}
@@ -138,7 +216,7 @@ const EventSection = () => {
                         justifyContent: "center",
                      }}
                   >
-                     {visibleEvents >= events.length ?
+                     {visibleEvents >= filteredEvents.length ?
                         <CustomText
                            color={theme.palette.common.black}
                            text="That's all, folks! 🎉"
@@ -166,5 +244,3 @@ const EventSection = () => {
 }
 
 export default EventSection
-
-
