@@ -1,21 +1,21 @@
-import { useScreenSize } from "../../contexts/ScreenSizeContext"
+import { useScreenSize } from "../../contexts/ScreenSizeContext";
 import { useTheme } from "@emotion/react"
+import CustomText from "./CustomText";
 import Box from "@mui/material/Box"
-import CustomText from "../../customs/components/CustomText"
 
-const Heading = () => {
+const CustomHeading = ({text}) => {
    const isSmallScreen = useScreenSize(); 
    const theme = useTheme(); 
    
    return (
       <Box
          sx={{
-            marginTop: "60px", 
-            alignSelf: "flex-start"
+            marginTop: "60px",
+            marginRight: "100%" 
          }}
       >
          <CustomText 
-            text="Rides"
+            text={text}
             variant="h1"
             typography={isSmallScreen ? theme.typography.global.mobile.pageHeading : theme.typography.global.desktop.pageHeading}
          />
@@ -23,4 +23,4 @@ const Heading = () => {
    )
 }
 
-export default Heading
+export default CustomHeading

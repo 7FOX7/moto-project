@@ -1,19 +1,18 @@
 import { useScreenSize } from "../../contexts/ScreenSizeContext"
+import CustomHeading from "../../customs/components/CustomHeading"
 import Content from "../Shared/Content"
 import VideoSection from "./VideoSection"
 import EventSection from "./EventSection"
 import ArtSection from "./ArtSection"
-import Heading from "./Heading"
 import Grid2 from "@mui/material/Grid2"
 
-const contentHeight = "300vh"
 const Main = () => {
    const isSmallScreen = useScreenSize()
    return (
-      <Content 
-         height={contentHeight}
-      >
-         <Heading />
+      <Content>
+         <CustomHeading
+            text="Rides"
+         />
          {!isSmallScreen ?
             <Grid2
                container
