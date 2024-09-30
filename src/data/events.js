@@ -41,14 +41,14 @@ const events = [
    }, 
    {
       id: "event5", 
-      title: "Default Event title 1",
+      title: "Default Event title 2",
       date: "2024-01-10", 
       place: "New-York City",  
       description: "There was still something to prove",
-      imgSrc: "/images/event-charity-ride.jpg",
+      imgSrc: "/images/event-racing-ride.webp",
       imgAlt: "Event Background Image",  
-      type: "Charity"
-   }, 
+      type: "Racing"
+   },
    {
       id: "event6", 
       title: "Default Event title 2",
