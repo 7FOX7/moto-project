@@ -15,7 +15,7 @@ const ArtSection = () => {
    return (
       <SectionBox component="section">
          <Box sx={{
-            alignSelf: "flex-start",
+            display: "flex", 
             marginBottom: "10px"
          }}>
             <CustomText 
