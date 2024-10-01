@@ -1,7 +1,7 @@
 const topicSubSectionContents = [
    {
       id: "topicSubSectionContent1", 
-      title: "What's Hot", 
+      title: "what's hot", 
       content: [
          {
             id: "topicHot1", 
@@ -22,7 +22,7 @@ const topicSubSectionContents = [
    }, 
    {
       id: "topicSubSectionContent2", 
-      title: "What's New", 
+      title: "what's new", 
       content: [
          {
             id: "topicNew1", 
@@ -56,7 +56,7 @@ const topicSubSectionContents = [
    }, 
    {
       id: "topicSubSectionContent3", 
-      title: "Best of", 
+      title: "best of", 
       content: [
          {
             id: "topicNew1", 
@@ -91,7 +91,3 @@ const topicSubSectionContents = [
 ]
 
 export default topicSubSectionContents
-
-/*
-   
-*/

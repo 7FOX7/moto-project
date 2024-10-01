@@ -12,10 +12,10 @@ const CustomSubSection = ({showCarousel, title, content}) => {
    return (
       <SubSectionBox component="section">
          <CustomText 
-            color="inherit"
-            text={title}
+            color={theme.palette.secondary.main}
+            text={title.toUpperCase()}
             variant="h3"
-            typography={isSmallScreen ? theme.typography.global.mobile.sectionHeading : theme.typography.global.desktop.sectionHeading}
+            typography={isSmallScreen ? theme.typography.community.mobile.subSectionHeading : theme.typography.community.desktop.subSectionHeading}
          />
          <Box>
             {showCarousel ? 
