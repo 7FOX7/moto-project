@@ -14,16 +14,11 @@ const ArtSection = () => {
 
    return (
       <SectionBox component="section">
-         <Box sx={{
-            display: "flex", 
-            marginBottom: "10px"
-         }}>
-            <CustomText 
-               text="Arts"
-               variant="h2"
-               typography={isSmallScreen ? theme.typography.global.mobile.sectionHeading : theme.typography.global.desktop.sectionHeading}
-            />
-         </Box>
+         <CustomText 
+            text="Arts"
+            variant="h2"
+            typography={isSmallScreen ? theme.typography.global.mobile.sectionHeading : theme.typography.global.desktop.sectionHeading}
+         />
 
          {isSmallScreen ?
             <CustomCarousel

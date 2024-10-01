@@ -142,7 +142,8 @@ export const VideoTextBox = styled(Box)({
 export const SectionBox = styled(Box)({
    width: "100%",
    display: "flex", 
-   flexDirection: "column", 
+   flexDirection: "column",
+   alignItems: "start", 
    marginTop: "50px",
 })
 
@@ -168,4 +169,8 @@ export const EmbeddedVideoContainer = styled(Box)({
    display: "flex",
    justifyContent: "center", 
    alignItems: "center", 
+})
+
+export const SubSectionBox = styled(Box)({
+
 })

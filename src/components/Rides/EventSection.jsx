@@ -43,74 +43,69 @@ const EventSection = () => {
 
    return (
       <SectionBox component="section">
-            <Box sx={{
-               display: "flex", 
-               color: theme.palette.common.white, 
-               marginBottom: "10px", 
-            }}>
-               <Box>
-                  <CustomText 
-                     color="inherit"
-                     text="Events"
-                     variant="h2"
-                     typography={isSmallScreen ? theme.typography.global.mobile.sectionHeading : theme.typography.global.desktop.sectionHeading}
+         <Box sx={{
+            display: "flex", 
+            color: theme.palette.common.white, 
+            marginBottom: isSmallScreen && "10px" 
+         }}>
+            <CustomText 
+               text="Events"
+               variant="h2"
+               typography={isSmallScreen ? theme.typography.global.mobile.sectionHeading : theme.typography.global.desktop.sectionHeading}
+            />
+            <Box
+               sx={{
+                  display: "flex", 
+                  alignItems: "center", 
+                  marginLeft: "10px", 
+               }}
+            >
+               {isSmallScreen ? 
+                  <CustomSelect 
+                     selectedOption={selectedEventType}
+                     options={eventTypes}
+                     onChange={handleChange}
                   />
-               </Box>
-               <Box
-                  sx={{
-                     display: "flex", 
-                     alignItems: "center", 
-                     marginLeft: "10px", 
-                  }}
-               >
-                  {isSmallScreen ? 
-                     <CustomSelect 
-                        selectedOption={selectedEventType}
-                        options={eventTypes}
-                        onChange={handleChange}
-                     />
-                     : 
-                     <Grid2 
-                        container
-                        columnSpacing={1.5}
-                        rowSpacing={1} 
-                        size={12}
-                        alignItems="center"
-                     >
-                        <Grid2>
-                           <Link 
-                              component="button"
-                              onClick={() => handleClick("All")}
-                           >
-                              <CustomText
-                                 color={selectedEventType === "All" && theme.palette.rides.selectedEvent.main}
-                                 text="All"
-                                 typography={selectedEventType === "All" && theme.typography.rides.selectedEvent}
-                              />
-                           </Link>
-                        </Grid2>
-                        {eventTypes.map((type) => {
-                           return (
-                              <Grid2 key={type.id}>
-                                 <Grid2>
-                                    <Link 
-                                       component="button"
-                                       onClick={() => handleClick(type.name)}
-                                    >
-                                       <CustomText
-                                          color={selectedEventType === type.name && theme.palette.rides.selectedEvent.main}
-                                          text={type.name}
-                                          typography={selectedEventType === type.name && theme.typography.rides.selectedEvent}
-                                       />
-                                    </Link>
-                                 </Grid2>
-                              </Grid2>
-                           )
-                        })}
+                  : 
+                  <Grid2 
+                     container
+                     columnSpacing={1.5}
+                     rowSpacing={1} 
+                     size={12}
+                     alignItems="center"
+                  >
+                     <Grid2>
+                        <Link 
+                           component="button"
+                           onClick={() => handleClick("All")}
+                        >
+                           <CustomText
+                              color={selectedEventType === "All" && theme.palette.rides.selectedEvent.main}
+                              text="All"
+                              typography={selectedEventType === "All" && theme.typography.rides.selectedEvent}
+                           />
+                        </Link>
                      </Grid2>
-                  }
-               </Box>
+                     {eventTypes.map((type) => (
+                        <Grid2 key={type.id}>
+                           <Grid2>
+                              <Link 
+                                 component="button"
+                                 onClick={() => handleClick(type.name)}
+                              >
+                                 <CustomText
+                                    color={selectedEventType === type.name && theme.palette.rides.selectedEvent.main}
+                                    text={type.name}
+                                    typography={selectedEventType === type.name && theme.typography.rides.selectedEvent}
+                                 />
+                              </Link>
+                           </Grid2>
+                        </Grid2>
+                     ))}
+                  </Grid2>
+               }
             </Box>
+         </Box>
          {isSmallScreen ? 
             <CustomCarousel
                data={filteredEvents}
