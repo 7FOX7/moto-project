@@ -95,6 +95,20 @@ const theme = createTheme({
             fontSize: "1.1rem",
             fontWeight: "700"
          }
+      }, 
+      community: {
+         mobile: {
+            subSectionHeading: {
+               fontSize: "2.5rem", 
+               fontWeight: 600
+            }
+         }, 
+         desktop: {
+            subSectionHeading: {
+               fontSize: "2.5rem", 
+               fontWeight: 600
+            }
+         }
       }
    }
 })
