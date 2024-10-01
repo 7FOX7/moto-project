@@ -114,7 +114,7 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
                   size={12}
                >
                   <CustomText 
-                     color={theme.palette.rides.eventTitle.main}
+                     color={theme.palette.secondary.dark}
                      text={item.title}
                      typography={theme.typography.rides.eventTitle}
                   />

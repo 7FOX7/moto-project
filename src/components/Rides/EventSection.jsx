@@ -80,7 +80,7 @@ const EventSection = () => {
                            onClick={() => handleClick("All")}
                         >
                            <CustomText
-                              color={selectedEventType === "All" && theme.palette.rides.selectedEvent.main}
+                              color={selectedEventType === "All" && theme.palette.secondary.main}
                               text="All"
                               typography={selectedEventType === "All" && theme.typography.rides.selectedEvent}
                            />
@@ -94,7 +94,7 @@ const EventSection = () => {
                                  onClick={() => handleClick(type.name)}
                               >
                                  <CustomText
-                                    color={selectedEventType === type.name && theme.palette.rides.selectedEvent.main}
+                                    color={selectedEventType === type.name && theme.palette.secondary.main}
                                     text={type.name}
                                     typography={selectedEventType === type.name && theme.typography.rides.selectedEvent}
                                  />
@@ -172,7 +172,7 @@ const EventSection = () => {
                                           size={12}
                                        >
                                           <CustomText
-                                             color={theme.palette.rides.eventTitle.main}
+                                             color={theme.palette.secondary.dark}
                                              text={event.title}
                                              typography={theme.typography.rides.eventTitle}
                                           />
@@ -221,8 +221,8 @@ const EventSection = () => {
                            component="button"
                            onClick={() => setVisibleEvents((prevVal) => prevVal + 10)}
                            sx={{ 
-                              color: theme.palette.common.black,
-                              textDecorationColor: theme.palette.common.black
+                              color: theme.palette.secondary.dark,
+                              textDecorationColor: theme.palette.secondary.dark
                            }}
                         >
                            <CustomText 
