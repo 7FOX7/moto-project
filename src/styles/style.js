@@ -172,5 +172,8 @@ export const EmbeddedVideoContainer = styled(Box)({
 })
 
 export const SubSectionBox = styled(Box)({
-
+   display: "flex",
+   flexDirection: "column", 
+   alignItems: "start",  
+   marginTop: "60px"
 })

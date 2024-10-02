@@ -26,6 +26,11 @@ const theme = createTheme({
             main: "rgba(200, 200, 200, 0.5)"
          }
       }, 
+      community: {
+         publisher: {
+            main: "rgb(99, 99, 99)"
+         }
+      }
    }, 
    shape: {
       borderLinearProgress: {
@@ -101,11 +106,27 @@ const theme = createTheme({
             subSectionHeading: {
                fontSize: "2.5rem", 
                fontWeight: 600
+            }, 
+            subSectionContent: {
+               fontSize: "1.2rem", 
+               fontWeight: 500
+            }, 
+            subSectionTitle: {
+               fontSize: "1.3rem", 
+               fontWeight: 600
             }
          }, 
          desktop: {
             subSectionHeading: {
                fontSize: "2.5rem", 
+               fontWeight: 600
+            }, 
+            subSectionContent: {
+               fontSize: "1.2rem", 
+               fontWeight: 500
+            }, 
+            subSectionTitle: {
+               fontSize: "1.3rem", 
                fontWeight: 600
             }
          }
