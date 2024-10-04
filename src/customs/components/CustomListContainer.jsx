@@ -131,7 +131,7 @@ const CustomListContainer = {
             </Grid>
          </Box>
       )
-   }, 
+   }
 }
 
 export default CustomListContainer

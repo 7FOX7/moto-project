@@ -5,6 +5,10 @@ import CustomSubSection from "../../customs/components/CustomSubSection"
 import { SectionBox } from "../../styles/style"
 import topicSubSectionContents from "../../data/topicSubSectionContents"
 
+
+// TODO: add selectionBox/categories to the TopicSection
+
+
 const TopicSection = () => {
    const isSmallScreen = useScreenSize(); 
    const theme = useTheme(); 

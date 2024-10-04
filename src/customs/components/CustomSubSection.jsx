@@ -7,7 +7,6 @@ import Box from "@mui/material/Box"
 import Grid2 from "@mui/material/Grid2"
 import Typography from "@mui/material/Typography"
 
-
 const marginTop = "30px"
 
 const CustomSubSection = ({showCarousel, title, content}) => {
