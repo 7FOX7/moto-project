@@ -9,7 +9,7 @@ const theme = createTheme({
                background: "linear-gradient(90deg, rgba(33,33,33,1) 0%, rgba(47,47,47,1) 89%)"
             }
          }
-      }
+      },
    }, 
    palette: {
       primary: {
@@ -17,6 +17,7 @@ const theme = createTheme({
       }, 
       secondary: {
          main: "#00ffa7", 
+         dark: "#00dc90"
       }, 
       global: {
          borderLinearProgress: {
@@ -48,6 +49,9 @@ const theme = createTheme({
             }, 
             sectionHeading: {
                fontSize: "2rem"
+            }, 
+            sectionHeadingSmaller: {
+               fontSize: "1.4rem"
             }
          }, 
          desktop: {
@@ -56,6 +60,9 @@ const theme = createTheme({
             }, 
             sectionHeading: {
                fontSize: "2.5rem"
+            }, 
+            sectionHeadingSmaller: {
+               fontSize: "1.9rem"
             }
          }
       }, 
@@ -114,7 +121,8 @@ const theme = createTheme({
             subSectionTitle: {
                fontSize: "1.3rem", 
                fontWeight: 600
-            }
+            }, 
+
          }, 
          desktop: {
             subSectionHeading: {
