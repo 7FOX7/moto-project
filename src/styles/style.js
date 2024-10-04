@@ -183,7 +183,6 @@ export const SubSectionBox = styled(Box)({
 
 export const SearchSectionContainer = styled(Box)({
    width: "100%", 
-   marginTop: "20px"
 })
 
 export const SearchBarContainer = styled(Box)({

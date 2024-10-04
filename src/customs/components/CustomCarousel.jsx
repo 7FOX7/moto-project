@@ -6,11 +6,12 @@ import "swiper/css";
 
 const CustomCarousel = ({data, type}) => {
    const isSmallScreen = useScreenSize(); 
+
    return (
       <>
          <Swiper
             autoHeight={true}
-            slidesPerView="auto"
+            slidesPerView={"auto"}
             spaceBetween={isSmallScreen ? 20 : 80}
             centeredSlides={true}
             loop={true}

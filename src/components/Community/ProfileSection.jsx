@@ -35,7 +35,7 @@ const ProfileSection = () => {
             variant="h3"
             typography={isSmallScreen ? theme.typography.global.mobile.sectionHeadingSmaller : theme.typography.global.desktop.sectionHeadingSmaller}
          />
-
+         <br />
          <CustomSearchSection 
             dataList={users}
             renderItems={renderProfiles}
