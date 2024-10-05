@@ -5,9 +5,13 @@ import { useTheme } from "@emotion/react"
 import CustomText from "./CustomText"
 import CustomImage from "./CustomImage"
 import { StyledPaper } from "../../styles/style"
+import { MarginBox } from "../../styles/style"
+import { TipSectionBox } from "../../styles/style"
 import { EventTypeBox } from "../../styles/style"
 import Grid2 from "@mui/material/Grid2"
 import Rating from "@mui/material/Rating"
+import Link from "@mui/material/Link"
+
 
 const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
    const isSmallScreen = useScreenSize()
@@ -162,6 +166,56 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
                borderRadius="15px" 
             />
          </StyledPaper>
+      )
+   }
+   else if(type === "tip") {
+      const navigate = useNavigate(); 
+      return (
+         <TipSectionBox>
+            <MarginBox>
+               <StyledPaper 
+                  sx={{
+                     width: "100%", 
+                     height: "230px"
+                  }}
+               >
+                  <CustomImage 
+                     width="100%"
+                     height="100%"
+                     src={item.imgSrc}
+                     alt={item.imgAlt}
+                     borderRadius="15px"
+                  />
+               </StyledPaper>
+            </MarginBox>
+            <MarginBox>
+               <CustomText
+                  color={theme.palette.secondary.main}
+                  text={item.title}
+                  typography={theme.typography.global.mobile.tipTitle}
+               />
+            </MarginBox>
+            <MarginBox>
+               <CustomText
+                  text={`${item.textContent.substring(0, 150)}...`}
+               />
+            </MarginBox>
+            <MarginBox>
+               <Link 
+                  component="button"
+                  onClick={() => navigate(`/video-view/${item.id}`, {relative: "route"})}
+                  sx={{ 
+                     color: theme.palette.secondary.dark,
+                     textDecorationColor: theme.palette.secondary.dark
+                  }}
+               >
+                  <CustomText 
+                     color="inherit"
+                     text="Read More"
+                  />
+               </Link>
+            </MarginBox>
+         </TipSectionBox>
       )
    }
 }

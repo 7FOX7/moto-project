@@ -52,6 +52,10 @@ const theme = createTheme({
             }, 
             sectionHeadingSmaller: {
                fontSize: "1.4rem"
+            }, 
+            tipTitle: {
+               fontSize: "1.5rem", 
+               fontWeight: 600
             }
          }, 
          desktop: {
@@ -63,6 +67,10 @@ const theme = createTheme({
             }, 
             sectionHeadingSmaller: {
                fontSize: "1.9rem"
+            }, 
+            tipTitle: {
+               fontSize: "2.5rem", 
+               fontWeight: 600
             }
          }
       }, 
