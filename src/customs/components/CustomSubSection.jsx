@@ -13,7 +13,11 @@ const CustomSubSection = ({showCarousel, title, content}) => {
    const isSmallScreen = useScreenSize(); 
    const theme = useTheme(); 
    return (
-      <SubSectionBox component="section">
+      <SubSectionBox 
+         component="section"
+         container
+         size={{xs: 12, sm: 12, md: 6, lg: 6, xl: 6}}
+      >
          <CustomText 
             color={theme.palette.secondary.main}
             text={title.toUpperCase()}

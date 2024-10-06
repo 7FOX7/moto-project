@@ -174,11 +174,11 @@ export const EmbeddedVideoContainer = styled(Box)({
    alignItems: "center", 
 })
 
-export const SubSectionBox = styled(Box)({
-   display: "flex",
-   flexDirection: "column", 
+export const SubSectionBox = styled(Grid2)({
+   height: "100%", 
    alignItems: "start",  
-   marginTop: "60px"
+   marginTop: "60px", 
+   backgroundColor: "blue", 
 })
 
 export const SearchSectionContainer = styled(Box)({

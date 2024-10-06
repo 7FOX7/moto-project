@@ -1,10 +1,11 @@
 import { useScreenSize } from "../../contexts/ScreenSizeContext"
 import { useTheme } from "@emotion/react"
 import CustomText from "../../customs/components/CustomText"
-import CustomSubSection from "../../customs/components/CustomSubSection"
 import { SectionBox } from "../../styles/style"
-import topicSubSectionContents from "../../data/topicSubSectionContents"
-
+import HotSubSection from "./HotSubSection"
+import NewSubSection from "./NewSubSection"
+import BestSubSection from "./BestSubSection"
+import Grid2 from "@mui/material/Grid2"
 
 // TODO: add selectionBox/categories to the TopicSection
 
@@ -19,20 +20,19 @@ const TopicSection = () => {
             variant="h2"
             typography={isSmallScreen ? theme.typography.global.mobile.sectionHeading : theme.typography.global.desktop.sectionHeading}
          />
-         {
-            topicSubSectionContents.map((topicSubSectionContent, index) => {
-               return (
-                  <CustomSubSection
-                     key={topicSubSectionContent.id}
-                     title={topicSubSectionContent.title}
-                     content={topicSubSectionContent.content}
-                     showCarousel={index === 0 && true}
-                  />
-               )
-            })
-         }
+         <Grid2
+            component="section"
+            container
+            columnSpacing={4}
+            columns={12}
+         >
+            <HotSubSection />
+            <NewSubSection />
+            <BestSubSection />
+         </Grid2>
       </SectionBox>
    ) 
 }
 
 export default TopicSection
+
