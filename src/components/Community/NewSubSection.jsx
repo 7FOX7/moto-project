@@ -65,7 +65,7 @@ const NewSubSection = () => {
                      </Grid2>
                      <Grid2
                         container
-                        size={{xs: 0.5, sm: 0.5, md: 1, lg: 1, xl: 1}}
+                        size={{xs: 0.5, sm: 0.5, md: 0.85, lg: 0.6, xl: 0.6}}
                         justifyContent="center"
                         sx={{background: "red"}}
                      >
@@ -105,7 +105,7 @@ const NewSubSection = () => {
                   >
                      <Grid2
                         container
-                        size={{xs: 0.5, sm: 0.5, md: 1.1, lg: 0.8, xl: 0.8}}
+                        size={{xs: 0.5, sm: 0.5, md: 1.05, lg: 0.8, xl: 0.8}}
                      >
                         <Typography
                            color={theme.palette.secondary.main}

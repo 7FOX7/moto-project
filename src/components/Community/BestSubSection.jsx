@@ -166,7 +166,7 @@ const BestSubSection = () => {
                      >
                         <Grid2
                            container
-                           size={{xs: 0.5, sm: 0.5, md: 0.4, lg: 0.3, xl: 0.3}}
+                           size={0.5}
                         >
                            <Typography
                               color={theme.palette.secondary.main}
