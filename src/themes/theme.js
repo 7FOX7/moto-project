@@ -130,7 +130,10 @@ const theme = createTheme({
                fontSize: "1.3rem", 
                fontWeight: 600
             }, 
-
+            subSectionCategory: {
+               fontSize: "1.2rem", 
+               fontWeight: 600
+            }
          }, 
          desktop: {
             subSectionHeading: {
@@ -143,6 +146,10 @@ const theme = createTheme({
             }, 
             subSectionTitle: {
                fontSize: "1.3rem", 
+               fontWeight: 600
+            }, 
+            subSectionCategory: {
+               fontSize: "1.4rem", 
                fontWeight: 600
             }
          }
