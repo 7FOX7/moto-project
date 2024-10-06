@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material";
-import { orange, red } from "@mui/material/colors";
 
 const theme = createTheme({
    components: {
@@ -10,6 +9,23 @@ const theme = createTheme({
             }
          }
       },
+      MuiInputBase: {
+         styleOverrides: {
+            root: {
+               borderRadius: "10px !important", 
+            }, 
+            input: {
+               padding: "8px !important"
+            }
+         }
+      }, 
+      MuiTextField: {
+         styleOverrides: {
+            root: {
+               borderRadius: "10px", 
+            }
+         }
+      }
    }, 
    palette: {
       primary: {
