@@ -45,13 +45,6 @@ const topicSubSectionContents = [
             title: "I wish I know about this game earlier!", 
             category: "Books"
          }, 
-         {
-            id: "topicNew4", 
-            publishDate: "2024-09-24", 
-            publisher: "Peter Parker", 
-            title: "I wish I know about this game earlier!", 
-            category: "Books"
-         }, 
       ]
    }, 
    {

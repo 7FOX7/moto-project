@@ -12,7 +12,6 @@ import Grid2 from "@mui/material/Grid2"
 import Rating from "@mui/material/Rating"
 import Link from "@mui/material/Link"
 
-
 const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
    const isSmallScreen = useScreenSize()
    const theme = useTheme()
