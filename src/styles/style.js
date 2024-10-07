@@ -43,7 +43,7 @@ export const OnboardingBox = styled(Box)({
 export const ContentBox = styled(Box)({
    position: "relative", 
    width: "100%",   
-   padding: "10px",
+   padding: "10px 12px",
    marginBottom: "30px"
 })
 
@@ -144,6 +144,7 @@ export const VideoTextBox = styled(Box)({
 
 export const SectionBox = styled(Box)({
    width: "100%",
+   minWidth: "312px", 
    display: "flex", 
    flexDirection: "column",
    alignItems: "start", 
@@ -181,8 +182,8 @@ export const SubSectionBox = styled(Grid2)({
    backgroundColor: "blue", 
 })
 
-export const SearchSectionContainer = styled(Box)({
-   width: "100%", 
+export const SearchSectionContainer = styled(Grid2)({
+   
 })
 
 export const SearchBarContainer = styled(Box)({
@@ -193,17 +194,14 @@ export const SearchBar = styled(TextField)({
    background: theme.palette.common.white, 
 })
 
-export const SearchListContainer = styled(Box)({
-   width: "100%", 
-   height: "300px", 
-   background: theme.palette.secondary.dark, 
+export const SearchListContainer = styled(Grid2)({
+   height: "400px", 
    marginTop: "20px", 
-   padding: "20px 10px", 
-   borderRadius: "10px", 
-   overflow: "scroll"
+   overflowY: "auto"
 })
 
 export const ProfileContainer = styled(Grid2)({
+   height: "100px", 
    alignItems: "center",
    justifyContent: "space-between", 
    padding: "10px"

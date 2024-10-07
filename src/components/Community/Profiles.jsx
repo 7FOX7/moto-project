@@ -1,11 +1,9 @@
-import { Fragment } from "react";
 import CustomAvatar from "../../customs/components/CustomAvatar"
 import Grid2 from "@mui/material/Grid2"
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { ProfileContainer } from "../../styles/style";
 import CustomText from "../../customs/components/CustomText";
 import CustomButton from "../../customs/components/CustomButton";
-import { Divider } from "@mui/material";
 
 /*
    TODO: make this a custom component in case you will have more profile lists
@@ -14,15 +12,19 @@ import { Divider } from "@mui/material";
 const Profiles = ({users}) => {
    return (
          <>
-            {users.map((user, index) => (
-               <Fragment key={user.id}>
+            {users.map((user) => (
                   <ProfileContainer
+                     key={user.id}
                      container
-                     size={12}
+                     size={{xs: 12, sm: 5.9, md: 5.9, lg: 3.9, xl: 3.9}}
+                     sx={{
+                        background: "green"
+                     }}
                   >
                      <Grid2
                         container
-                        columnSpacing={2}
+                        columnSpacing={1.5}
+                        alignItems="center"
                      >
                         <CustomAvatar
                            content={user.username.charAt(0)}
@@ -60,17 +62,6 @@ const Profiles = ({users}) => {
                         />
                      </Grid2>
                   </ProfileContainer>
-                  {
-                     index < users.length - 1 && 
-                     <>
-                        <br />
-                        <Divider 
-                           variant="middle"
-                        />
-                        <br />
-                     </>
-                  }
-               </Fragment>
             ))}
          </>
       )
