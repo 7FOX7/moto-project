@@ -53,7 +53,6 @@ const BestSubSection = () => {
             size={{md: 9, lg: 9, xl: 9}}
             sx={{
                marginLeft: "20px",
-               background: "blue"
             }}
          >
             {isSmallScreen ? 
@@ -67,15 +66,15 @@ const BestSubSection = () => {
                <Grid2 
                   container
                   columnSpacing={2}
-                  sx={{
-                     background: "green"
-                  }}
                >
                   {subSectionCategories.map((category) => (
                      <Link 
                         key={category.id}
                         component="button"
                         onClick={() => handleClick(category.name)}
+                        sx={{
+                           textDecorationColor: theme.palette.secondary.main
+                        }}
                      >
                         <CustomText
                            color={theme.palette.secondary.main}
@@ -107,12 +106,10 @@ const BestSubSection = () => {
                      fontSize: isSmallScreen ? theme.typography.community.mobile.subSectionContent.fontSize : theme.typography.community.desktop.subSectionContent.fontSize, 
                      fontWeight: isSmallScreen ? theme.typography.community.mobile.subSectionContent.fontWeight : theme.typography.community.desktop.subSectionContent.fontWeight, 
                      marginBottom: "30px", 
-                     background: "orange"
                   }}
                >
                         <Grid2
                            container
-                           sx={{background: "orange"}}
                         >
                            <Typography
                               color={theme.palette.secondary.main}
@@ -127,7 +124,6 @@ const BestSubSection = () => {
                            justifyContent="center"
                            sx={{
                               width: "25px", 
-                              background: "red"
                            }}
                         >
                            <Typography
@@ -139,7 +135,6 @@ const BestSubSection = () => {
                         </Grid2>
                         <Grid2
                            container
-                           sx={{background: "green"}}
                         >
                            <Typography
                               fontSize="inherit"
@@ -151,9 +146,6 @@ const BestSubSection = () => {
                      <Grid2
                         container
                         size={12}
-                        sx={{
-                           background: "red"
-                        }}
                      >
                            <Typography
                               typography={isSmallScreen ? theme.typography.community.mobile.subSectionTitle : theme.typography.community.desktop.subSectionTitle}

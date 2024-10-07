@@ -1,3 +1,5 @@
+import { useScreenSize } from "../../contexts/ScreenSizeContext";
+import { useTheme } from "@emotion/react";
 import CustomAvatar from "../../customs/components/CustomAvatar"
 import Grid2 from "@mui/material/Grid2"
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -10,6 +12,8 @@ import CustomButton from "../../customs/components/CustomButton";
 */
 
 const Profiles = ({users}) => {
+   const isSmallScreen = useScreenSize(); 
+   const theme = useTheme(); 
    return (
          <>
             {users.map((user) => (
@@ -18,7 +22,8 @@ const Profiles = ({users}) => {
                      container
                      size={{xs: 12, sm: 5.9, md: 5.9, lg: 3.9, xl: 3.9}}
                      sx={{
-                        background: "green"
+                        background: !isSmallScreen && theme.palette.secondary.dark, 
+                        borderRadius: !isSmallScreen && "15px"
                      }}
                   >
                      <Grid2

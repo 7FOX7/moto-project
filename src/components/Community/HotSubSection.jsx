@@ -28,7 +28,10 @@ const HotSubSection = () => {
             variant="h3"
             typography={isSmallScreen ? theme.typography.community.mobile.subSectionHeading : theme.typography.community.desktop.subSectionHeading}
          /> 
-            <Box
+            <Grid2
+               container
+               columns={12}
+               size={12}
                sx={{marginTop: marginTop}}
             >
                {isSmallScreen ?
@@ -39,19 +42,17 @@ const HotSubSection = () => {
                   : 
                   <Grid2
                      container
-                     columns={3}
+                     size={12}
                      columnSpacing={2}
                      sx={{
                         height: "450px", 
-                        background: "orange"
                      }}
                   >
                      <Grid2
                         container
-                        size={2}
+                        size={7}
                         sx={{
                            height: "100%", 
-                           background: "red", 
                         }}
                      >
                         <CustomImage
@@ -65,10 +66,9 @@ const HotSubSection = () => {
                      <Grid2
                         container
                         columns={1}
-                        size={1}
+                        size={4}
                         sx={{
                            height: "100%", 
-                           background: "green", 
                            flexDirection: "column", 
                            justifyContent: "space-between"
                         }}
@@ -104,7 +104,7 @@ const HotSubSection = () => {
                      </Grid2>
                   </Grid2>
                }
-            </Box>
+            </Grid2>
       </SubSectionBox>
    )
 }

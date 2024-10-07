@@ -48,12 +48,10 @@ const NewSubSection = () => {
                   fontSize: isSmallScreen ? theme.typography.community.mobile.subSectionContent.fontSize : theme.typography.community.desktop.subSectionContent.fontSize, 
                   fontWeight: isSmallScreen ? theme.typography.community.mobile.subSectionContent.fontWeight : theme.typography.community.desktop.subSectionContent.fontWeight, 
                   marginBottom: "30px", 
-                  background: "orange"
                }}
             >
                      <Grid2
                         container
-                        sx={{background: "orange"}}
                      >
                         <Typography
                            color={theme.palette.secondary.main}
@@ -68,7 +66,6 @@ const NewSubSection = () => {
                         justifyContent="center"
                         sx={{
                            width: "25px", 
-                           background: "red"
                         }}
                      >
                         <Typography
@@ -80,7 +77,6 @@ const NewSubSection = () => {
                      </Grid2>
                      <Grid2
                         container
-                        sx={{background: "green"}}
                      >
                         <Typography
                            fontSize="inherit"
@@ -92,7 +88,6 @@ const NewSubSection = () => {
                   <Grid2
                      container
                      size={12}
-                     sx={{background: "red"}}
                   >
                         <Typography
                            typography={isSmallScreen ? theme.typography.community.mobile.subSectionTitle : theme.typography.community.desktop.subSectionTitle}
@@ -108,7 +103,6 @@ const NewSubSection = () => {
                      <Grid2
                         container
                         sx={{
-                           background: "red", 
                            width: "30px"
                         }}
                      >

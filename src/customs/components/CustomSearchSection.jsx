@@ -22,9 +22,6 @@ const CustomSearchSection = ({dataList, renderItems, filterFunc, placeholder}) =
          container
          columns={12}
          size={{xs: 12, sm: 12, md: 8, lg: 8, xl: 8}}
-         sx={{
-            background: "red"
-         }}
          justifyContent="center"
       >
          <Grid2
@@ -41,7 +38,7 @@ const CustomSearchSection = ({dataList, renderItems, filterFunc, placeholder}) =
             size={12}
             spacing={1}
             sx={{
-               background: isSmallScreen && theme.palette.secondary.main
+               background: isSmallScreen && theme.palette.secondary.dark
             }}
          >
             {renderItems(filteredList)}
