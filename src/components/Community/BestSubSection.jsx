@@ -41,10 +41,6 @@ const BestSubSection = () => {
          container
          size={12}
          columns={12}
-         sx={{
-            height: "600px", 
-            overflowY: "auto"
-         }}
       >
          <CustomText 
             color={theme.palette.secondary.main}
@@ -57,7 +53,7 @@ const BestSubSection = () => {
             size={{md: 9, lg: 9, xl: 9}}
             sx={{
                marginLeft: "20px",
-               background: "red"
+               background: "blue"
             }}
          >
             {isSmallScreen ? 
@@ -93,7 +89,9 @@ const BestSubSection = () => {
          </Grid2>
          <Box
             sx={{
-               marginTop: marginTop
+               height: "600px", 
+               marginTop: marginTop,
+               overflowY: "auto"
             }}
          >
             {filteredItems.map((item) => (
@@ -172,7 +170,6 @@ const BestSubSection = () => {
                            container
                            sx={{
                               width: "30px", 
-                              background: "red"
                            }}
                         >
                            <Typography
