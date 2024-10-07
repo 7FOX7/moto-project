@@ -126,9 +126,11 @@ const BestSubSection = () => {
                         </Grid2>
                         <Grid2
                            container
-                           size={{xs: 0.5, sm: 0.5, md: 0.4, lg: 0.4, xl: 0.4}}
                            justifyContent="center"
-                           sx={{background: "red"}}
+                           sx={{
+                              width: "25px", 
+                              background: "red"
+                           }}
                         >
                            <Typography
                               fontSize="3rem"
@@ -151,7 +153,9 @@ const BestSubSection = () => {
                      <Grid2
                         container
                         size={12}
-                        sx={{background: "red"}}
+                        sx={{
+                           background: "red"
+                        }}
                      >
                            <Typography
                               typography={isSmallScreen ? theme.typography.community.mobile.subSectionTitle : theme.typography.community.desktop.subSectionTitle}
@@ -166,7 +170,10 @@ const BestSubSection = () => {
                      >
                         <Grid2
                            container
-                           size={0.5}
+                           sx={{
+                              width: "30px", 
+                              background: "red"
+                           }}
                         >
                            <Typography
                               color={theme.palette.secondary.main}
@@ -176,9 +183,7 @@ const BestSubSection = () => {
                               by
                            </Typography>
                         </Grid2>
-                        <Grid2
-                           size={11}
-                        >
+                        <Grid2>
                            <Typography
                               color={theme.palette.community.publisher.main}
                               fontSize="inherit"

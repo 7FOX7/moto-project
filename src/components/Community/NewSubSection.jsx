@@ -65,9 +65,11 @@ const NewSubSection = () => {
                      </Grid2>
                      <Grid2
                         container
-                        size={{xs: 0.5, sm: 0.5, md: 0.85, lg: 0.6, xl: 0.6}}
                         justifyContent="center"
-                        sx={{background: "red"}}
+                        sx={{
+                           width: "25px", 
+                           background: "red"
+                        }}
                      >
                         <Typography
                            fontSize="3rem"
@@ -105,7 +107,10 @@ const NewSubSection = () => {
                   >
                      <Grid2
                         container
-                        size={{xs: 0.5, sm: 0.5, md: 1.05, lg: 0.8, xl: 0.8}}
+                        sx={{
+                           background: "red", 
+                           width: "30px"
+                        }}
                      >
                         <Typography
                            color={theme.palette.secondary.main}
@@ -115,9 +120,7 @@ const NewSubSection = () => {
                            by
                         </Typography>
                      </Grid2>
-                     <Grid2
-                        size={10}
-                     >
+                     <Grid2>
                         <Typography
                            color={theme.palette.community.publisher.main}
                            fontSize="inherit"

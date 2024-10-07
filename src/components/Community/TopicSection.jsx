@@ -23,8 +23,9 @@ const TopicSection = () => {
          <Grid2
             component="section"
             container
-            columnSpacing={4}
             columns={12}
+            columnSpacing={4}
+            size={12}
          >
             <HotSubSection />
             <NewSubSection />
