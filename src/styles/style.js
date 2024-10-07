@@ -214,12 +214,13 @@ export const StyledButton = styled(Button)({
 
 export const TipSectionBox = styled(Box)({
    width: "300px", 
-   height: "600px", 
+   height: "500px", 
    background: "red"
 })
 
 export const MarginBox = styled(Box)({
    margin: "10px", 
    display: "flex", 
-   justifyContent: "center"
+   justifyContent: "center", 
+   background: "blue"
 })

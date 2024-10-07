@@ -1,8 +1,8 @@
 import { useScreenSize } from "../../contexts/ScreenSizeContext"
 import { useTheme } from "@emotion/react"
 import CustomText from "../../customs/components/CustomText"
-import { SectionBox } from "../../styles/style"
 import CustomCarousel from "../../customs/components/CustomCarousel"
+import { SectionBox } from "../../styles/style"
 import tips from "../../data/tips"
 
 const TipSection = () => {

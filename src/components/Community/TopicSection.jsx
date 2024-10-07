@@ -9,7 +9,6 @@ import Grid2 from "@mui/material/Grid2"
 
 // TODO: add selectionBox/categories to the TopicSection
 
-
 const TopicSection = () => {
    const isSmallScreen = useScreenSize(); 
    const theme = useTheme(); 
