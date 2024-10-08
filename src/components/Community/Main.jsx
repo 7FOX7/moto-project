@@ -1,8 +1,8 @@
 import CustomHeading from "../../customs/components/CustomHeading"
 import Content from "../Shared/Content"
-import ProfileSection from "./ProfileSection"
-import TipSection from "./TipSection"
-import TopicSection from "./TopicSection"
+import ProfileSection from "./Profiles/ProfileSection"
+import TipSection from "./Tips/TipSection"
+import TopicSection from "./Topics/TopicSection"
 
 const Main = () => {
    return (

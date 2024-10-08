@@ -1,15 +1,11 @@
-import { useScreenSize } from "../../contexts/ScreenSizeContext";
+import { useScreenSize } from "../../../contexts/ScreenSizeContext";
 import { useTheme } from "@emotion/react";
-import CustomAvatar from "../../customs/components/CustomAvatar"
+import CustomAvatar from "../../../customs/components/CustomAvatar"
 import Grid2 from "@mui/material/Grid2"
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { ProfileContainer } from "../../styles/style";
-import CustomText from "../../customs/components/CustomText";
-import CustomButton from "../../customs/components/CustomButton";
-
-/*
-   TODO: make this a custom component in case you will have more profile lists
-*/
+import { ProfileContainer } from "../../../styles/style";
+import CustomText from "../../../customs/components/CustomText";
+import CustomButton from "../../../customs/components/CustomButton";
 
 const Profiles = ({users}) => {
    const isSmallScreen = useScreenSize(); 
@@ -23,7 +19,7 @@ const Profiles = ({users}) => {
                      size={{xs: 12, sm: 5.9, md: 5.9, lg: 3.9, xl: 3.9}}
                      sx={{
                         background: !isSmallScreen && theme.palette.secondary.dark, 
-                        borderRadius: !isSmallScreen && "15px"
+                        borderRadius: !isSmallScreen ? "15px" : 0 
                      }}
                   >
                      <Grid2

@@ -1,11 +1,11 @@
 import { useTheme } from "@emotion/react";
-import { useScreenSize } from "../../contexts/ScreenSizeContext";
-import CustomText from "../../customs/components/CustomText";
-import { SubSectionBox } from "../../styles/style";
+import { useScreenSize } from "../../../contexts/ScreenSizeContext";
+import { SubSectionBox } from "../../../styles/style";
+import CustomText from "../../../customs/components/CustomText";
 import Grid2 from "@mui/material/Grid2";
 import Box from "@mui/material/Box";
-import topicSubSectionContents from "../../data/topicSubSectionContents"
 import Typography from "@mui/material/Typography";
+import topicSubSectionContents from "../../../data/topicSubSectionContents";
 
 const marginTop = "30px"; 
 const content = topicSubSectionContents[1]; 
