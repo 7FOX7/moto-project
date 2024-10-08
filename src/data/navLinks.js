@@ -29,17 +29,17 @@ const navLinks = [
          {
             id: "communityDiscussions", 
             title: "Discussions", 
-            path: "/discussions"
+            path: "/community"
          }, 
          {
             id: "communityTips", 
             title: "Tips", 
-            path: "/tips"
+            path: "/community"
          }, 
          {
             id: "communityProfiles", 
             title: "Profiles", 
-            path: "/profiles"
+            path: "/community"
          } 
       ]
    }, 
