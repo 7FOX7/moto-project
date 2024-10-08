@@ -1,24 +1,23 @@
 import { Fragment } from "react"
 import { useState } from "react"
-import { useScreenSize } from "../../contexts/ScreenSizeContext"
+import { useScreenSize } from "../../../contexts/ScreenSizeContext"
 import { useTheme } from "@emotion/react"
-import CustomSelect from "../../customs/components/CustomSelect"
-import CustomCarousel from "../../customs/components/CustomCarousel"
-import CustomText from "../../customs/components/CustomText"
-import CustomImage from "../../customs/components/CustomImage"
-import {SectionBox} from "../../styles/style"
-import {ScrollableContainer} from "../../styles/style"
-import {StyledPaper} from "../../styles/style"
+import CustomSelect from "../../../customs/components/CustomSelect"
+import CustomCarousel from "../../../customs/components/CustomCarousel"
+import CustomText from "../../../customs/components/CustomText"
+import CustomImage from "../../../customs/components/CustomImage"
+import {ScrollableContainer} from "../../../styles/style"
+import {StyledPaper} from "../../../styles/style"
 import Box from "@mui/material/Box"
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import Grid2 from "@mui/material/Grid2"
 import Divider from "@mui/material/Divider"
-import events from "../../data/events"
+import events from "../../../data/events"
 import Link from "@mui/material/Link"
-import eventTypes from "../../data/eventTypes"
+import eventTypes from "../../../data/eventTypes"
 
-const EventSection = () => {
+const EventContent = () => {
    const [visibleEvents, setVisibleEvents] = useState(5); 
    const [filteredEvents, setFilteredEvents] = useState([...events])
    const [selectedEventType, setSelectedEventType] = useState('All'); 
@@ -42,84 +41,71 @@ const EventSection = () => {
    }
 
    return (
-      <SectionBox component="section">
-         <Box sx={{
-            display: "flex", 
-            color: theme.palette.common.white, 
-            marginBottom: isSmallScreen && "10px" 
-         }}>
-            <CustomText 
-               text="Events"
-               variant="h2"
-               typography={isSmallScreen ? theme.typography.global.mobile.sectionHeading : theme.typography.global.desktop.sectionHeading}
-            />
-            <Box
-               sx={{
-                  display: "flex", 
-                  alignItems: "center", 
-                  marginLeft: "10px", 
-               }}
-            >
-               {isSmallScreen ? 
+      <>
+         <Grid2
+            container
+            size={12}
+            spacing={{xs: 2, sm: 2, md: 1, lg: 1, xl: 1}}
+         >
+            {isSmallScreen ? 
+               <Grid2
+                  size={12}
+               >
                   <CustomSelect 
                      selectedOption={selectedEventType}
                      options={eventTypes}
                      onChange={handleChange}
                   />
-                  : 
-                  <Grid2 
-                     container
-                     columnSpacing={1.5}
-                     rowSpacing={1} 
-                     size={12}
-                     alignItems="center"
+               </Grid2>
+               : 
+               <Grid2 
+                  container
+                  columns={12}
+                  columnSpacing={1.5}
+                  rowSpacing={1} 
+                  alignItems="center"
+               >
+                  <Link 
+                     component="button"
+                     onClick={() => handleClick("All")}
                   >
-                     <Grid2>
-                        <Link 
-                           component="button"
-                           onClick={() => handleClick("All")}
-                        >
-                           <CustomText
-                              color={selectedEventType === "All" && theme.palette.secondary.main}
-                              text="All"
-                              typography={selectedEventType === "All" && theme.typography.rides.selectedEvent}
-                           />
-                        </Link>
-                     </Grid2>
-                     {eventTypes.map((type) => (
-                        <Grid2 key={type.id}>
-                           <Grid2>
-                              <Link 
-                                 component="button"
-                                 onClick={() => handleClick(type.name)}
-                              >
-                                 <CustomText
-                                    color={selectedEventType === type.name && theme.palette.secondary.main}
-                                    text={type.name}
-                                    typography={selectedEventType === type.name && theme.typography.rides.selectedEvent}
-                                 />
-                              </Link>
-                           </Grid2>
-                        </Grid2>
-                     ))}
-                  </Grid2>
-               }
-            </Box>
-         </Box>
-         {isSmallScreen ? 
-            <CustomCarousel
-               data={filteredEvents}
-               type="event"
-            />
-            : 
-            <ScrollableContainer>
+                     <CustomText
+                        color={selectedEventType === "All" && theme.palette.secondary.main}
+                        text="All"
+                        typography={selectedEventType === "All" && theme.typography.rides.selectedEvent}
+                     />
+                  </Link>
+                  {eventTypes.map((type) => (
+                     <Link
+                        key={type.id} 
+                        component="button"
+                        onClick={() => handleClick(type.name)}
+                     >
+                        <CustomText
+                           color={selectedEventType === type.name && theme.palette.secondary.main}
+                           text={type.name}
+                           typography={selectedEventType === type.name && theme.typography.rides.selectedEvent}
+                        />
+                     </Link>
+                  ))}
+               </Grid2>
+            }
+            {isSmallScreen ? 
+               <CustomCarousel
+                  data={filteredEvents}
+                  type="event"
+               />
+               : 
+               <ScrollableContainer>
                   <List>
                      {filteredEvents.slice(0, visibleEvents).map((event) => {
                         return (
                            <Fragment
                               key={event.id}
                            >
-                              <ListItem>
+                              <ListItem
+                                 disablePadding
+                              >
                                  <Grid2
                                     container
                                     spacing={2}
@@ -127,7 +113,7 @@ const EventSection = () => {
                                  >
                                     <Grid2
                                        container
-                                       size={{md: 12, lg: 12, xl: 6}}
+                                       size={12}
                                     >
                                        <StyledPaper 
                                           sx={{
@@ -165,7 +151,7 @@ const EventSection = () => {
                                     <Grid2
                                        container
                                        rowSpacing={1}
-                                       size={{md: 12, lg: 12, xl: 6}}
+                                       size={12}
                                     >
                                        <Grid2
                                           container
@@ -232,10 +218,11 @@ const EventSection = () => {
                         </Link>
                      }
                   </Box>
-            </ScrollableContainer>
-         }
-      </SectionBox>
+               </ScrollableContainer>
+            }
+         </Grid2>
+      </>
    )
 }
 
-export default EventSection
+export default EventContent

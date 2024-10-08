@@ -1,9 +1,9 @@
 import { useScreenSize } from "../../contexts/ScreenSizeContext"
 import CustomHeading from "../../customs/components/CustomHeading"
 import Content from "../Shared/Content"
-import VideoSection from "./VideoSection"
-import EventSection from "./EventSection"
-import ArtSection from "./ArtSection"
+import VideoSection from "./Videos/VideoSection"
+import EventSection from "./Events/EventSection"
+import ArtSection from "./Arts/ArtSection"
 import Grid2 from "@mui/material/Grid2"
 
 const Main = () => {
@@ -15,14 +15,15 @@ const Main = () => {
          />
          {!isSmallScreen ?
             <Grid2
+               component="section"
                container
-               columnSpacing={{md: 3, lg: 4, xl: 4}} 
+               columns={12}
+               columnSpacing={2} 
                size={12}
-               justifyContent="center"
             >
                <Grid2
                   container
-                  size={3}
+                  size={3.5}
                >
                   <ArtSection />
                </Grid2>
@@ -34,7 +35,7 @@ const Main = () => {
                </Grid2>
                <Grid2
                   container
-                  size={4}
+                  size={3.5}
                >
                   <EventSection />
                </Grid2>
@@ -45,7 +46,7 @@ const Main = () => {
                <EventSection />
                <ArtSection />
             </> 
-         }         
+         }
       </Content>
    )
 }

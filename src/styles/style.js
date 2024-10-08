@@ -144,7 +144,6 @@ export const VideoTextBox = styled(Box)({
 
 export const SectionBox = styled(Box)({
    width: "100%",
-   minWidth: "312px", 
    display: "flex", 
    flexDirection: "column",
    alignItems: "start", 
@@ -162,9 +161,10 @@ export const EventTypeBox = styled(Box)({
 
 export const ScrollableContainer = styled(Box)({ 
    height: "450px", 
+   overflowY: "auto", 
    overflowX: "hidden", 
    backgroundColor: theme.palette.grey[300],
-   paddingBlock: "10px"
+   padding: "12px"
 })
 
 export const EmbeddedVideoContainer = styled(Box)({
