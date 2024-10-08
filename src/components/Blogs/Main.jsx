@@ -1,5 +1,6 @@
 import CustomHeading from "../../customs/components/CustomHeading"
 import Content from "../Shared/Content"
+import SuccessStoriesSection from "./SuccessStories/SuccessStoriesSection"
 
 const Main = () => {
    return (
@@ -7,7 +8,7 @@ const Main = () => {
          <CustomHeading
             text="Blogs"
          /> 
-         
+         <SuccessStoriesSection />
       </Content>
    )
 }
