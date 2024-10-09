@@ -173,7 +173,7 @@ const theme = createTheme({
       blogs: {
          callToAction: {
             standard: {
-               fontSize: "1.5rem", 
+               fontSize: "1.8rem", 
                fontWeight: 500
             }, 
             bigger: {
