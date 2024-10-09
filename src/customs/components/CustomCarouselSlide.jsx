@@ -191,7 +191,7 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
                <CustomText
                   color={theme.palette.secondary.main}
                   text={item.title}
-                  typography={theme.typography.global.mobile.tipTitle}
+                  typography={theme.typography.global.sectionContentTitle}
                />
             </MarginBox>
             <MarginBox>

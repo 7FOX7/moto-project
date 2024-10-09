@@ -8,12 +8,9 @@ const SuccessStoriesContent = () => {
          <Grid2
             container
             columns={12}
-            columnSpacing={2}
-            direction={{xs: "column", md: "row"}}   
+            rowSpacing={8}
+            direction="column"   
             size={12}
-            sx={{
-               background: "green"
-            }}
          >
             {successStories.map((story) => (
                <SuccessStory

@@ -59,6 +59,14 @@ const theme = createTheme({
          boldText: {
             fontWeight: "700"
          }, 
+         sectionContentTitle: {
+            fontSize: "1.5rem", 
+            fontWeight: 600
+         }, 
+         linkText: {
+            fontSize: "1.2rem", 
+            fontWeight: 600
+         },
          mobile: {
             pageHeading: {
                fontSize: "2.5rem"
@@ -69,10 +77,6 @@ const theme = createTheme({
             sectionHeadingSmaller: {
                fontSize: "1.4rem"
             }, 
-            tipTitle: {
-               fontSize: "1.5rem", 
-               fontWeight: 600
-            }
          }, 
          desktop: {
             pageHeading: {
@@ -84,10 +88,6 @@ const theme = createTheme({
             sectionHeadingSmaller: {
                fontSize: "1.9rem"
             }, 
-            tipTitle: {
-               fontSize: "2.5rem", 
-               fontWeight: 600
-            }
          }
       }, 
       home: {
@@ -166,6 +166,18 @@ const theme = createTheme({
             }, 
             subSectionCategory: {
                fontSize: "1.4rem", 
+               fontWeight: 600
+            }
+         }
+      }, 
+      blogs: {
+         callToAction: {
+            standard: {
+               fontSize: "1.5rem", 
+               fontWeight: 500
+            }, 
+            bigger: {
+               fontSize: "3.3rem", 
                fontWeight: 600
             }
          }

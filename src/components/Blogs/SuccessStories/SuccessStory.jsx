@@ -23,14 +23,14 @@ const SuccessStory = (props) => {
       <Grid2
          component="article"
          container
-         direction={isSmallScreen ? "column" : "row"}
-         columns={12}   // you mihgt probably use 'size' prop instead
-         // size={12}   We are temporarily comment this out,to checkc if we can acutally control the size of the chilld grids with the 'columns' prop of the parent Grid2
+         direction={{xs: "column", sm: "row", md: "row", lg: "row", xl: "row"}}
+         columns={12}
+         size={12}
          spacing={2}
       >
          <Grid2
             container
-            size={{xs: 12, sm: 12, md: 4, lg: 4, xl: 4}}
+            size={{xs: 12, sm: 6, md: 5.5, lg: 4.5, xl: 4.5}}
          >
             <CustomImage 
                src={imgSrc}
@@ -42,31 +42,31 @@ const SuccessStory = (props) => {
          <Grid2
             container
             direction="column"
-            size={{xs: 12, sm: 12, md: 6, lg: 6, xl: 6}}
-            sx={{
-               background: "red"
-            }}
-            alignItems="center"    // might probably switch to justifyContent
+            size={{xs: 12, sm: 6, md: 6, lg: 6, xl: 6}}
          >
             <Box
                sx={{
-                  textAlign: "left"
+                  textAlign: isSmallScreen ? "center" : "left", 
                }}
             >
                <CustomText
-                  textAlign="left"
+                  color={theme.palette.secondary.main}
+                  textAlign="inherit"
                   text={title}
+                  typography={theme.typography.global.sectionContentTitle}
                />
                <CustomText
-                  textAlign="left"
+                  textAlign="inherit"
                   text={textContent}
                />
+               <br />
+               <br />
                <CustomLink
                   content={linkText}
                   underline="always"
                   color={theme.palette.secondary.main}
+                  typography={theme.typography.global.linkText}
                   textDecorationColor={theme.palette.secondary.main}
-                  // TODO: add 'typography' property
                />
             </Box>
          </Grid2>
