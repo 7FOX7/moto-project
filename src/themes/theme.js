@@ -60,7 +60,7 @@ const theme = createTheme({
             fontWeight: "700"
          }, 
          sectionContentTitle: {
-            fontSize: "1.5rem", 
+            fontSize: "1.6rem", 
             fontWeight: 600
          }, 
          linkText: {
@@ -181,8 +181,35 @@ const theme = createTheme({
                fontWeight: 600
             }
          }
+      },
+      about: {
+            mobile: {
+               faqSection: {
+                  category: {
+                     fontSize: "1.7rem", 
+                     fontWeight: 600
+                  },
+                  question: {
+                     fontSize: "1.2rem", 
+                     fontWeight: 600
+                  }
+               } 
+            }, 
+            desktop: {
+               faqSection: {
+                  category: {
+                     fontSize: "2rem", 
+                     fontWeight: 600
+                  },
+                  question: {
+                     fontSize: "1.5rem", 
+                     fontWeight: 600
+                  }
+               } 
+            }
+         }
       }
-   }
+   
 })
 
 export default theme
