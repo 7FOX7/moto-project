@@ -65,11 +65,6 @@ const navLinks = [
             title: "FAQ", 
             path: "/faq"
          }, 
-         {
-            id: "aboutSupport", 
-            title: "Support", 
-            path: "/support"
-         }, 
       ]
    }
 ]
