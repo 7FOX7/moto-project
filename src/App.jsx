@@ -16,7 +16,7 @@ const Rides = lazy(() => import('./pages/Rides'))
 const VideoView = lazy(() => import('./pages/VideoView')) 
 const Community = lazy(() => import('./pages/Community'))
 const Blogs = lazy(() => import('./pages/Blogs'))
-
+const About = lazy(() => import('./pages/About'))
 function App() {
   return (
     <ScreenSizeProvider>
@@ -30,6 +30,7 @@ function App() {
             <Route path="video-view/:id" element={<VideoView />} />
             <Route path="community" element={<Community /> } />
             <Route path="blogs" element={<Blogs />} />
+            <Route path="about" element={<About />} />
           </Route>
         </Routes>
       </Suspense>
