@@ -15,12 +15,14 @@ const CustomSection = ({headingText, subHeadingText, content}) => {
                text={headingText}
                variant="h2"
                typography={isSmallScreen ? theme.typography.global.mobile.sectionHeading : theme.typography.global.desktop.sectionHeading}
+               textAlign="left"
             />
             {subHeadingText && 
                <CustomText 
                   text={subHeadingText}
                   variant="h3"
                   typography={isSmallScreen ? theme.typography.global.mobile.sectionHeadingSmaller : theme.typography.global.desktop.sectionHeadingSmaller}
+                  textAlign="left"
                />
             }  
             <br />

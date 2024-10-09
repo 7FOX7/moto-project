@@ -2,22 +2,22 @@ import { memo } from "react"
 import Typography from "@mui/material/Typography"
 
 const CustomText = memo(function CustomText(props) {
-   const {
-      color="primary", 
+   const { 
       text, 
-      secondary=false,  
+      typography, 
       variant="body1", 
-      typography
+      color="primary",
+      textAlign="center",
    } = props
    
    return (
       <>
          <Typography 
-            color={secondary ? "global.secondaryTextContent.main" : color}
+            color={color}
             variant={variant}
             typography={typography}
             sx={{
-               textAlign: "center"
+               textAlign: textAlign,
             }}
          >
             {text}
