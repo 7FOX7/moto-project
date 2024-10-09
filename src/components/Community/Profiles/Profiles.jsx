@@ -55,13 +55,9 @@ const Profiles = ({users}) => {
                            </Grid2>
                         </Grid2>
                      </Grid2>
-                     <Grid2
-                        container
-                     >
-                        <CustomButton 
-                           content="View Profile"
-                        />
-                     </Grid2>
+                     <CustomButton 
+                        content="View Profile"
+                     />
                   </ProfileContainer>
             ))}
          </>
