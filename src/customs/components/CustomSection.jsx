@@ -12,6 +12,7 @@ const CustomSection = ({headingText, subHeadingText, content}) => {
             component="section"
          >
             <CustomText 
+               color={theme.palette.secondary.main}
                text={headingText}
                variant="h2"
                typography={isSmallScreen ? theme.typography.global.mobile.sectionHeading : theme.typography.global.desktop.sectionHeading}
@@ -25,6 +26,7 @@ const CustomSection = ({headingText, subHeadingText, content}) => {
                   textAlign="left"
                />
             }  
+            <br />
             <br />
             {content}
          </SectionBox>
