@@ -1,4 +1,5 @@
 import { useScreenSize } from "../../contexts/ScreenSizeContext"
+import { useTheme } from "@emotion/react"
 import CustomLink from "./CustomLink"
 import CustomLinkIcon from "./CustomLinkIcon"
 import CustomText from "./CustomText"
@@ -13,7 +14,8 @@ import networkLinks from "../../data/networkLinks"
 
 const CustomListContainer = {
    header: () => {
-      const isSmallScreen = useScreenSize()
+      const isSmallScreen = useScreenSize(); 
+      const theme = useTheme(); 
       return (
          <List sx={{
             display: isSmallScreen ? "block" : "flex"
@@ -24,7 +26,7 @@ const CustomListContainer = {
                      <CustomLink 
                         path={navLink.path} 
                         content={navLink.title}
-                        bold={true}    
+                        typography={theme.typography.global.boldText}                            
                      />
                   </ListItem>
                )
@@ -33,6 +35,7 @@ const CustomListContainer = {
       )
    }, 
    footer: () => {
+      const theme = useTheme(); 
       return (
          <Box sx={{
             padding: "20px 25px"
@@ -68,7 +71,7 @@ const CustomListContainer = {
                            <CustomLink 
                               path={navLink.path} 
                               content={navLink.title}
-                              bold={true}    
+                              typography={theme.typography.global.boldText}                              
                            />
                            {navLink.subLinks && navLink.subLinks.length > 0 && (
                               navLink.subLinks.map((subLink) => {
@@ -79,7 +82,7 @@ const CustomListContainer = {
                                        <CustomLink 
                                           path={subLink.path} 
                                           content={subLink.title} 
-                                          secondary={true} 
+                                          color={theme.palette.global.secondaryTextContent.main} 
                                        />
                                     </Grid>
                                  )
@@ -104,8 +107,8 @@ const CustomListContainer = {
                   size={{xs: 12, sm: 12, md: 8, lg: 8, xl: 8}}
                >
                   <CustomText 
+                     color={theme.palette.global.secondaryTextContent}
                      text="Copyright &copy; 2024 7FOX7. All rights reserved." 
-                     secondary={true}
                      variant="body2"
                   />
                </Grid>

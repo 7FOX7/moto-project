@@ -1,6 +1,6 @@
 import { memo } from "react"
 import { useNavigate } from "react-router-dom"
-import { LinkContent } from "../../styles/style"
+import CustomText from "./CustomText"
 import Link from "@mui/material/Link"
 
 const CustomLink = memo(function CustomLink(props) {
@@ -8,29 +8,34 @@ const CustomLink = memo(function CustomLink(props) {
 	const {
 		path, 
 		content, 
-		secondary=false, 
-		bold=false, 
+		typography,
+		textDecorationColor,
+		underline="none", 
+		color="primary", 
 		ariaLabel=""
 	} = props
 
 	const handleClick = () => {
 		navigate(path, {relative: "route"})	
 	}
+
 	return (
 		<>
 			<Link
 				component="button"
 				onClick={handleClick}
-				underline="hover"
-				aria-label={ariaLabel}	
+				underline={underline}
+				aria-label={ariaLabel}
+				sx={{
+					textDecorationColor: textDecorationColor
+				}}	
 			>
 				{typeof(content) === "string" ? 
-					<LinkContent 
-						color={secondary ? "global.secondaryTextContent.main" : "primary"}
-						typography={bold && "global.boldText"}
-					>
-						{content}
-					</LinkContent>
+					<CustomText 
+						color={color}
+						text={content}
+						typography={typography}
+					/>
 					:
 					content
 				}

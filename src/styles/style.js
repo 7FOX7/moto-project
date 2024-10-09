@@ -30,10 +30,6 @@ export const FooterSection = styled(Box)({
    color: theme.palette.primary.main
 })
 
-export const LinkContent = styled(Typography)({
-   textWrap: "nowrap", 
-})
-
 export const OnboardingBox = styled(Box)({
    width: "100%", 
    height: "100%", 
