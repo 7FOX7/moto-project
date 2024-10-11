@@ -37,6 +37,9 @@ const FaqContent = () => {
                   container
                   size={{xs: 12, sm: 12, md: 12, lg: 10, xl: 8}}
                   justifyContent="center"
+                  sx={{
+                     marginBottom: "65px"
+                  }}
                >
                   <FaqCategoryBox>
                      <FaqCategoryLine />
