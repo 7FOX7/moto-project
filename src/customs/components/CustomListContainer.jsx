@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import { useScreenSize } from "../../contexts/ScreenSizeContext"
 import { useTheme } from "@emotion/react"
 import CustomLink from "./CustomLink"
@@ -16,6 +17,7 @@ const CustomListContainer = {
    header: () => {
       const isSmallScreen = useScreenSize(); 
       const theme = useTheme(); 
+      const navigate = useNavigate(); 
       return (
          <List sx={{
             display: isSmallScreen ? "block" : "flex"
@@ -24,7 +26,7 @@ const CustomListContainer = {
                return (
                   <ListItem key={navLink.id}>
                      <CustomLink 
-                        path={navLink.path} 
+                        onClick={() => navigate(navLink.path, {relative: "route"})}
                         content={navLink.title}
                         typography={theme.typography.global.boldText}                            
                      />
@@ -35,7 +37,8 @@ const CustomListContainer = {
       )
    }, 
    footer: () => {
-      const theme = useTheme(); 
+      const theme = useTheme();
+      const navigate = useNavigate(); 
       return (
          <Box sx={{
             padding: "20px 25px"
@@ -69,7 +72,7 @@ const CustomListContainer = {
                            size={{xs: 12, sm: 6, md: 3, lg: 3, xl: 3}}
                         >
                            <CustomLink 
-                              path={navLink.path} 
+                              onClick={() => navigate(navLink.path, {relative: "route"})}
                               content={navLink.title}
                               typography={theme.typography.global.boldText}                              
                            />
@@ -80,7 +83,7 @@ const CustomListContainer = {
                                        key={subLink.id}
                                     >
                                        <CustomLink 
-                                          path={subLink.path} 
+                                          onClick={() => navigate(subLink.path, {relative: "route"})} 
                                           content={subLink.title} 
                                           color={theme.palette.global.secondaryTextContent.main} 
                                        />
@@ -107,7 +110,7 @@ const CustomListContainer = {
                   size={{xs: 12, sm: 12, md: 8, lg: 8, xl: 8}}
                >
                   <CustomText 
-                     color={theme.palette.global.secondaryTextContent}
+                     color={theme.palette.global.secondaryTextContent}     // TODO: this will throw a warning about invalid 'color' prop
                      text="Copyright &copy; 2024 7FOX7. All rights reserved." 
                      variant="body2"
                   />

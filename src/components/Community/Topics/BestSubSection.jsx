@@ -3,6 +3,7 @@ import { useTheme } from "@emotion/react";
 import { useScreenSize } from "../../../contexts/ScreenSizeContext";
 import CustomText from "../../../customs/components/CustomText";
 import CustomSelect from "../../../customs/components/CustomSelect";
+import CustomLink from "../../../customs/components/CustomLink";
 import { SubSectionBox } from "../../../styles/style";
 import Grid2 from "@mui/material/Grid2";
 import Box from "@mui/material/Box";
@@ -10,6 +11,7 @@ import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import topicSubSectionContents from "../../../data/topicSubSectionContents"; 
 import subSectionCategories from "../../../data/subSectionCategories";
+
 
 const marginTop = "30px"
 const content = topicSubSectionContents[2]; 
@@ -68,20 +70,16 @@ const BestSubSection = () => {
                   columnSpacing={2}
                >
                   {subSectionCategories.map((category) => (
-                     <Link 
+                     <CustomLink 
                         key={category.id}
-                        component="button"
+                        content={category.name}
+                        typography={isSmallScreen ? theme.typography.community.mobile.subSectionCategory : theme.typography.community.desktop.subSectionCategory}
+                        textDecorationColor={theme.palette.secondary.main}
                         onClick={() => handleClick(category.name)}
-                        sx={{
-                           textDecorationColor: theme.palette.secondary.main
-                        }}
-                     >
-                        <CustomText
-                           color={theme.palette.secondary.main}
-                           text={category.name}
-                           typography={isSmallScreen ? theme.typography.community.mobile.subSectionCategory : theme.typography.community.desktop.subSectionCategory}
-                        />
-                     </Link>
+                        underline="always"
+                        color={theme.palette.secondary.main}
+                        ariaLabel="category"
+                     />
                   ))}
                </Grid2>
             }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useScreenSize } from "../../contexts/ScreenSizeContext";
 import { HeaderSection } from "../../styles/style";
 import CustomIconButton from "../../customs/components/CustomIconButton"
@@ -14,8 +15,9 @@ const anchor = "right"
 const List = CustomListContainer.header
 
 const Header = () => {
-   const isSmallScreen = useScreenSize()
-   const [open, setOpen] = useState(false)
+   const [open, setOpen] = useState(false); 
+   const navigate = useNavigate(); 
+   const isSmallScreen = useScreenSize();
 
    const content = 
       <CustomImage 
@@ -38,7 +40,7 @@ const Header = () => {
          <HeaderSection>
             <Toolbar>
                <CustomLink 
-                  path="/"
+                  onClick={() => navigate('/', {relative: "route"})}
                   content={content}
                   ariaLabel="Navigate to Home Page"
                />            
