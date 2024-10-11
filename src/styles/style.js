@@ -178,7 +178,7 @@ export const SubSectionBox = styled(Grid2)({
 })
 
 export const SearchSectionContainer = styled(Grid2)({
-   
+   width: "100%"
 })
 
 export const SearchBarContainer = styled(Box)({
@@ -190,6 +190,7 @@ export const SearchBar = styled(TextField)({
 })
 
 export const SearchListContainer = styled(Grid2)({
+   width: "100%", 
    height: "400px", 
    marginTop: "20px", 
    overflowY: "auto"

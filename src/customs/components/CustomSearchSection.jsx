@@ -21,7 +21,6 @@ const CustomSearchSection = ({dataList, renderItems, filterFunc, placeholder}) =
       <SearchSectionContainer
          container
          columns={12}
-         size={{xs: 12, sm: 12, md: 8, lg: 8, xl: 8}}
          justifyContent="center"
       >
          <Grid2
