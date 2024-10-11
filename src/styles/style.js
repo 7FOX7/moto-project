@@ -223,3 +223,17 @@ export const MarginBox = styled(Box)({
    display: "flex", 
    justifyContent: "center", 
 })
+
+export const FaqCategoryBox = styled(Box)({
+   width: "100%", 
+   display: "flex", 
+   justifyContent: "center", 
+   alignItems: "center"
+})
+
+export const FaqCategoryLine = styled(Box)({
+   height: "1.5px",  
+   width: "25%",
+   marginInline: "10px", 
+   background: theme.palette.common.white, 
+})

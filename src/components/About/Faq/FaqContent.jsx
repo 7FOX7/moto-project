@@ -3,6 +3,8 @@ import { useScreenSize } from "../../../contexts/ScreenSizeContext"
 import { useTheme } from "@emotion/react"
 import CustomAccordion from "../../../customs/components/CustomAccordion"
 import CustomText from "../../../customs/components/CustomText"
+import { FaqCategoryBox } from "../../../styles/style"
+import { FaqCategoryLine } from "../../../styles/style"
 import faqs from "../../../data/faqs"
 import Grid2 from "@mui/material/Grid2"
 
@@ -12,9 +14,8 @@ const FaqContent = () => {
    const theme = useTheme(); 
    
    function handleChange(id) {
-      setExpanded(id)
+      expanded === id ? setExpanded(null) : setExpanded(id)
    }
-
 
    return (
       <>
@@ -25,9 +26,7 @@ const FaqContent = () => {
             columnSpacing={4}
             direction="column"
             size={12}
-            sx={{
-               background: "red"
-            }}
+            alignItems="center"
          >
             {faqs.map((faq) => {
                const subFaqs = faq.faqs; 
@@ -36,21 +35,25 @@ const FaqContent = () => {
                   key={faq.id}
                   component="article"
                   container
-                  size={{xs: 12, sm: 12, md: 12, lg: 8, xl: 6}}
-                  sx={{
-                     background: "green"
-                  }}
+                  size={{xs: 12, sm: 12, md: 12, lg: 10, xl: 8}}
+                  justifyContent="center"
                >
-                  <CustomText
-                     color={theme.palette.common.black}
-                     text={faq.category}
-                  />
+                  <FaqCategoryBox>
+                     <FaqCategoryLine />
+                     <CustomText
+                        color={theme.palette.common.white}
+                        text={faq.category}
+                        typography={isSmallScreen ? theme.typography.about.mobile.faqSection.category : theme.typography.about.desktop.faqSection.category}
+                     />
+                     <FaqCategoryLine />
+                  </FaqCategoryBox>
                   {subFaqs.map((faq) => (
                      <CustomAccordion
                         key={faq.id}
-                        expanded={expanded == faq.id}
-                        header={faq.question}
-                        content={faq.answer}
+                        expanded={expanded === faq.id}
+                        header={`Q: ${faq.question}`}
+                        content={`A: ${faq.answer}`}
+                        background="rgba(0, 0, 0, 0.4)"
                         onChange={() => handleChange(faq.id)}
                      />
                   ))}
