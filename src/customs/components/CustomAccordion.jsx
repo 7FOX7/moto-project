@@ -1,31 +1,40 @@
+import { useScreenSize } from "../../contexts/ScreenSizeContext";
+import { useTheme } from "@emotion/react";
 import CustomText from "./CustomText"
-import Accordion from "@mui/material/Accordion"
+import { StyledAccordion } from "../../styles/style";
 import AccordionSummary from "@mui/material/AccordionSummary"
 import AccordionDetails from "@mui/material/AccordionDetails"
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-const CustomAccordion = ({expanded, header, content, onChange}) => {
+const CustomAccordion = ({expanded, header, content, background, onChange}) => {
+   const isSmallScreen = useScreenSize(); 
+   const theme = useTheme(); 
    return (
       <>
-         <Accordion
+         <StyledAccordion
             expanded={expanded}
             onChange={onChange}
+            sx={{
+               background: background
+            }}
          >
             <AccordionSummary
-               expandIcon={<KeyboardArrowDownIcon />}
+               expandIcon={<KeyboardArrowDownIcon color="primary"/>}
             >
                <CustomText
-                  color="black"        // use theme if using black color
+                  color={theme.palette.secondary.main}        // use theme if using black color
                   text={header}
+                  typography={isSmallScreen ? theme.typography.global.mobile.accordionHeader : theme.typography.global.desktop.accordionHeader}
                />
             </AccordionSummary>
             <AccordionDetails>
                <CustomText
-                  color="black"         // same goes here
                   text={content}
+                  textAlign="left"
+                  typography={isSmallScreen ? theme.typography.global.mobile.accordionContent : theme.typography.global.desktop.accordionContent}
                />
             </AccordionDetails>
-         </Accordion>
+         </StyledAccordion>
       </>
    )
 }

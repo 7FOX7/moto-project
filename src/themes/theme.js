@@ -25,7 +25,7 @@ const theme = createTheme({
                borderRadius: "10px", 
             }
          }
-      }
+      }, 
    }, 
    palette: {
       primary: {
@@ -77,6 +77,13 @@ const theme = createTheme({
             sectionHeadingSmaller: {
                fontSize: "1.4rem"
             }, 
+            accordionHeader: {
+               fontSize: "1.5rem", 
+               fontWeight: 600
+            }, 
+            accordionContent: {
+               fontSize: "1.2rem"
+            }
          }, 
          desktop: {
             pageHeading: {
@@ -88,6 +95,13 @@ const theme = createTheme({
             sectionHeadingSmaller: {
                fontSize: "1.9rem"
             }, 
+            accordionHeader: {
+               fontSize: "1.8rem", 
+               fontWeight: 600
+            }, 
+            accordionContent: {
+               fontSize: "1.2rem"
+            }
          }
       }, 
       home: {
