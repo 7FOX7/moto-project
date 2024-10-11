@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { useScreenSize } from "../../../contexts/ScreenSizeContext"
 import { useTheme } from "@emotion/react"
 import CustomAccordion from "../../../customs/components/CustomAccordion"
@@ -6,8 +7,15 @@ import faqs from "../../../data/faqs"
 import Grid2 from "@mui/material/Grid2"
 
 const FaqContent = () => {
-   const isSmallScreen = useScreenSize(); 
+   const [expanded, setExpanded] = useState(null); 
+   const isSmallScreen = useScreenSize();
    const theme = useTheme(); 
+   
+   function handleChange(id) {
+      setExpanded(id)
+   }
+
+
    return (
       <>
          <Grid2
@@ -21,8 +29,11 @@ const FaqContent = () => {
                background: "red"
             }}
          >
-            {faqs.map((faq) => (
+            {faqs.map((faq) => {
+               const subFaqs = faq.faqs; 
+               return (
                <Grid2
+                  key={faq.id}
                   component="article"
                   container
                   size={{xs: 12, sm: 12, md: 12, lg: 8, xl: 6}}
@@ -31,14 +42,28 @@ const FaqContent = () => {
                   }}
                >
                   <CustomText
+                     color={theme.palette.common.black}
                      text={faq.category}
-                     typography={isSmallScreen ? theme.typography.about.mobile.faqSection.category : theme.typography.about.mobile.faqSection.category }
                   />
+                  {subFaqs.map((faq) => (
+                     <CustomAccordion
+                        key={faq.id}
+                        expanded={expanded == faq.id}
+                        header={faq.question}
+                        content={faq.answer}
+                        onChange={() => handleChange(faq.id)}
+                     />
+                  ))}
                </Grid2>
-            ))}
+               )
+            })}
          </Grid2>
       </>
    )
 }
 
 export default FaqContent
+
+/*
+   
+*/

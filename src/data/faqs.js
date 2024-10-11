@@ -27,42 +27,42 @@ const faqs = [
 		]
 	},
 	{
-	id: 'faqEvents',
-	category: 'Events',
-	faqs: [
-		{
-			id: 'faqEvents1', 
-			question: 'What types of events do you organize?',
-			answer: 'We have a variety of events, including camping rides, workshops, and social gatherings.'
-		},
-		{
-			id: 'faqEvents2', 
-			question: 'How do I register for an event?',
-			answer: 'You can register for events on our website or contact our event team for more information.'
-		}
-	]
+		id: 'faqEvents',
+		category: 'Events',
+		faqs: [
+			{
+				id: 'faqEvents1', 
+				question: 'What types of events do you organize?',
+				answer: 'We have a variety of events, including camping rides, workshops, and social gatherings.'
+			},
+			{
+				id: 'faqEvents2', 
+				question: 'How do I register for an event?',
+				answer: 'You can register for events on our website or contact our event team for more information.'
+			}
+		]
 	},
 	{
-	id: 'faqDelivery',
-	category: 'Delivery',
-	faqs: [
-		{
-			id: 'faqDelivery1', 
-			question: 'Do you offer delivery services?',
-			answer: 'Yes, delivery is available for online purchases. Fees and times vary based on location.'
-		}
-	]
+		id: 'faqDelivery',
+		category: 'Delivery',
+		faqs: [
+			{
+				id: 'faqDelivery1', 
+				question: 'Do you offer delivery services?',
+				answer: 'Yes, delivery is available for online purchases. Fees and times vary based on location.'
+			}
+		]
 	}, 
 	{
-	id: 'faqSupport',
-	category: 'Support',
-	faqs: [
-		{
-			id: 'faqSupport1', 
-			question: 'What should I do if I encounter a problem with my motorcycle?',
-			answer: 'Contact our support team immediately. We offer assistance and can schedule a service appointment if needed.'
-		}
-		]
+		id: 'faqSupport',
+		category: 'Support',
+		faqs: [
+			{
+				id: 'faqSupport1', 
+				question: 'What should I do if I encounter a problem with my motorcycle?',
+				answer: 'Contact our support team immediately. We offer assistance and can schedule a service appointment if needed.'
+			}
+		]	
 	}, 
 	{
 		id: 'faqContactUs',
@@ -78,21 +78,3 @@ const faqs = [
 ]
 
 export default faqs
-
-/*
-	sample component strcuture for the 'FAQ' section: 
-
-	<FaqSection>
-		
-	</FaqSection>
-	
-	const FaqContent = () => {
-		return (
-			<Grid2 
-				container 
-			>
-
-			</Grid2>
-		)	
-	}
-*/

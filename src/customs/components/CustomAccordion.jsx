@@ -2,12 +2,18 @@ import CustomText from "./CustomText"
 import Accordion from "@mui/material/Accordion"
 import AccordionSummary from "@mui/material/AccordionSummary"
 import AccordionDetails from "@mui/material/AccordionDetails"
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-const CustomAccordion = ({header, content}) => {
+const CustomAccordion = ({expanded, header, content, onChange}) => {
    return (
       <>
-         <Accordion>
-            <AccordionSummary>
+         <Accordion
+            expanded={expanded}
+            onChange={onChange}
+         >
+            <AccordionSummary
+               expandIcon={<KeyboardArrowDownIcon />}
+            >
                <CustomText
                   color="black"        // use theme if using black color
                   text={header}
@@ -16,7 +22,7 @@ const CustomAccordion = ({header, content}) => {
             <AccordionDetails>
                <CustomText
                   color="black"         // same goes here
-                  text="Still something to prove"
+                  text={content}
                />
             </AccordionDetails>
          </Accordion>
