@@ -1,9 +1,12 @@
 import { StyledButton } from "../../styles/style"
 
-const CustomButton = ({content, style}) => {
+const CustomButton = ({content, style, onClick}) => {
    return (
       <>
-         <StyledButton sx={style}>
+         <StyledButton 
+            sx={style}
+            onClick={onClick} 
+         >
             {content}
          </StyledButton>
       </>
