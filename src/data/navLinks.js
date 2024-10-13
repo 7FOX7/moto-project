@@ -51,7 +51,7 @@ const navLinks = [
          {
             id: "blogsSuccessStories", 
             title: "Success Stories", 
-            path: "/success-stories"
+            path: "/blogs"
          } 
       ]
    }, 
@@ -63,33 +63,10 @@ const navLinks = [
          {
             id: "aboutFAQ", 
             title: "FAQ", 
-            path: "/faq"
+            path: "/about"
          }, 
       ]
    }
 ]
 
 export default navLinks
-
-/*
-   ok, lets assume, I have a 'Community' page which should contain three main sections: Profiles, Topics, and Tips; 
-
-   1. Profiles section is implemented like this: 
-
-   PROFILE: 
-   1. contains a search bar to search for a user; 
-   2. a container inside of which the results will be shown 
-
-   TOPICS: 
-   1. This will have a select box, so the user could select the topic and the results will be shown in the container
-   2. Container, inside of which the topic results (filtered by the option selected will be displayed)
-
-   TIPS: 
-   1. Not really sure, how I can implement this section. Should that just be the list of all tips (without option to filter)
-   2. What are good practices for implementing the 'Tips' section. 
-   
-   So, my questions are:
-   1. Not really sure, how I can implement this section. Should that just be the list of all tips (without option to filter)
-   2. What are good practices for implementing the 'Tips' section. 
-    
-*/
