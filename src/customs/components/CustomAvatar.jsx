@@ -1,11 +1,13 @@
 import Avatar from "@mui/material/Avatar"
 
-const CustomAvatar = ({content}) => {
+const CustomAvatar = ({content, width="40px", height="40px"}) => {
    return (
       <>
          <Avatar
-            width="40px"
-            height="40px"
+            sx={{
+               width: width, 
+               height: height
+            }}
          >
             {content}
          </Avatar>
