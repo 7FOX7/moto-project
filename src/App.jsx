@@ -16,7 +16,7 @@ const Community = lazy(() => import('./pages/Community'))
 const Profile = lazy(() => import('./pages/Profile'))
 const Blogs = lazy(() => import('./pages/Blogs'))
 const About = lazy(() => import('./pages/About'))
-
+const StoryView = lazy(() => import('./pages/StoryView'))
 
 function App() {
   return (
@@ -34,6 +34,7 @@ function App() {
               <Route path="profile/:username" element={<Profile /> } />
               <Route path="blogs" element={<Blogs />} />
               <Route path="about" element={<About />} />
+              <Route path="blogs/:id" element={<StoryView />} />
             </Route>
           </Routes>
         </Suspense>
