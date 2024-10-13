@@ -1,3 +1,4 @@
+import { useSelectedStory } from "../../../contexts/SelectedStoryContext";
 import { useScreenSize } from "../../../contexts/ScreenSizeContext";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "@emotion/react";
@@ -9,7 +10,8 @@ import Box from "@mui/material/Box";
 
 const imgHeight = "300px"; 
 
-const SuccessStory = (props) => {
+const SuccessStory = ({story}) => {
+   const {setSelectedStory} = useSelectedStory(); 
    const isSmallScreen = useScreenSize();
    const navigate = useNavigate(); 
    const theme = useTheme(); 
@@ -20,8 +22,13 @@ const SuccessStory = (props) => {
       imgAlt, 
       textContent, 
       linkText, 
-   } = props.story
+   } = story
    
+   function handleClick() {
+      navigate(`${id}`, {relative: "path"})
+      setSelectedStory(story)
+   }
+
    return (
       <Grid2
          component="article"
@@ -60,7 +67,7 @@ const SuccessStory = (props) => {
                />
                <CustomText
                   textAlign="inherit"
-                  text={textContent}
+                  text={`${textContent.substring(0, 200)}...`}
                />
                <br />
                <br />
@@ -70,8 +77,7 @@ const SuccessStory = (props) => {
                   color={theme.palette.secondary.main}
                   typography={theme.typography.global.linkText}
                   textDecorationColor={theme.palette.secondary.main}
-                  // add click event here
-                  onClick={() => navigate(`${id}`, {relative: "path"})}
+                  onClick={handleClick}
                />
             </Box>
          </Grid2>
