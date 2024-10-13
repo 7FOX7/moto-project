@@ -7,6 +7,7 @@ const TipSection = () => {
          headingText="Tips"
          subHeadingText="See what folks find useful"
          content={<TipContent />}
+         marginTop="40px"
       />
    ) 
 }

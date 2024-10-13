@@ -11,6 +11,7 @@ const CustomHeading = ({text}) => {
       <Box
          sx={{
             marginTop: "60px",
+            marginBottom: "30px", 
             marginRight: "100%" 
          }}
       >

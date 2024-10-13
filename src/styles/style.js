@@ -148,7 +148,6 @@ export const SectionBox = styled(Box)({
    display: "flex", 
    flexDirection: "column",
    alignItems: "start", 
-   marginTop: "50px",
 })
 
 export const EventTypeBox = styled(Box)({
@@ -179,10 +178,10 @@ export const EmbeddedVideoContainer = styled(Box)({
 export const SubSectionBox = styled(Grid2)({
    height: "100%", 
    alignItems: "start",  
-   marginTop: "60px", 
+   marginTop: "15px", 
 })
 
-export const SearchSectionContainer = styled(Grid2)({
+export const SearchSectionContainer = styled(Grid2)({ 
    width: "100%"
 })
 

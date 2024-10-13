@@ -3,13 +3,16 @@ import { useTheme } from "@emotion/react"
 import { SectionBox } from "../../styles/style"
 import CustomText from "./CustomText"
 
-const CustomSection = ({headingText, subHeadingText, content}) => {
+const CustomSection = ({headingText, subHeadingText, content, marginTop}) => {
    const isSmallScreen = useScreenSize(); 
    const theme = useTheme(); 
    return (
       <>
          <SectionBox
             component="section"
+            sx={{
+               marginTop: marginTop
+            }}
          >
             <CustomText 
                color={theme.palette.secondary.main}
@@ -26,8 +29,6 @@ const CustomSection = ({headingText, subHeadingText, content}) => {
                   textAlign="left"
                />
             }  
-            <br />
-            <br />
             {content}
          </SectionBox>
       </>

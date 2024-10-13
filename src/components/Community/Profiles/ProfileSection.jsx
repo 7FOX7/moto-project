@@ -7,6 +7,7 @@ const ProfileSection = () => {
          headingText="Profiles"
          subHeadingText="Chat, Connect, Make Friends"
          content={<ProfileContent />}
+         marginTop="40px"
       />
    ) 
 }
