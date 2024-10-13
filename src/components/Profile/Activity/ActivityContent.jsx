@@ -34,6 +34,7 @@ const ActivityContent = () => {
          <CustomContentContainer
             showMargin={isSmallScreen ? false : true}
             height={isSmallScreen ? "100%" : "500px"}
+            showTransBox={isSmallScreen ? false : true}
             content={
                <>
                   <Grid2

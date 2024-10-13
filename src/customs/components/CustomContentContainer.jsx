@@ -3,7 +3,7 @@ import { SemiTransparentBox } from "../../styles/style"
 import CustomText from "./CustomText"
 import Grid2 from "@mui/material/Grid2"
 
-const CustomContentContainer = ({showMargin, height, content, typography}) => {
+const CustomContentContainer = ({showMargin, showTransBox, height, content, typography}) => {
    const theme = useTheme(); 
    return (
       <>
@@ -17,11 +17,13 @@ const CustomContentContainer = ({showMargin, height, content, typography}) => {
                height: height ? height : "100%"
             }}
          >
-            <SemiTransparentBox
-               sx={{
-                  background: theme.palette.secondary.main
-               }}
-            />
+            {showTransBox && 
+               <SemiTransparentBox
+                  sx={{
+                     background: theme.palette.secondary.main
+                  }}
+               />
+            }
             <Grid2
                container
                size={12}

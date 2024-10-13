@@ -13,6 +13,7 @@ const BioContent = () => {
       <>
          <CustomContentContainer
             showMargin={isSmallScreen ? false : true}
+            showTransBox={isSmallScreen ? false : true}
             content={bio}
             typography={isSmallScreen ? theme.typography.profile.mobile.bioText : theme.typography.profile.desktop.bioText}
          />
@@ -21,16 +22,3 @@ const BioContent = () => {
 }
 
 export default BioContent
-
-/*
-   <CustomContentContainer
-      showMargin={true}
-      content={
-         <CustomText
-            text={bio}
-            textAlign="left"
-            typography={isSmallScreen ? theme.typography.profile.mobile.bioText : theme.typography.profile.desktop.bioText}
-         />
-      } 
-   />
-*/
