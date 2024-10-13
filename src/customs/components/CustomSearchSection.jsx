@@ -18,31 +18,33 @@ const CustomSearchSection = ({dataList, renderItems, filterFunc, placeholder}) =
    }
 
    return (
-      <SearchSectionContainer
-         container
-         columns={12}
-         justifyContent="center"
-      >
-         <Grid2
+      <>   
+         <SearchSectionContainer
             container
-            size={{xs: 10, sm: 8, md: 8, lg: 6, xl: 6}}
+            columns={12}
+            justifyContent="center"
          >
-            <CustomSearchBar 
-               placeholder={placeholder}
-               onChange={handleChange}    
-            />
-         </Grid2>
-         <SearchListContainer
-            container
-            size={12}
-            spacing={1}
-            sx={{
-               background: isSmallScreen && theme.palette.secondary.dark
-            }}
-         >
-            {renderItems(filteredList)}
-         </SearchListContainer>
-      </SearchSectionContainer>
+            <Grid2
+               container
+               size={{xs: 10, sm: 8, md: 8, lg: 6, xl: 6}}
+            >
+               <CustomSearchBar 
+                  placeholder={placeholder}
+                  onChange={handleChange}    
+               />
+            </Grid2>
+            <SearchListContainer
+               container
+               size={12}
+               spacing={1}
+               sx={{
+                  background: isSmallScreen && theme.palette.secondary.dark
+               }}
+            >
+               {renderItems(filteredList)}
+            </SearchListContainer>
+         </SearchSectionContainer>
+      </>
    )   
 }
 
