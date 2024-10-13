@@ -1,4 +1,5 @@
 import { useScreenSize } from "../../../contexts/ScreenSizeContext";
+import { useNavigate } from "react-router-dom";
 import { useTheme } from "@emotion/react";
 import CustomImage from "../../../customs/components/CustomImage";
 import CustomLink from "../../../customs/components/CustomLink";
@@ -10,8 +11,10 @@ const imgHeight = "300px";
 
 const SuccessStory = (props) => {
    const isSmallScreen = useScreenSize();
+   const navigate = useNavigate(); 
    const theme = useTheme(); 
    const {
+      id, 
       title, 
       imgSrc, 
       imgAlt, 
@@ -68,7 +71,7 @@ const SuccessStory = (props) => {
                   typography={theme.typography.global.linkText}
                   textDecorationColor={theme.palette.secondary.main}
                   // add click event here
-                  onClick={() => console.log('you clicked on the button')}
+                  onClick={() => navigate(`${id}`, {relative: "path"})}
                />
             </Box>
          </Grid2>
