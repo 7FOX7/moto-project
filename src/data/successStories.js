@@ -20,7 +20,7 @@ const successStories = [
       publishDate: "2024-09-24", 
    }, 
    {
-      id: "successStory1", 
+      id: "successStory3", 
       title: "7FOX7 went from Zero to Hero", 
       imgSrc: "/images/art-cartoon-rider.webp", 
       imgAlt: "Some Alt", 
