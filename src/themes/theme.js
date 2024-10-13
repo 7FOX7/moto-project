@@ -83,6 +83,10 @@ const theme = createTheme({
             }, 
             accordionContent: {
                fontSize: "1.2rem"
+            }, 
+            contentTitle: {
+               fontSize: "1.8rem", 
+               fontWeight: 600
             }
          }, 
          desktop: {
@@ -101,6 +105,10 @@ const theme = createTheme({
             }, 
             accordionContent: {
                fontSize: "1.2rem"
+            }, 
+            contentTitle: {
+               fontSize: "2rem", 
+               fontWeight: 600
             }
          }
       }, 
@@ -197,68 +205,68 @@ const theme = createTheme({
          }
       },
       about: {
-            mobile: {
-               faqSection: {
-                  category: {
-                     fontSize: "1.7rem", 
-                     fontWeight: 600
-                  },
-                  question: {
-                     fontSize: "1.2rem", 
-                     fontWeight: 600
-                  }
-               } 
-            }, 
-            desktop: {
-               faqSection: {
-                  category: {
-                     fontSize: "2rem", 
-                     fontWeight: 600
-                  },
-                  question: {
-                     fontSize: "1.5rem", 
-                     fontWeight: 600
-                  }
-               } 
-            }
-         }, 
-         profile: {
-            mobile: {
-               generalContentUsername: {
-                  fontSize: "1.5rem", 
-                  fontWeight: 600
-               }, 
-               interestListValue: {
+         mobile: {
+            faqSection: {
+               category: {
                   fontSize: "1.7rem", 
                   fontWeight: 600
-               }, 
-               bioText: {
-                  fontSize: "1.2rem"
-               }, 
-               activityType: {
+               },
+               question: {
+                  fontSize: "1.2rem", 
+                  fontWeight: 600
+               }
+            } 
+         }, 
+         desktop: {
+            faqSection: {
+               category: {
+                  fontSize: "2rem", 
+                  fontWeight: 600
+               },
+               question: {
                   fontSize: "1.5rem", 
                   fontWeight: 600
                }
+            } 
+         }
+      }, 
+      profile: {
+         mobile: {
+            generalContentUsername: {
+               fontSize: "1.5rem", 
+               fontWeight: 600
             }, 
-            desktop: {
-               generalContentUsername: {
-                  fontSize: "2rem", 
-                  fontWeight: 600
-               }, 
-               interestListValue: {
-                  fontSize: "2rem", 
-                  fontWeight: 600
-               }, 
-               bioText: {
-                  fontSize: "1.4rem"
-               }, 
-               activityType: {
-                  fontSize: "2rem", 
-                  fontWeight: 600
-               }
+            interestListValue: {
+               fontSize: "1.7rem", 
+               fontWeight: 600
+            }, 
+            bioText: {
+               fontSize: "1.2rem"
+            }, 
+            activityType: {
+               fontSize: "1.5rem", 
+               fontWeight: 600
+            }
+         }, 
+         desktop: {
+            generalContentUsername: {
+               fontSize: "2rem", 
+               fontWeight: 600
+            }, 
+            interestListValue: {
+               fontSize: "2rem", 
+               fontWeight: 600
+            }, 
+            bioText: {
+               fontSize: "1.4rem"
+            }, 
+            activityType: {
+               fontSize: "2rem", 
+               fontWeight: 600
             }
          }
       }
+   }
    
 })
 
