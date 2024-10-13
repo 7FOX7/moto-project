@@ -221,10 +221,3 @@ const useHomePageAnimation = (contentRef, isSmallScreen) => {
 }
 
 export default useHomePageAnimation
-
-/*
-   Main (Home) {
-      <Content 
-      />
-   }
-*/

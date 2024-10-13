@@ -114,21 +114,27 @@ const theme = createTheme({
       }, 
       home: {
          mobile: {
+            commonText: {
+               fontSize: "1.3rem"
+            }, 
             contentTextPrimary: {
                fontSize: "2.5rem"
             }, 
             contentTextSecondary: {
-               fontSize: "1.1rem"
+               fontSize: "1.3rem"
             }, 
             reviewPrimaryText: {
                fontSize: "1.8rem",
                fontWeight: 600
             }, 
             reviewSecondaryText: {
-               fontSize: "0.9rem"
-            }
+               fontSize: "1rem"
+            }, 
          }, 
          desktop: {
+            commonText: {
+               fontSize: "1.4rem"
+            }, 
             contentTextPrimary: {
                fontSize: "4rem"
             }, 
@@ -140,7 +146,7 @@ const theme = createTheme({
                fontWeight: 600
             }, 
             reviewSecondaryText: {
-               fontSize: "1rem"
+               fontSize: "1.1rem"
             }
          }
       }, 

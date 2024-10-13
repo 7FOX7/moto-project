@@ -131,7 +131,7 @@ export const BorderLinearProgress = styled(LinearProgress)({
 export const VideoContainer = styled(Box)({
    display: "flex", 
    alignItems: "center",
-   scrollMarginTop: "95px"
+   scrollMarginTop: "80px"
 })
 
 export const StyledPaper = styled(Paper)({
