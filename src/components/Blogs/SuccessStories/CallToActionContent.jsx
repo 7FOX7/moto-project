@@ -5,7 +5,6 @@ import CustomText from "../../../customs/components/CustomText"
 import CustomButton from "../../../customs/components/CustomButton"
 import Grid2 from "@mui/material/Grid2"
 
-
 const imageData = {
    imgSrc: "/images/art-idle-biker.jpg", 
    imgAlt: "Default Alt"
@@ -16,6 +15,8 @@ const CallToActionContent = () => {
 
    const style = useMemo(() => {
       const styling = {
+         fontSize: "1.1rem",
+         fontWeight: 600,  
          background: theme.palette.secondary.main, 
          padding: "15px 35px"
       }
@@ -28,36 +29,56 @@ const CallToActionContent = () => {
             component="article"
             container
             columns={12}
-            spacing={1.5}   
+            spacing={5}
             size={12}
+            sx={{
+               marginTop: "100px", 
+            }}
          >
             <Grid2
                container
+               spacing={0.5}
                size={{xs: 12, sm: 6, md: 6, lg: 6, xl: 6}}
                direction="column"
                alignItems="center"
             >
-               <CustomText 
-                  text="Want to share your story with others?"
-                  typography={theme.typography.blogs.callToAction.standard}
-               />
-               <CustomText 
-                  color={theme.palette.secondary.main}
-                  text="Email us!"
-                  typography={theme.typography.blogs.callToAction.bigger}
-               />     
-               <CustomText 
-                  text="Let other folks now"
-                  typography={theme.typography.blogs.callToAction.standard}
-               />
-               <CustomButton
-                  content="Email us"
-                  style={style}
-               />
+               <Grid2
+                  container
+               >
+                  <CustomText 
+                     text="Want to share your story with others?"
+                     typography={theme.typography.blogs.callToAction.standard}
+                  />
+               </Grid2>
+               <Grid2
+                  container
+               >
+                  <CustomText 
+                     color={theme.palette.secondary.main}
+                     text="Email us!"
+                     typography={theme.typography.blogs.callToAction.bigger}
+                  />     
+               </Grid2>
+               <Grid2
+                  container
+               >
+                  <CustomText 
+                     text="Let other folks now"
+                     typography={theme.typography.blogs.callToAction.standard}
+                  />
+               </Grid2>
+               <Grid2
+                  container
+               >
+                  <CustomButton
+                     content="Email us"
+                     style={style}
+                  />
+               </Grid2>
             </Grid2>
             <Grid2
                container
-               size={{xs: 12, sm: 6, md: 5.5, lg: 4.5, xl: 4.5}}
+               size={{xs: 12, sm: 6, md: 6, lg: 6, xl: 6}}
             >
                <CustomImage 
                   src={imageData.imgSrc}

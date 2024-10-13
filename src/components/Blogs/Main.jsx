@@ -10,8 +10,6 @@ const Main = () => {
             text="Blogs"
          /> 
          <SuccessStoriesSection />
-         <br />
-         <br />
          <CallToActionSection />
       </Content>
    )

@@ -11,6 +11,9 @@ const SuccessStoriesContent = () => {
             rowSpacing={8}
             direction="column"   
             size={12}
+            sx={{
+               marginTop: "50px"
+            }}
          >
             {successStories.map((story) => (
                <SuccessStory
