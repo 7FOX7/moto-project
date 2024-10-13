@@ -221,6 +221,42 @@ const theme = createTheme({
                   }
                } 
             }
+         }, 
+         profile: {
+            mobile: {
+               generalContentUsername: {
+                  fontSize: "1.5rem", 
+                  fontWeight: 600
+               }, 
+               interestListValue: {
+                  fontSize: "1.7rem", 
+                  fontWeight: 600
+               }, 
+               bioText: {
+                  fontSize: "1.2rem"
+               }, 
+               activityType: {
+                  fontSize: "1.5rem", 
+                  fontWeight: 600
+               }
+            }, 
+            desktop: {
+               generalContentUsername: {
+                  fontSize: "2rem", 
+                  fontWeight: 600
+               }, 
+               interestListValue: {
+                  fontSize: "2rem", 
+                  fontWeight: 600
+               }, 
+               bioText: {
+                  fontSize: "1.4rem"
+               }, 
+               activityType: {
+                  fontSize: "2rem", 
+                  fontWeight: 600
+               }
+            }
          }
       }
    
