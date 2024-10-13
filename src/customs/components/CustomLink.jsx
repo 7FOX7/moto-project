@@ -9,8 +9,9 @@ const CustomLink = memo(function CustomLink(props) {
 		onClick,
 		textDecorationColor,
 		underline="none", 
-		color="primary", 
-		ariaLabel=""
+		color="primary",
+		contentAlign="center", 
+		ariaLabel="", 
 	} = props
 
 	return (
@@ -30,6 +31,7 @@ const CustomLink = memo(function CustomLink(props) {
 						color={color}
 						text={content}
 						typography={typography}
+						textAlign={contentAlign}
 					/>
 					:
 					content
