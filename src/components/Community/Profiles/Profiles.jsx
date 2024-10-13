@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import { useScreenSize } from "../../../contexts/ScreenSizeContext";
+import { useSelectedUser } from "../../../contexts/SelectedUserContext";
 import { useTheme } from "@emotion/react";
 import CustomAvatar from "../../../customs/components/CustomAvatar"
 import Grid2 from "@mui/material/Grid2"
@@ -8,8 +10,16 @@ import CustomText from "../../../customs/components/CustomText";
 import CustomButton from "../../../customs/components/CustomButton";
 
 const Profiles = ({users}) => {
+   const navigate = useNavigate(); 
    const isSmallScreen = useScreenSize(); 
+   const {setSelectedUser} = useSelectedUser(); 
    const theme = useTheme(); 
+
+   function handleClick(user, username) {
+      navigate(`/profile/${username}`, {relative: "route"})
+      setSelectedUser(user)
+   } 
+
    return (
          <>
             {users.map((user) => (
@@ -56,6 +66,7 @@ const Profiles = ({users}) => {
                         </Grid2>
                      </Grid2>
                      <CustomButton 
+                        onClick={() => handleClick(user, user.username)}
                         content="View Profile"
                      />
                   </ProfileContainer>
