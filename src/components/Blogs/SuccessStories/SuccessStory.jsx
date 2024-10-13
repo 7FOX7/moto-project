@@ -67,14 +67,14 @@ const SuccessStory = (props) => {
                   color={theme.palette.secondary.main}
                   typography={theme.typography.global.linkText}
                   textDecorationColor={theme.palette.secondary.main}
+                  // add click event here
+                  onClick={() => console.log('you clicked on the button')}
                />
             </Box>
-         </Grid2>
-         <Grid2>
-
          </Grid2>
       </Grid2>
    )
 }
 
 export default SuccessStory
+
