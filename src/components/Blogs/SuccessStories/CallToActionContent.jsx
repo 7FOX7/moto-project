@@ -10,6 +10,8 @@ const imageData = {
    imgAlt: "Default Alt"
 }
 
+const href = "mailto:kheeugene@gmail.com"
+
 const CallToActionContent = () => {
    const theme = useTheme(); 
 
@@ -23,6 +25,10 @@ const CallToActionContent = () => {
       return styling
    }, [])
    
+   function handleClick() {
+      window.location.href=href
+   }
+
    return (
       <>
          <Grid2
@@ -72,6 +78,7 @@ const CallToActionContent = () => {
                >
                   <CustomButton
                      content="Email us"
+                     onClick={handleClick}
                      style={style}
                   />
                </Grid2>
