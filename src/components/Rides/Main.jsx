@@ -43,7 +43,11 @@ const Main = () => {
             :
             <>
                <VideoSection />
+               <br />
+               <br />
                <EventSection />
+               <br />
+               <br />
                <ArtSection />
             </> 
          }
