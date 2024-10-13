@@ -14,7 +14,7 @@ const CustomContentContainer = ({showMargin, showTransBox, height, content, typo
             justifyContent="center"
             sx={{
                position: "relative", 
-               height: height ? height : "100%"
+               height: height && height
             }}
          >
             {showTransBox && 

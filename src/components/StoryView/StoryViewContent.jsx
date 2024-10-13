@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { useSelectedStory } from "../../contexts/SelectedStoryContext";
 import { useScreenSize } from "../../contexts/ScreenSizeContext";
 import { useTheme } from "@emotion/react"
@@ -9,7 +8,6 @@ import CustomImage from "../../customs/components/CustomImage";
 
 const StoryViewContent = () => {
    const {selectedStory} = useSelectedStory(); 
-   const navigate = useNavigate();
    const isSmallScreen = useScreenSize(); 
    const theme = useTheme();
 
