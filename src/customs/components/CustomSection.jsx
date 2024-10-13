@@ -14,13 +14,15 @@ const CustomSection = ({headingText, subHeadingText, content, marginTop}) => {
                marginTop: marginTop
             }}
          >
-            <CustomText 
-               color={theme.palette.secondary.main}
-               text={headingText}
-               variant="h2"
-               typography={isSmallScreen ? theme.typography.global.mobile.sectionHeading : theme.typography.global.desktop.sectionHeading}
-               textAlign="left"
-            />
+            {headingText &&
+               <CustomText 
+                  color={theme.palette.secondary.main}
+                  text={headingText}
+                  variant="h2"
+                  typography={isSmallScreen ? theme.typography.global.mobile.sectionHeading : theme.typography.global.desktop.sectionHeading}
+                  textAlign="left"
+               />
+            }
             {subHeadingText && 
                <CustomText 
                   text={subHeadingText}
