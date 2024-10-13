@@ -7,11 +7,9 @@ import CustomLink from "../../../customs/components/CustomLink";
 import { SubSectionBox } from "../../../styles/style";
 import Grid2 from "@mui/material/Grid2";
 import Box from "@mui/material/Box";
-import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import topicSubSectionContents from "../../../data/topicSubSectionContents"; 
 import subSectionCategories from "../../../data/subSectionCategories";
-
 
 const marginTop = "30px"
 const content = topicSubSectionContents[2]; 
