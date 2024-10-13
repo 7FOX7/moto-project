@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useScreenSize } from "../../../contexts/ScreenSizeContext"
 import { useSelectedUser } from "../../../contexts/SelectedUserContext";
 import { useTheme } from "@emotion/react";
-import { SemiTransparentBox } from "../../../styles/style";
+import CustomContentContainer from "../../../customs/components/CustomContentContainer";
 import CustomSelect from "../../../customs/components/CustomSelect";
 import CustomCarousel from "../../../customs/components/CustomCarousel";
 import CustomLink from "../../../customs/components/CustomLink";
@@ -31,32 +31,11 @@ const ActivityContent = () => {
    console.log('Component was rerendered')
    return (
       <>
-         <Grid2
-            container
-            columns={12}
-            size={12}
-            justifyContent="center"
-            sx={{
-               position: "relative", 
-               height: !isSmallScreen ? "500px" : "100%"
-            }}
-         > 
-            {!isSmallScreen &&
-               <SemiTransparentBox
-                  sx={{
-                     background: theme.palette.secondary.main
-                  }}
-               />
-            }
-            <Grid2
-               container
-               size={12}
-               sx={{
-                  margin: !isSmallScreen ? "20px" : 0,   
-                  padding: "20px", 
-                  background: theme.palette.common.black
-               }}
-            > 
+         <CustomContentContainer
+            showMargin={isSmallScreen ? false : true}
+            height={isSmallScreen ? "100%" : "500px"}
+            content={
+               <>
                   <Grid2
                      container
                      direction="column"
@@ -88,8 +67,10 @@ const ActivityContent = () => {
                         type="art"
                      />
                   </Grid2>
-            </Grid2> 
-         </Grid2>
+               </>
+            }
+         >
+         </CustomContentContainer>
       </>
    )
 }
