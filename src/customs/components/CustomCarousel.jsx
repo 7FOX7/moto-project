@@ -17,6 +17,9 @@ const CustomCarousel = ({data, type}) => {
             loop={true}
             allowTouchMove={true}
             grabCursor={true}
+            style={{
+               width: "100%"
+            }}
          >
             {data.map((item) => {
                return (      

@@ -42,14 +42,13 @@ const EventContent = () => {
 
    return (
       <>
-         <Grid2
-            container
-            size={12}
-            spacing={{xs: 2, sm: 2, md: 1, lg: 1, xl: 1}}
-         >
-            {isSmallScreen ? 
+         {isSmallScreen ?
+            <> 
                <Grid2
                   size={12}
+                  sx={{
+                     marginBottom: "20px"
+                  }}
                >
                   <CustomSelect 
                      selectedOption={selectedEventType}
@@ -57,7 +56,17 @@ const EventContent = () => {
                      onChange={handleChange}
                   />
                </Grid2>
-               : 
+               <CustomCarousel
+                  data={filteredEvents}
+                  type="event"
+               />
+            </>
+            : 
+            <Grid2
+               container
+               size={12}
+               spacing={1}
+            >
                <Grid2 
                   container
                   columns={12}
@@ -89,144 +98,137 @@ const EventContent = () => {
                      </Link>
                   ))}
                </Grid2>
-            }
-            {isSmallScreen ? 
-               <CustomCarousel
-                  data={filteredEvents}
-                  type="event"
-               />
-               : 
                <ScrollableContainer>
-                  <List>
-                     {filteredEvents.slice(0, visibleEvents).map((event) => {
-                        return (
-                           <Fragment
-                              key={event.id}
+               <List>
+                  {filteredEvents.slice(0, visibleEvents).map((event) => {
+                     return (
+                        <Fragment
+                           key={event.id}
+                        >
+                           <ListItem
+                              disablePadding
                            >
-                              <ListItem
-                                 disablePadding
+                              <Grid2
+                                 container
+                                 spacing={2}
+                                 size={12}
                               >
                                  <Grid2
                                     container
-                                    spacing={2}
+                                    size={12}
+                                 >
+                                    <StyledPaper 
+                                       sx={{
+                                          width: "250px", 
+                                          height: "170px",
+                                          flexDirection: "column", 
+                                          justifyContent: "start", 
+                                          alignItems: "flex-start"
+                                       }}
+                                    >
+                                       <Box 
+                                          sx={{
+                                             width: "100%",
+                                             height: "130px", 
+                                          }
+                                       }>
+                                          <CustomImage
+                                             width="100%"
+                                             height="100%"
+                                             src={event.imgSrc}
+                                             alt={event.imgAlt}
+                                             borderRadius="15px 15px 0 0"
+                                          />
+                                       </Box>
+                                       <Box sx={{
+                                          margin: "5px"
+                                       }}>
+                                          <CustomText
+                                             color={theme.palette.common.black}
+                                             text={event.type}
+                                          />
+                                       </Box>
+                                    </StyledPaper>
+                                 </Grid2>
+                                 <Grid2
+                                    container
+                                    rowSpacing={1}
                                     size={12}
                                  >
                                     <Grid2
                                        container
                                        size={12}
                                     >
-                                       <StyledPaper 
-                                          sx={{
-                                             width: "250px", 
-                                             height: "170px",
-                                             flexDirection: "column", 
-                                             justifyContent: "start", 
-                                             alignItems: "flex-start"
-                                          }}
-                                       >
-                                          <Box 
-                                             sx={{
-                                                width: "100%",
-                                                height: "130px", 
-                                             }
-                                          }>
-                                             <CustomImage
-                                                width="100%"
-                                                height="100%"
-                                                src={event.imgSrc}
-                                                alt={event.imgAlt}
-                                                borderRadius="15px 15px 0 0"
-                                             />
-                                          </Box>
-                                          <Box sx={{
-                                             margin: "5px"
-                                          }}>
-                                             <CustomText
-                                                color={theme.palette.common.black}
-                                                text={event.type}
-                                             />
-                                          </Box>
-                                       </StyledPaper>
+                                       <CustomText
+                                          color={theme.palette.secondary.dark}
+                                          text={event.title}
+                                          typography={theme.typography.rides.eventTitle}
+                                       />
                                     </Grid2>
                                     <Grid2
                                        container
-                                       rowSpacing={1}
                                        size={12}
                                     >
-                                       <Grid2
-                                          container
-                                          size={12}
-                                       >
-                                          <CustomText
-                                             color={theme.palette.secondary.dark}
-                                             text={event.title}
-                                             typography={theme.typography.rides.eventTitle}
-                                          />
-                                       </Grid2>
-                                       <Grid2
-                                          container
-                                          size={12}
-                                       >
-                                          <CustomText
-                                             color={theme.palette.common.white}
-                                             text={event.date}
-                                          />
-                                       </Grid2>
-                                       <Grid2
-                                          container
-                                          size={12}
-                                       >
-                                          <CustomText
-                                             color={theme.palette.common.white}
-                                             text={event.place}
-                                          />
-                                       </Grid2>
+                                       <CustomText
+                                          color={theme.palette.common.white}
+                                          text={event.date}
+                                       />
+                                    </Grid2>
+                                    <Grid2
+                                       container
+                                       size={12}
+                                    >
+                                       <CustomText
+                                          color={theme.palette.common.white}
+                                          text={event.place}
+                                       />
                                     </Grid2>
                                  </Grid2>
-                              </ListItem>
-                              <ListItem />
-                              <Divider
-                                 component="li" 
-                                 variant="middle"
-                                 sx={{
-                                    background: theme.palette.common.white
-                                 }}
-                              />
-                              <ListItem />
-                           </Fragment>
-                        )
-                     })}
-                  </List>
-                  <Box 
-                     sx={{ 
-                        display: "flex", 
-                        justifyContent: "center",
-                     }}
-                  >
-                     {visibleEvents >= filteredEvents.length ?
-                        <CustomText
-                           color={theme.palette.secondary.main}
-                           text="That's all, folks! 🎉"
-                        />
-                        : 
-                        <Link 
-                           component="button"
-                           onClick={() => setVisibleEvents((prevVal) => prevVal + 10)}
-                           sx={{ 
-                              color: theme.palette.secondary.dark,
-                              textDecorationColor: theme.palette.secondary.dark
-                           }}
-                        >
-                           <CustomText 
-                              color="inherit"
-                              text="View More"
+                              </Grid2>
+                           </ListItem>
+                           <ListItem />
+                           <Divider
+                              component="li" 
+                              variant="middle"
+                              sx={{
+                                 background: theme.palette.common.white
+                              }}
                            />
-                        </Link>
-                     }
-                  </Box>
+                           <ListItem />
+                        </Fragment>
+                     )
+                  })}
+               </List>
+               <Box 
+                  sx={{ 
+                     display: "flex", 
+                     justifyContent: "center",
+                  }}
+               >
+                  {visibleEvents >= filteredEvents.length ?
+                     <CustomText
+                        color={theme.palette.secondary.main}
+                        text="That's all, folks! 🎉"
+                     />
+                     : 
+                     <Link 
+                        component="button"
+                        onClick={() => setVisibleEvents((prevVal) => prevVal + 10)}
+                        sx={{ 
+                           color: theme.palette.secondary.dark,
+                           textDecorationColor: theme.palette.secondary.dark
+                        }}
+                     >
+                        <CustomText 
+                           color="inherit"
+                           text="View More"
+                        />
+                     </Link>
+                  }
+               </Box>
                </ScrollableContainer>
-            }
-         </Grid2>
+            </Grid2>
+         }
       </>
    )
 }
