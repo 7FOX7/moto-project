@@ -52,10 +52,10 @@ const CustomListContainer = {
                   size={{xs: 12, sm: 12, md: 4, lg: 6, xl: 6}}
                >
                   <CustomImage 
-                     src="/images/fox-logo.png" 
+                     src="/images/fox-logo.webp" 
                      alt="Fox Logo"
-                     width="60px"
-                     height="60px"   
+                     width="65px"
+                     height="65px"   
                   />
                </Grid>
                <Grid 
@@ -97,7 +97,9 @@ const CustomListContainer = {
                </Grid>
             </Grid>
             <br />
-            <Divider orientation="horizontal" sx={{background: "white"}} />
+            <Divider 
+               orientation="horizontal" 
+               sx={{background: "white"}} />
             <br />
             {/* TODO: Create a custom component that will contain the text */}
             <Grid

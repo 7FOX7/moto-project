@@ -21,11 +21,11 @@ const Header = () => {
 
    const content = 
       <CustomImage 
-         src="/images/fox-logo.png" 
+         src="/images/fox-logo.webp" 
          alt="Fox Logo"
-         width="60px"
-         height="60px"   
-      />
+         width="65px"
+         height="65px"   
+      /> 
 
    const handleOpen = () => {
       setOpen(true)
