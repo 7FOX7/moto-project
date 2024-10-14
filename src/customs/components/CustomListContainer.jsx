@@ -112,7 +112,7 @@ const CustomListContainer = {
                   size={{xs: 12, sm: 12, md: 8, lg: 8, xl: 8}}
                >
                   <CustomText 
-                     color={theme.palette.global.secondaryTextContent}     // TODO: this will throw a warning about invalid 'color' prop
+                     color={theme.palette.global.secondaryTextContent.main}     
                      text="Copyright &copy; 2024 7FOX7. All rights reserved." 
                      variant="body2"
                   />
