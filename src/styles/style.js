@@ -163,7 +163,7 @@ export const ScrollableContainer = styled(Box)({
    height: "450px", 
    overflowY: "auto", 
    overflowX: "hidden", 
-   backgroundColor: theme.palette.grey[300],
+   backgroundColor: theme.palette.common.black,
    padding: "12px"
 })
 

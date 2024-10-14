@@ -97,6 +97,7 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
                width: "230px", 
                height: "320px", 
                flexDirection: "column", 
+               background: theme.palette.common.black
             }}
          >
             <CustomImage
@@ -127,7 +128,7 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
                   size={12}
                >
                   <CustomText 
-                     color={theme.palette.common.black}
+                     color={theme.palette.common.white}
                      text={item.date}
                   />
                </Grid2>
@@ -136,7 +137,7 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
                   size={12}
                >
                   <CustomText 
-                     color={theme.palette.common.black}
+                     color={theme.palette.common.white}
                      text={item.place}
                   />
                </Grid2>

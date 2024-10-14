@@ -168,7 +168,7 @@ const EventContent = () => {
                                           size={12}
                                        >
                                           <CustomText
-                                             color={theme.palette.common.black}
+                                             color={theme.palette.common.white}
                                              text={event.date}
                                           />
                                        </Grid2>
@@ -177,16 +177,22 @@ const EventContent = () => {
                                           size={12}
                                        >
                                           <CustomText
-                                             color={theme.palette.common.black}
+                                             color={theme.palette.common.white}
                                              text={event.place}
                                           />
                                        </Grid2>
                                     </Grid2>
                                  </Grid2>
                               </ListItem>
-                              <br />
-                              <Divider variant="middle" />
-                              <br />
+                              <ListItem />
+                              <Divider
+                                 component="li" 
+                                 variant="middle"
+                                 sx={{
+                                    background: theme.palette.common.white
+                                 }}
+                              />
+                              <ListItem />
                            </Fragment>
                         )
                      })}
@@ -199,7 +205,7 @@ const EventContent = () => {
                   >
                      {visibleEvents >= filteredEvents.length ?
                         <CustomText
-                           color={theme.palette.common.black}
+                           color={theme.palette.secondary.main}
                            text="That's all, folks! 🎉"
                         />
                         : 
