@@ -178,7 +178,7 @@ const EventContent = () => {
                                        >
                                           <CustomText
                                              color={theme.palette.common.black}
-                                             text={"At " + event.place}
+                                             text={event.place}
                                           />
                                        </Grid2>
                                     </Grid2>

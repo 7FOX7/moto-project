@@ -137,7 +137,7 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
                >
                   <CustomText 
                      color={theme.palette.common.black}
-                     text={"At " + item.place}
+                     text={item.place}
                   />
                </Grid2>
                <EventTypeBox>
