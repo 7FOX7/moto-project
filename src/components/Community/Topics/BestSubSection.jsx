@@ -11,13 +11,14 @@ import Typography from "@mui/material/Typography";
 import topicSubSectionContents from "../../../data/topicSubSectionContents"; 
 import subSectionCategories from "../../../data/subSectionCategories";
 
-const marginTop = "30px"
+const marginTop = "25px"
 const content = topicSubSectionContents[2]; 
 const items = content.content; 
+const firstCategory = subSectionCategories[0].name
 
 const BestSubSection = () => {
-   const [filteredItems, setFilteredItems] = useState([...items])
-   const [selectedCategory, setSelectedCategory] = useState(subSectionCategories[0].name); 
+   const [filteredItems, setFilteredItems] = useState([...items].filter(item => item.category === firstCategory))
+   const [selectedCategory, setSelectedCategory] = useState(firstCategory); 
    const isSmallScreen = useScreenSize(); 
    const theme = useTheme(); 
 
@@ -72,11 +73,11 @@ const BestSubSection = () => {
                         key={category.id}
                         content={category.name}
                         typography={isSmallScreen ? theme.typography.community.mobile.subSectionCategory : theme.typography.community.desktop.subSectionCategory}
-                        textDecorationColor={theme.palette.secondary.main}
+                        textDecorationColor={category.name === selectedCategory ? theme.palette.common.white : theme.palette.secondary.main}
                         onClick={() => handleClick(category.name)}
                         underline="always"
-                        color={theme.palette.secondary.main}
-                        ariaLabel="category"
+                        color={category.name === selectedCategory ? theme.palette.common.white : theme.palette.secondary.main}
+                        ariaLabel={`${category.name} category`}
                      />
                   ))}
                </Grid2>
@@ -84,9 +85,10 @@ const BestSubSection = () => {
          </Grid2>
          <Box
             sx={{
+               width: isSmallScreen ? "100%" : "700px", 
                height: "600px", 
                marginTop: marginTop,
-               overflowY: "auto"
+               overflowY: "auto", 
             }}
          >
             {filteredItems.map((item) => (
@@ -104,47 +106,50 @@ const BestSubSection = () => {
                      marginBottom: "30px", 
                   }}
                >
-                        <Grid2
-                           container
+                     <Grid2
+                        container
+                     >
+                        <Typography
+                           color={theme.palette.secondary.main}
+                           fontSize="inherit"
+                           fontWeight="inherit"
                         >
-                           <Typography
-                              color={theme.palette.secondary.main}
-                              fontSize="inherit"
-                              fontWeight="inherit"
-                           >
-                              {item.publishDate}
-                           </Typography>
-                        </Grid2>
-                        <Grid2
-                           container
-                           justifyContent="center"
-                           sx={{
-                              width: "25px", 
-                           }}
+                           {item.publishDate}
+                        </Typography>
+                     </Grid2>
+                     <Grid2
+                        container
+                        justifyContent="center"
+                        sx={{
+                           width: "25px", 
+                        }}
+                     >
+                        <Typography
+                           fontSize="3rem"
+                           variant="span"
                         >
-                           <Typography
-                              fontSize="3rem"
-                              variant="span"
-                           >
-                              •
-                           </Typography>
-                        </Grid2>
-                        <Grid2
-                           container
+                           •
+                        </Typography>
+                     </Grid2>
+                     <Grid2
+                        container
+                     >
+                        <Typography
+                           fontSize="inherit"
+                           fontWeight="inherit"
                         >
-                           <Typography
-                              fontSize="inherit"
-                              fontWeight="inherit"
-                           >
-                              {item.category}
-                           </Typography>
-                        </Grid2>
+                           {item.category}
+                        </Typography>
+                     </Grid2>
                      <Grid2
                         container
                         size={12}
                      >
                            <Typography
                               typography={isSmallScreen ? theme.typography.community.mobile.subSectionTitle : theme.typography.community.desktop.subSectionTitle}
+                              sx={{
+                                 wordBreak: "break-all"
+                              }}
                            >
                               {item.title}
                            </Typography>

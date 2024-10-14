@@ -2,8 +2,8 @@ import { useTheme } from "@emotion/react";
 import { useScreenSize } from "../../../contexts/ScreenSizeContext";
 import CustomText from "../../../customs/components/CustomText";
 import { SubSectionBox } from "../../../styles/style";
+import { StyledPaper } from "../../../styles/style";
 import topicSubSectionContents from "../../../data/topicSubSectionContents"
-import CustomCarousel from "../../../customs/components/CustomCarousel";
 import Grid2 from "@mui/material/Grid2";
 import CustomImage from "../../../customs/components/CustomImage";
 
@@ -19,7 +19,8 @@ const HotSubSection = () => {
       <SubSectionBox 
          component="article"
          container
-         size={{xs: 12, sm: 12, md: 7, lg: 7, xl: 7}}
+         columns={12}
+         size={{xs: 12, sm: 12, md: 8, lg: 7, xl: 7}}
       >
          <CustomText 
             color={theme.palette.secondary.main}
@@ -33,11 +34,37 @@ const HotSubSection = () => {
                size={12}
                sx={{marginTop: marginTop}}
             >
-               {isSmallScreen ?
-                  <CustomCarousel
-                     data={items}
-                     type="art"
-                  />
+               {isSmallScreen ? 
+                  <Grid2
+                     container
+                     spacing={2}
+                     direction={{xs: "column", sm: "row"}}
+                     justifyContent="center"
+                     alignItems="center"
+                     size={12}
+                  >
+                     {items.map((item) => (
+                        <Grid2
+                           key={item.id}
+                           container
+                        >
+                           <StyledPaper 
+                              sx={{
+                                 width: "230px", 
+                                 height: "230px"
+                              }}
+                           >
+                              <CustomImage
+                                 width="100%"
+                                 height="100%"
+                                 src={item.imgSrc}
+                                 alt={item.imgAlt}
+                                 borderRadius="15px" 
+                              />
+                           </StyledPaper>
+                        </Grid2>
+                     ))}
+                  </Grid2>
                   : 
                   <Grid2
                      container

@@ -3,15 +3,11 @@ import { useScreenSize } from "../../../contexts/ScreenSizeContext";
 import { SubSectionBox } from "../../../styles/style";
 import CustomText from "../../../customs/components/CustomText";
 import Grid2 from "@mui/material/Grid2";
-import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import topicSubSectionContents from "../../../data/topicSubSectionContents";
 
-const marginTop = "30px"; 
 const content = topicSubSectionContents[1]; 
 const items = content.content; 
-
-console.log(content)
 
 const NewSubSection = () => {
    const isSmallScreen = useScreenSize(); 
@@ -30,11 +26,6 @@ const NewSubSection = () => {
             variant="h3"
             typography={isSmallScreen ? theme.typography.community.mobile.subSectionHeading : theme.typography.community.desktop.subSectionHeading}
          />
-         <Box
-            sx={{
-               marginTop: marginTop
-            }}
-         >
          {items.map((item) => (
             <Grid2
                key={item.id}
@@ -126,7 +117,6 @@ const NewSubSection = () => {
                   </Grid2>
             </Grid2>
          ))}
-         </Box>
       </SubSectionBox>
    )
 }

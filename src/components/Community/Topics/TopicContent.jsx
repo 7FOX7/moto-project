@@ -10,7 +10,8 @@ const TopicContent = () => {
             component="section"
             container
             columns={12}
-            columnSpacing={4}
+            columnSpacing={2}
+            rowSpacing={3}
             size={12}
          >
             <HotSubSection />
