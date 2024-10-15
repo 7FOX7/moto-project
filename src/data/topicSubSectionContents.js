@@ -5,18 +5,18 @@ const topicSubSectionContents = [
       content: [
          {
             id: "topicHot1", 
-            imgSrc: "/images/art-girl-on-motorcycle.webp", 
-            imgAlt: "Girl on motorcycle"
+            imgSrc: "/images/art-painted-motorbike-standing-against-the-backdrop-of-the-setting-sun.webp", 
+            imgAlt: "A painted motorbike standing agains the backdrop of the setting sun"
          }, 
          {
             id: "topicHot2", 
-            imgSrc: "/images/art-racing-motorcyclists.webp", 
-            imgAlt: "Dirt bike"
+            imgSrc: "/images/art-a-motorcyclist-leaning-over.webp", 
+            imgAlt: "A drawn motorcyclist leaning over"
          }, 
          {
             id: "topicHot3", 
-            imgSrc: "/images/art-standing-girl.webp", 
-            imgAlt: "Biker showing hand"
+            imgSrc: "/images/art-a-cartoon-motorcyclist-standing-on-a-back-wheel.webp", 
+            imgAlt: "A cartoon motorcyclist standing on a back wheel"
          }
       ]
    }, 
