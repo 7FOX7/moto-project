@@ -173,7 +173,6 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
       )
    }
    else if(type === "tip") {
-      console.log('it got rerendered (tips)')
       const navigate = useNavigate(); 
       const {setSelectedTip} = useSelectedTip(); 
 

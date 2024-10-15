@@ -25,8 +25,6 @@ function getRandomInterests(amount) {
          )
       }
    }
-   
-   console.log(randomInterests)
    return randomInterests
 }
 

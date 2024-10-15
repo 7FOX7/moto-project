@@ -27,7 +27,6 @@ const useHomePageAnimation = (contentRef, isSmallScreen) => {
             end: `+=${pinDuration} 100px`,
             pin: true,
             scrub: true, 
-            markers: true,
          }, 
          x: xMove, 
       })
