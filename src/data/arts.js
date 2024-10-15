@@ -54,6 +54,16 @@ const arts = [
       imgSrc: "/images/art-a-winter-soldier-riding-a-motorbike.webp", 
       imgAlt: "A Winter Soldier riding a motorbike"
    }, 
+   {
+      id: "art12", 
+      imgSrc: "/images/art-a-motorbiker-standing-on-a-back-wheel.webp", 
+      imgAlt: "A motorbiker standing on a back wheel"
+   }, 
+   {
+      id: "art13", 
+      imgSrc: "/images/art-a-woman-riding-a-motorbike.webp", 
+      imgAlt: "A woman riding a motorbike"
+   }, 
 ]
 
 export default arts

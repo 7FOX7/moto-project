@@ -151,6 +151,26 @@ const events = [
       imgAlt: "White motorcycle in the garage",   
       type: "Workshop"
    }, 
+   {
+      id: "event16", 
+      title: "AMATEURS: Racing",
+      date: new Date().toDateString(), 
+      place: "Calgary",  
+      description: "description here",
+      imgSrc: "/images/event-racing-ride.webp",
+      imgAlt: "Motorcyclists competing in a race",  
+      type: "Racing"
+   },
+   {
+      id: "event17", 
+      title: "AMATEURS: Racing",
+      date: new Date().toDateString(), 
+      place: "Toronto",  
+      description: "description here",
+      imgSrc: "/images/event-racing-ride.webp",
+      imgAlt: "Motorcyclists competing in a race",  
+      type: "Racing"
+   },
 ]
 
 export default events
