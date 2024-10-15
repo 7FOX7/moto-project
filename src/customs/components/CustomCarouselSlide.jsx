@@ -2,6 +2,7 @@ import { memo } from "react"
 import { useNavigate } from "react-router-dom"
 import { useScreenSize } from "../../contexts/ScreenSizeContext"
 import { useTheme } from "@emotion/react"
+import { useSelectedTip } from "../../contexts/SelectedTipContext"
 import CustomText from "./CustomText"
 import CustomImage from "./CustomImage"
 import { StyledPaper } from "../../styles/style"
@@ -11,6 +12,9 @@ import { EventTypeBox } from "../../styles/style"
 import Grid2 from "@mui/material/Grid2"
 import Rating from "@mui/material/Rating"
 import Link from "@mui/material/Link"
+
+const tip_imgSrc = "/images/thinking-motorbiker.webp"
+const tip_imgAlt = "A thinking motorbiker"
 
 const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
    const isSmallScreen = useScreenSize()
@@ -169,7 +173,15 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
       )
    }
    else if(type === "tip") {
+      console.log('it got rerendered (tips)')
       const navigate = useNavigate(); 
+      const {setSelectedTip} = useSelectedTip(); 
+
+      function handleClick(tip, tipId) {
+         setSelectedTip(tip)
+         navigate(`${tipId}`, {relative: "path"})
+      }
+
       return (
          <TipSectionBox>
             <MarginBox>
@@ -182,8 +194,8 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
                   <CustomImage 
                      width="100%"
                      height="100%"
-                     src={item.imgSrc}
-                     alt={item.imgAlt}
+                     src={tip_imgSrc}
+                     alt={tip_imgAlt}
                      borderRadius="15px"
                   />
                </StyledPaper>
@@ -203,7 +215,7 @@ const CustomCarouselSlide = memo(function CustomCarouselSlide(props) {
             <MarginBox>
                <Link 
                   component="button"
-                  onClick={() => navigate(`/video-view/${item.id}`, {relative: "route"})}
+                  onClick={() => handleClick(item, item.id)}
                   sx={{ 
                      color: theme.palette.secondary.dark,
                      textDecorationColor: theme.palette.secondary.dark
