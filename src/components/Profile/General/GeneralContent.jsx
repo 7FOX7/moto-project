@@ -41,6 +41,7 @@ const GeneralContent = () => {
                   width="150px"
                   height="150px"
                   content={username.charAt(0)}
+                  largerText={true}
                />
             </Grid2>
             <Grid2
@@ -52,6 +53,7 @@ const GeneralContent = () => {
                   color={theme.palette.secondary.main}
                   text={username}
                   typography={isSmallScreen ? theme.typography.profile.mobile.generalContentUsername : theme.typography.profile.desktop.generalContentUsername}
+                  wordBreak="break-all"
                />
             </Grid2>
             <Grid2
@@ -65,7 +67,7 @@ const GeneralContent = () => {
                   rowSpacing={0.5}
                   direction="column"
                   alignItems="center"
-                  size={{xs: 12, sm: 2, md: 12, lg: 2, xl: 2}}
+                  size={{xs: 12, sm: 2, md: 12, lg: 12, xl: 2}}
                >
                   <FavoriteIcon />
                   <CustomText 
@@ -77,7 +79,7 @@ const GeneralContent = () => {
                   rowSpacing={0.5}
                   direction="column"
                   alignItems="center"
-                  size={{xs: 12, sm: 7, md: 12, lg: 7, xl: 7}}
+                  size={{xs: 12, sm: 7, md: 12, lg: 12, xl: 6.5}}
                >
                   <EmailIcon />
                   <CustomText
@@ -89,7 +91,7 @@ const GeneralContent = () => {
                   rowSpacing={0.5}
                   direction="column"
                   alignItems="center"
-                  size={{xs: 12, sm: 3, md: 12, lg: 3, xl: 3}}
+                  size={{xs: 12, sm: 3, md: 12, lg: 12, xl: 3.2}}
                >
                   <DateRangeIcon />
                   <CustomText

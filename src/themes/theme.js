@@ -67,6 +67,9 @@ const theme = createTheme({
             fontSize: "1.2rem", 
             fontWeight: 600
          },
+         avatar: {
+            fontSize: "2.5rem", 
+         }, 
          mobile: {
             pageHeading: {
                fontSize: "2.5rem"
@@ -87,7 +90,7 @@ const theme = createTheme({
             contentTitle: {
                fontSize: "1.8rem", 
                fontWeight: 600
-            }
+            }, 
          }, 
          desktop: {
             pageHeading: {
@@ -109,7 +112,8 @@ const theme = createTheme({
             contentTitle: {
                fontSize: "2rem", 
                fontWeight: 600
-            }
+            }, 
+            
          }
       }, 
       home: {
@@ -256,7 +260,7 @@ const theme = createTheme({
          }, 
          desktop: {
             generalContentUsername: {
-               fontSize: "2rem", 
+               fontSize: "1.8rem", 
                fontWeight: 600
             }, 
             interestListValue: {

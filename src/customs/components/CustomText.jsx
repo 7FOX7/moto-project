@@ -8,6 +8,7 @@ const CustomText = memo(function CustomText(props) {
       variant="body1", 
       color="primary",
       textAlign="center",
+      wordBreak="normal"
    } = props
    
    return (
@@ -18,6 +19,7 @@ const CustomText = memo(function CustomText(props) {
             typography={typography}
             sx={{
                textAlign: textAlign,
+               wordBreak: wordBreak
             }}
          >
             {text}

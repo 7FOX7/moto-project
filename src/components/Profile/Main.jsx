@@ -1,4 +1,3 @@
-
 import { useScreenSize } from "../../contexts/ScreenSizeContext";
 import { useTheme } from "@emotion/react";
 import Content from "../Shared/Content";
@@ -47,7 +46,8 @@ const Main = () => {
                   <>
                      <Grid2
                         container
-                        rowSpacing={4}
+                        direction="column"
+                        rowSpacing={5}
                         size={3}
                      >
                         <GeneralSection />
@@ -74,29 +74,3 @@ const Main = () => {
 }
 
 export default Main
-
-
-/*
-
-import CustomHeading from "../../customs/components/CustomHeading"
-import Content from "../Shared/Content"
-import SuccessStoriesSection from "./SuccessStories/SuccessStoriesSection"
-import CallToActionSection from "./SuccessStories/CallToActionSection"
-
-const Main = () => {
-   return (
-      <Content>
-         <CustomHeading
-            text="Blogs"
-         /> 
-         <SuccessStoriesSection />
-         <br />
-         <br />
-         <CallToActionSection />
-      </Content>
-   )
-}
-
-export default Main
-
-*/
