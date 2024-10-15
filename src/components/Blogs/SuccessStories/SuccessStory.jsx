@@ -70,7 +70,6 @@ const SuccessStory = ({story}) => {
                   text={`${textContent.substring(0, 200)}...`}
                />
                <br />
-               <br />
                <CustomLink
                   content={linkText}
                   underline="always"

@@ -6,8 +6,8 @@ import CustomButton from "../../../customs/components/CustomButton"
 import Grid2 from "@mui/material/Grid2"
 
 const imageData = {
-   imgSrc: "/images/art-idle-biker.jpg", 
-   imgAlt: "Default Alt"
+   imgSrc: "/images/a-motorcyclist-leaning-over.webp", 
+   imgAlt: "A motorcyclist leaning over"
 }
 
 const href = "mailto:kheeugene@gmail.com"
@@ -69,7 +69,7 @@ const CallToActionContent = () => {
                   container
                >
                   <CustomText 
-                     text="Let other folks now"
+                     text="Let other people know"
                      typography={theme.typography.blogs.callToAction.standard}
                   />
                </Grid2>
