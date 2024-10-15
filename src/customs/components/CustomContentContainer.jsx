@@ -28,7 +28,7 @@ const CustomContentContainer = ({showMargin, showTransBox, height, content, typo
                container
                size={12}
                sx={{
-                  margin: showMargin && "20px", 
+                  margin: showMargin ? "20px" : 0, 
                   padding: "20px", 
                   background: theme.palette.common.black
                }}

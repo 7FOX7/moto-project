@@ -28,7 +28,6 @@ const ActivityContent = () => {
 
    const {arts} = selectedUser
 
-   console.log('Component was rerendered')
    return (
       <>
          <CustomContentContainer
