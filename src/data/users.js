@@ -16,7 +16,7 @@ const users = [
       arts: [
          {
             id: "userArt1", 
-            imgSrc: "/images/art-biker-showing-hand.jpeg",
+            imgSrc: "/images/art-biker-showing-hand.webp",
             imgAlt: "A biker showing hand" 
          }, 
          {
