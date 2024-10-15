@@ -27,6 +27,7 @@ const VideoContent = () => {
                {videoThumbnails.map((thumbnail) => {
                   return (
                      <ImageListItem
+                        key={thumbnail.id}
                         onClick={() => navigate(`/video-view/${thumbnail.id}`, {relative: "route"})}
                         sx={{
                            cursor: "pointer"
