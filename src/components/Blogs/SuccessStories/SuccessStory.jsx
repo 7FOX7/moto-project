@@ -25,8 +25,8 @@ const SuccessStory = ({story}) => {
    } = story
    
    function handleClick() {
-      navigate(`${id}`, {relative: "path"})
       setSelectedStory(story)
+      navigate(`${id}`, {relative: "path"})
    }
 
    return (

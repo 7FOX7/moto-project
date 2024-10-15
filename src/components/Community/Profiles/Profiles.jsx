@@ -16,8 +16,8 @@ const Profiles = ({users}) => {
    const theme = useTheme(); 
 
    function handleClick(user, username) {
-      navigate(`/profile/${username}`, {relative: "route"})
       setSelectedUser(user)
+      navigate(`/profile/${username}`, {relative: "route"})
    } 
 
    return (
