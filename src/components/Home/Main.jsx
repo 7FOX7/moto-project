@@ -187,7 +187,7 @@ const Main = () => {
                <RevealingComponent className="revealingComponent">
                   <CustomImage 
                      src="/images/motorcycle-cartoon.webp"
-                     alt="Motorcycle cartoon"
+                     alt="A red mortorbike"
                      width={isSmallScreen ? "350px" : "500px"}
                      height={isSmallScreen ? "350px" : "500px"}
                   />
