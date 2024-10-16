@@ -37,7 +37,7 @@ const StoryViewContent = () => {
                      </Grid2>
                      <Grid2
                         container
-                        size={{xs: 10, sm: 8, md: 12, lg: 10, xl: 10}}
+                        size={{xs: 10, sm: 8, md: 12, lg: 10, xl: 8}}
                      >
                         <CustomImage 
                            src={selectedStory.imgSrc}

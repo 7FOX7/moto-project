@@ -26,7 +26,7 @@ const Profiles = ({users}) => {
                   <ProfileContainer
                      key={user.id}
                      container
-                     size={{xs: 12, sm: 5.9, md: 5.9, lg: 3.9, xl: 3.9}}
+                     size={{xs: 12, sm: 5.9, md: 5.9, lg: 3.9, xl: 2.9}}
                      sx={{
                         background: !isSmallScreen && theme.palette.secondary.dark, 
                         borderRadius: !isSmallScreen ? "15px" : 0 

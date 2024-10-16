@@ -10,7 +10,7 @@ const TopicContent = () => {
             component="section"
             container
             columns={12}
-            columnSpacing={2}
+            columnSpacing={{md: 2, lg: 4, xl: 8}}
             rowSpacing={3}
             size={12}
          >

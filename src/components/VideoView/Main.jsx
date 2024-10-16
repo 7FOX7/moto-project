@@ -17,8 +17,8 @@ const Main = () => {
       >
          <EmbeddedVideoContainer>
             <iframe
-               width={isSmallScreen ? "320px" : "800px"}
-               height={isSmallScreen ? "220px" : "400px"}
+               width={isSmallScreen ? "320px" : "700px"}
+               height={isSmallScreen ? "220px" : "380px"}
                src={video.embeddedUrl}
                title={video.title}
                referrerPolicy="strict-origin-when-cross-origin"

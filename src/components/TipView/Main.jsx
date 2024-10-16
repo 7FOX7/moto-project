@@ -1,8 +1,10 @@
+import { useScreenSize } from "../../contexts/ScreenSizeContext"
 import Content from "../Shared/Content"
 import TipViewSection from "./TipViewSection"
 import Grid2 from "@mui/material/Grid2"
 
-const Main = () => {    
+const Main = () => {
+   const isSmallScreen = useScreenSize()    
    return (
       <Content>
          <Grid2
@@ -11,7 +13,7 @@ const Main = () => {
             size={12}
             justifyContent="center"
             sx={{
-               marginTop: "100px"
+               marginTop: isSmallScreen ? "150px" : "220px", 
             }}
          >
             <Grid2

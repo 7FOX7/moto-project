@@ -40,7 +40,7 @@ const SuccessStory = ({story}) => {
       >
          <Grid2
             container
-            size={{xs: 12, sm: 6, md: 5.5, lg: 4.5, xl: 4.5}}
+            size={{xs: 12, sm: 6, md: 5.5, lg: 4.5, xl: 4}}
          >
             <CustomImage 
                src={imgSrc}

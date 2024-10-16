@@ -20,7 +20,7 @@ const HotSubSection = () => {
          component="article"
          container
          columns={12}
-         size={{xs: 12, sm: 12, md: 8, lg: 7, xl: 7}}
+         size={{xs: 12, sm: 12, md: 8, lg: 7, xl: 6}}
       >
          <CustomText 
             color={theme.palette.secondary.main}
