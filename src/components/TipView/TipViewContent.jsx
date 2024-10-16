@@ -54,7 +54,7 @@ const TipViewContent = () => {
                      >
                         <CustomText
                            color="inherit"
-                           text={'Made with love by the'}
+                           text={'Made with love by'}
                         />
                         <CustomText
                            color={theme.palette.secondary.main}
