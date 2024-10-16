@@ -7,6 +7,7 @@ const CustomVideo = ({width, src}) => {
             autoPlay={true}
             muted={true}
             loop={true}
+            playsInline={true}
             width={width}
             style={{
                borderRadius: borderRadius 
@@ -14,11 +15,11 @@ const CustomVideo = ({width, src}) => {
          >
             <source 
                src={src} 
-               type="video/webm" 
+               type="video/mp4" 
             />
             <source 
                src={src} 
-               type="video/mp4" 
+               type="video/webm" 
             />
          </video>
       </>
