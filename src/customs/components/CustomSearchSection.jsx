@@ -26,7 +26,7 @@ const CustomSearchSection = ({dataList, renderItems, filterFunc, placeholder}) =
          >
             <Grid2
                container
-               size={{xs: 10, sm: 8, md: 8, lg: 6, xl: 6}}
+               size={{xs: 10, sm: 6, md: 5, lg: 5, xl: 4}}
             >
                <CustomSearchBar 
                   placeholder={placeholder}
