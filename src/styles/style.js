@@ -95,7 +95,7 @@ export const ReviewCarouselBox = styled(Box)({
 
 export const ContentRevealComponent = styled(Box)({
    position: "absolute", 
-   top: "42%", 
+   top: "40%", 
    left: 0, 
    width: "100%",
    height: "4%",
